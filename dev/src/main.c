@@ -2,7 +2,7 @@
 
 int main()
 {
-	VDP_drawText( "Hello test World!", 10, 13 );
+	VDP_drawText( "Hello StevePro Studios!!", 10, 13 );
 	while( 1 )
 	{
 		//read input

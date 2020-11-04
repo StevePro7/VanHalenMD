@@ -13,10 +13,22 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\content">
+      <UniqueIdentifier>{34fc977f-1dcc-4ad9-81e9-b5cc045bebab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\content">
+      <UniqueIdentifier>{3609abc2-6e70-4edf-8b8a-fb9d3392d637}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gfx\res\gfx.c">
+      <Filter>Source Files\content</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sfx\res\sfx.c">
+      <Filter>Source Files\content</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -27,6 +39,12 @@
   <ItemGroup>
     <ClInclude Include="inc\main.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="res\gfx.h">
+      <Filter>Header Files\content</Filter>
+    </ClInclude>
+    <ClInclude Include="res\sfx.h">
+      <Filter>Header Files\content</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
