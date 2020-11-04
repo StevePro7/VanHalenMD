@@ -2,16 +2,14 @@
 
 int main()
 {
-	//unsigned char input;
-
 	u16 *data = NULL;
-	if( NULL != gfx_banner.palette )
+	if( NULL != gfx_eddie_01.palette )
 	{
-		data = gfx_banner.palette->data;
+		data = gfx_eddie_01.palette->data;
 	}
 
 	VDP_setPalette( PAL1, data );
-	VDP_drawImageEx( BG_A, &gfx_banner, TILE_ATTR_FULL( PAL1, 0, 0, 0, 1 ), 0, 0, 0, CPU );
+	VDP_drawImageEx( BG_A, &gfx_eddie_01, TILE_ATTR_FULL( PAL1, 0, 0, 0, 1 ), 0, 0, 0, CPU );
 	while( 1 )
 	{
 		//wait for screen refresh

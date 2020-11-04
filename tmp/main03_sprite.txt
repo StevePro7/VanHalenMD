@@ -1,0 +1,31 @@
+#include "main.h"
+
+int main()
+{
+	unsigned char input;
+
+	const SpriteDefinition* spriteDef = &gfx_wrong;
+	u16 *data = NULL;
+	if( NULL != spriteDef->palette )
+	{
+		data = spriteDef->palette->data;
+	}
+
+	VDP_setPalette( PAL2, data );
+	SPR_init( 0, 0, 0 );
+	SPR_addSprite( spriteDef, 0, 48, TILE_ATTR( PAL2, 0, FALSE, FALSE ) );
+
+	while( 1 )
+	{
+		engine_input_manager_update();
+		input = engine_input_manager_move_right();
+		if( input )
+		{
+			SPR_update();
+		}
+
+		VDP_waitVSync();
+	}
+
+	return 0;
+}
