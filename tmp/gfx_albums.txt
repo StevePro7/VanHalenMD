@@ -1,0 +1,13 @@
+// Album images
+IMAGE gfx_album_1978 "gfx_albums/album_1978.bmp" 0
+IMAGE gfx_album_1979 "gfx_albums/album_1979.bmp" 0
+IMAGE gfx_album_1980 "gfx_albums/album_1980.bmp" 0
+IMAGE gfx_album_1981 "gfx_albums/album_1981.bmp" 0
+IMAGE gfx_album_1982 "gfx_albums/album_1982.bmp" 0
+IMAGE gfx_album_1984 "gfx_albums/album_1984.bmp" 0
+IMAGE gfx_album_1986 "gfx_albums/album_1986.bmp" 0
+IMAGE gfx_album_1988 "gfx_albums/album_1988.bmp" 0
+IMAGE gfx_album_1991 "gfx_albums/album_1991.bmp" 0
+IMAGE gfx_album_1995 "gfx_albums/album_1995.bmp" 0
+IMAGE gfx_album_1998 "gfx_albums/album_1998.bmp" 0
+IMAGE gfx_album_2012 "gfx_albums/album_2012.bmp" 0
