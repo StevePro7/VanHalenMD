@@ -29,6 +29,7 @@ const SpriteDefinition gfx_wrong = { NULL, 0, NULL, 0, 0 };
 
 
 // Tile images
+const Image gfx_banner = { NULL, NULL, NULL };
 const Image gfx_splash = { NULL, NULL, NULL };
 
 
