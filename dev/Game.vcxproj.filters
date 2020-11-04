@@ -100,7 +100,7 @@
       <Filter>Source Files\engine</Filter>
     </ClCompile>
     <ClCompile Include="src\engine\random_manager.c">
-      <Filter>Source Files\engine</Filter>
+      <Filter>Source Files\object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

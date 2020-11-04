@@ -8,28 +8,30 @@ typedef enum tag_enum_screen_type
 
 } enum_screen_type;
 
-typedef enum tag_enum_album_type
-{
-	album_van_halen = 0,
-	album_van_halen_ii = 1,
-	album_women_children_first = 2,
-	album_fair_warning = 3,
-	album_diver_down = 4,
-	album_1984 = 5,
-	album_5150 = 6,
-	album_ou812 = 7,
-	album_unlawful_carnal_knowledge = 8,
-	album_balance = 9,
-	album_van_halen_iii = 10,
-	album_different_kind_truth = 11,
-
-} enum_album_type;
-
 typedef enum tag_enum_random_type
 {
 	random_type_diff = 0,
 	random_type_same = 1,
 
 } enum_random_type;
+
+/*
+typedef enum tag_enum_album_type
+{
+album_1978 = 0,		// Van Halen
+album_1979 = 1,		// Van Halen II
+album_1980 = 2,		// Women and Children First
+album_1981 = 3,		// Fair Warning
+album_1982 = 4,		// Diver Down
+album_1984 = 5,		// 1984
+album_1986 = 6,		// 5150
+album_1988 = 7,		// OU812
+album_1991 = 8,		// For Unlawful Carnal Knowledge
+album_1995 = 9,		// Balance
+album_1998 = 10,	// Van Halen III
+album_2012 = 11,	// A Different Kind of Truth
+
+} enum_album_type;
+*/
 
 #endif//__ENUM_MANAGER__
