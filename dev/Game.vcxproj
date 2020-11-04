@@ -90,7 +90,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\lib;$(ProjectDir)inc;$(ProjectDir)res;$(GDK_WIN)\inc;$(IncludePath)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\lib;$(ProjectDir)inc;$(ProjectDir)inc\engine;$(ProjectDir)inc\object;$(ProjectDir)inc\screen;$(ProjectDir)res;$(GDK_WIN)\inc;$(IncludePath)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,15 +149,49 @@
   <ItemGroup>
     <ClCompile Include="..\gfx\res\gfx.c" />
     <ClCompile Include="..\sfx\res\sfx.c" />
-    <ClCompile Include="src\input_manager.c" />
+    <ClCompile Include="src\engine\audio_manager.c" />
+    <ClCompile Include="src\engine\data_manager.c" />
+    <ClCompile Include="src\engine\enum_manager.c" />
+    <ClCompile Include="src\engine\font_manager.c" />
+    <ClCompile Include="src\engine\function_manager.c" />
+    <ClCompile Include="src\engine\global_manager.c" />
+    <ClCompile Include="src\engine\hack_manager.c" />
+    <ClCompile Include="src\engine\input_manager.c" />
+    <ClCompile Include="src\engine\music_manager.c" />
+    <ClCompile Include="src\engine\quiz_manager.c" />
+    <ClCompile Include="src\engine\random_manager.c" />
     <ClCompile Include="src\main.c" />
+    <ClCompile Include="src\object\audio_object.c" />
+    <ClCompile Include="src\object\hack_object.c" />
+    <ClCompile Include="src\object\music_object.c" />
+    <ClCompile Include="src\object\quiz_object.c" />
+    <ClCompile Include="src\screen\play_screen.c" />
+    <ClCompile Include="src\screen\quiz_screen.c" />
+    <ClCompile Include="src\screen\test_screen.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="inc\input_manager.h" />
+    <ClInclude Include="inc\engine\audio_manager.h" />
+    <ClInclude Include="inc\engine\data_manager.h" />
+    <ClInclude Include="inc\engine\enum_manager.h" />
+    <ClInclude Include="inc\engine\font_manager.h" />
+    <ClInclude Include="inc\engine\function_manager.h" />
+    <ClInclude Include="inc\engine\global_manager.h" />
+    <ClInclude Include="inc\engine\hack_manager.h" />
+    <ClInclude Include="inc\engine\input_manager.h" />
+    <ClInclude Include="inc\engine\music_manager.h" />
+    <ClInclude Include="inc\engine\quiz_manager.h" />
+    <ClInclude Include="inc\engine\random_manager.h" />
     <ClInclude Include="inc\main.h" />
+    <ClInclude Include="inc\object\audio_object.h" />
+    <ClInclude Include="inc\object\hack_object.h" />
+    <ClInclude Include="inc\object\music_object.h" />
+    <ClInclude Include="inc\object\quiz_object.h" />
+    <ClInclude Include="inc\screen\play_screen.h" />
+    <ClInclude Include="inc\screen\quiz_screen.h" />
+    <ClInclude Include="inc\screen\test_screen.h" />
     <ClInclude Include="res\gfx.h" />
     <ClInclude Include="res\sfx.h" />
   </ItemGroup>

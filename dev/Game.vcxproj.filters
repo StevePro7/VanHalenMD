@@ -19,6 +19,24 @@
     <Filter Include="Source Files\content">
       <UniqueIdentifier>{3609abc2-6e70-4edf-8b8a-fb9d3392d637}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\object">
+      <UniqueIdentifier>{b5001613-d873-4dae-8165-40a703b1daa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\object">
+      <UniqueIdentifier>{1f97874e-26fd-44ad-857e-fb4091ba24ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engine">
+      <UniqueIdentifier>{70065e95-db96-4625-af4e-b4c3e29499ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engine">
+      <UniqueIdentifier>{4cb2d0d5-c7ad-4fa2-a986-124b049b15b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\screen">
+      <UniqueIdentifier>{5dbdfe96-0355-423b-81a4-0cb2d4a5dad9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\screen">
+      <UniqueIdentifier>{97711949-b7bf-4a0c-8126-e35ee2b5db02}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.c">
@@ -30,8 +48,59 @@
     <ClCompile Include="..\sfx\res\sfx.c">
       <Filter>Source Files\content</Filter>
     </ClCompile>
-    <ClCompile Include="src\input_manager.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\object\audio_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\object\hack_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\object\music_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\object\quiz_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\global_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\screen\play_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\screen\quiz_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\screen\test_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\audio_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\data_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\enum_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\font_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\function_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\hack_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\input_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\music_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\quiz_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\random_manager.c">
+      <Filter>Source Files\engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -49,8 +118,59 @@
     <ClInclude Include="res\sfx.h">
       <Filter>Header Files\content</Filter>
     </ClInclude>
-    <ClInclude Include="inc\input_manager.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="inc\object\audio_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\object\hack_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\object\music_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\object\quiz_object.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\engine\global_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\screen\play_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\screen\quiz_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\screen\test_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\engine\audio_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\engine\data_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\engine\enum_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\engine\font_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\engine\function_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\engine\hack_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\engine\input_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\engine\music_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\engine\quiz_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\engine\random_manager.h">
+      <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
