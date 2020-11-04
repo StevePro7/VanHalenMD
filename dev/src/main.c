@@ -4,20 +4,18 @@
 
 int main()
 {
-	unsigned char input;
-	SND_setPCM_XGM( SFX_DEAD, sfx_wrong, 13568 );
-	VDP_drawText( "Hello...", 10, 13 );
+	//unsigned char input;
+
+	u16 *data = NULL;
+	if( NULL != gfx_splash.palette )
+	{
+		data = gfx_splash.palette->data;
+	}
+
+	VDP_setPalette( PAL1, data );
+	VDP_drawImageEx( BG_A, &gfx_splash, TILE_ATTR_FULL( PAL1, 0, 0, 0, 1 ), 4, 2, 0, CPU );
 	while( 1 )
 	{
-		engine_input_manager_update();
-
-		input = engine_input_manager_hold_buttonA();
-		if( input )
-		{
-			VDP_drawText( "PRESSED: TEST", 5, 10 );
-			XGM_startPlayPCM( SFX_DEAD, 1, SOUND_PCM_CH4 );
-		}
-
 		//wait for screen refresh
 		VDP_waitVSync();
 	}

@@ -1,0 +1,26 @@
+#include "main.h"
+
+#define SFX_DEAD            250
+
+int main()
+{
+	unsigned char input;
+	SND_setPCM_XGM( SFX_DEAD, sfx_wrong, 13568 );
+	VDP_drawText( "Hello...", 10, 13 );
+	while( 1 )
+	{
+		engine_input_manager_update();
+
+		input = engine_input_manager_hold_buttonA();
+		if( input )
+		{
+			VDP_drawText( "PRESSED: TEST", 5, 10 );
+			XGM_startPlayPCM( SFX_DEAD, 1, SOUND_PCM_CH4 );
+		}
+
+		//wait for screen refresh
+		VDP_waitVSync();
+	}
+
+	return 0;
+}
