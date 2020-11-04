@@ -1,19 +1,17 @@
 #include "main.h"
 
-#define SFX_DEAD            250
-
 int main()
 {
 	//unsigned char input;
 
 	u16 *data = NULL;
-	if( NULL != gfx_splash.palette )
+	if( NULL != gfx_banner.palette )
 	{
-		data = gfx_splash.palette->data;
+		data = gfx_banner.palette->data;
 	}
 
 	VDP_setPalette( PAL1, data );
-	VDP_drawImageEx( BG_A, &gfx_splash, TILE_ATTR_FULL( PAL1, 0, 0, 0, 1 ), 4, 2, 0, CPU );
+	VDP_drawImageEx( BG_A, &gfx_banner, TILE_ATTR_FULL( PAL1, 0, 0, 0, 1 ), 0, 0, 0, CPU );
 	while( 1 )
 	{
 		//wait for screen refresh
