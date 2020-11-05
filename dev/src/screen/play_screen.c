@@ -1,8 +1,13 @@
 #include "play_screen.h"
 #include "data_manager.h"
+#include "enum_manager.h"
 
-int screen_play_screen_init()
+void screen_play_screen_load()
 {
-	int data = engine_data_manager_test();
-	return data;
+	engine_data_manager_test();
+}
+
+void screen_play_screen_update( unsigned char *screen_type )
+{
+	*screen_type = screen_type_play;
 }

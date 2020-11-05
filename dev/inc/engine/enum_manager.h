@@ -5,6 +5,11 @@ typedef enum tag_enum_screen_type
 {
 	screen_type_none = 0,
 	screen_type_splash = 1,
+	screen_type_begin = 2,
+	screen_type_intro = 3,
+	screen_type_play = 4,
+	screen_type_quiz = 5,
+	screen_type_test = 6,
 
 } enum_screen_type;
 

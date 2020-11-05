@@ -160,13 +160,18 @@
     <ClCompile Include="src\engine\music_manager.c" />
     <ClCompile Include="src\engine\quiz_manager.c" />
     <ClCompile Include="src\engine\random_manager.c" />
+    <ClCompile Include="src\engine\screen_manager.c" />
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\object\audio_object.c" />
     <ClCompile Include="src\object\hack_object.c" />
     <ClCompile Include="src\object\music_object.c" />
     <ClCompile Include="src\object\quiz_object.c" />
+    <ClCompile Include="src\screen\begin_screen.c" />
+    <ClCompile Include="src\screen\intro_screen.c" />
+    <ClCompile Include="src\screen\none_screen.c" />
     <ClCompile Include="src\screen\play_screen.c" />
     <ClCompile Include="src\screen\quiz_screen.c" />
+    <ClCompile Include="src\screen\splash_screen.c" />
     <ClCompile Include="src\screen\test_screen.c" />
   </ItemGroup>
   <ItemGroup>
@@ -189,9 +194,14 @@
     <ClInclude Include="inc\object\hack_object.h" />
     <ClInclude Include="inc\object\music_object.h" />
     <ClInclude Include="inc\object\quiz_object.h" />
+    <ClInclude Include="inc\screen\begin_screen.h" />
+    <ClInclude Include="inc\screen\intro_screen.h" />
+    <ClInclude Include="inc\screen\none_screen.h" />
     <ClInclude Include="inc\screen\play_screen.h" />
     <ClInclude Include="inc\screen\quiz_screen.h" />
+    <ClInclude Include="inc\screen\splash_screen.h" />
     <ClInclude Include="inc\screen\test_screen.h" />
+    <ClInclude Include="inc\screen_manager.h" />
     <ClInclude Include="res\gfx.h" />
     <ClInclude Include="res\sfx.h" />
   </ItemGroup>
