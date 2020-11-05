@@ -6,7 +6,7 @@ int main()
 	unsigned char input;
 	Image image;
 
-	image = gfx_eddie_07;
+	image = gfx_eddie_17;
 	if( NULL != image.palette )
 	{
 		data = image.palette->data;
