@@ -7,7 +7,6 @@
 #include <genesis.h>
 #endif
 
-#include "input_manager.h"
 #include "gfx.h"
 #include "sfx.h"
 
