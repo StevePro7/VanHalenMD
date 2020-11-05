@@ -1,6 +1,13 @@
 #ifdef _CONSOLE
 
-#include "_genesis.h"
+//#ifdef _CONSOLE
+//#include "_genesis.h"
+//#else
+//#include <genesis.h>
+//#endif
+
+#include "gfx.h"
+//#include "_genesis.h"
 
 // Eddie Van Halen images
 const Image gfx_eddie_01 = { NULL, NULL, NULL };

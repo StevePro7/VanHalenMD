@@ -1,6 +1,12 @@
 #ifndef _RES_GFX_H_
 #define _RES_GFX_H_
 
+#ifdef _CONSOLE
+#include "_genesis.h"
+#else
+#include <genesis.h>
+#endif
+
 extern const SpriteDefinition gfx_actor;
 extern const SpriteDefinition gfx_right;
 extern const SpriteDefinition gfx_wrong;
