@@ -13,3 +13,8 @@ BUT after the header file is generated MUST manually update:
 #endif
 
 Otherwise I won't be able to Ctrl+Shift+B build + step thru code
+
+
+title text
+CLASSIC "PICK THE RIFF" TESTER
+123456789012345678901234567890
