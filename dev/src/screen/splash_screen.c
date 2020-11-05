@@ -5,7 +5,7 @@
 
 void screen_splash_screen_load()
 {
-	engine_image_manager_draw( gfx_splash, PAL1, 4, 2 );
+	engine_image_manager_draw( gfx_splash, PAL1, 0, 4, 2 );
 }
 
 void screen_splash_screen_update( unsigned char *screen_type )
