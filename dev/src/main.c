@@ -7,6 +7,7 @@ int main()
 	//open_screen_type = screen_type_splash;
 	open_screen_type = screen_type_intro;
 	engine_screen_manager_init( open_screen_type );
+	engine_sprite_manager_init();
 	while( 1 )
 	{
 		engine_input_manager_update();

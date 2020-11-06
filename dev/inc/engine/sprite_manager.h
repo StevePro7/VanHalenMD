@@ -3,5 +3,6 @@
 
 void engine_sprite_manager_init();
 void engine_sprite_manager_update();
+void engine_sprite_manager_test();
 
 #endif//_SPRITE_MANAGER_

@@ -13,6 +13,14 @@ typedef enum tag_enum_screen_type
 
 } enum_screen_type;
 
+typedef enum tag_enum_sprite_type
+{
+	sprite_type_actor = 0,
+	sprite_type_right = 1,
+	sprite_type_wrong = 2,
+
+} enum_sprite_type;
+
 typedef enum tag_enum_random_type
 {
 	random_type_diff = 0,

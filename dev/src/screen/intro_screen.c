@@ -2,6 +2,7 @@
 #include "enum_manager.h"
 #include "global_manager.h"
 #include "image_manager.h"
+#include "sprite_manager.h"
 #include "gfx.h"
 
 void screen_intro_screen_load()
@@ -12,5 +13,6 @@ void screen_intro_screen_load()
 
 void screen_intro_screen_update( unsigned char *screen_type )
 {
+	engine_sprite_manager_update();
 	*screen_type = screen_type_intro;
 }
