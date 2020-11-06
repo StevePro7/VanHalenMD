@@ -80,6 +80,44 @@ const SpriteDefinition* spriteDefList[ MAX_SPRITES ] = { &gfx_actor, &gfx_right,
 
 void engine_sprite_manager_init()
 {
+	const SpriteDefinition* spriteDef;
+	u16 *data = NULL;
+
+	//sprites[ sprite_type_actor ] = init_sprite( &gfx_actor );
+	//sprites[ sprite_type_right ] = init_sprite( &gfx_right );
+	//sprites[ sprite_type_wrong ] = init_sprite( &gfx_wrong );
+
+	SPR_init( 0, 0, 0 );
+
+	// Sprite #0
+	spriteDef = spriteDefList[ sprite_type_actor ];
+	data = spriteDef->palette->data;
+	VDP_setPalette( PAL3, data );
+	sprites[ sprite_type_actor ] = SPR_addSprite( spriteDef, 0, sprite_positions[ 0 ], TILE_ATTR( PAL3, 0, FALSE, FALSE ) );
+	SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
+	//SPR_setVisibility( sprites[ sprite_type_actor ], VISIBLE );
+
+	// Sprite #1
+	spriteDef = spriteDefList[ sprite_type_right ];
+	data = spriteDef->palette->data;
+	VDP_setPalette( PAL3, data );
+	sprites[ sprite_type_right ] = SPR_addSprite( spriteDef, 0, sprite_positions[ 0 ], TILE_ATTR( PAL3, 0, FALSE, FALSE ) );
+	SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
+	//SPR_setVisibility( sprites[ sprite_type_right ], VISIBLE );
+
+	// Sprite #2
+	spriteDef = spriteDefList[ sprite_type_wrong ];
+	data = spriteDef->palette->data;
+	VDP_setPalette( PAL3, data );
+	sprites[ sprite_type_wrong ] = SPR_addSprite( spriteDef, 0, sprite_positions[ 0 ], TILE_ATTR( PAL3, 0, FALSE, FALSE ) );
+	SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
+	//SPR_setVisibility( sprites[ sprite_type_wrong ], VISIBLE );
+
+	////sprite_index = 0;
+}
+/*
+void engine_sprite_manager_init()
+{
 	const SpriteDefinition* spriteDef2;
 	//Sprite* sprite2;
 
@@ -123,13 +161,36 @@ void engine_sprite_manager_init()
 
 	////sprite_index = 0;
 }
-
+*/
 void engine_sprite_manager_update()
 {
 	SPR_update();
 }
 
-void engine_sprite_manager_test()
+void engine_sprite_manager_test0()
 {
+	// Sprite #0
+	const SpriteDefinition* spriteDef;
+	u16 *data = NULL;
+	spriteDef = spriteDefList[ sprite_type_actor ];
+	data = spriteDef->palette->data;
+	VDP_setPalette( PAL3, data );
+	SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
+	SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
+	SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
+	SPR_setVisibility( sprites[ sprite_type_actor ], VISIBLE );
+}
 
+void engine_sprite_manager_test1()
+{
+	// Sprite #0
+	const SpriteDefinition* spriteDef;
+	u16 *data = NULL;
+	spriteDef = spriteDefList[ sprite_type_wrong ];
+	data = spriteDef->palette->data;
+	VDP_setPalette( PAL3, data );
+	SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
+	SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
+	SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
+	SPR_setVisibility( sprites[ sprite_type_wrong ], VISIBLE );
 }
