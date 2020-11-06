@@ -183,7 +183,21 @@ void engine_sprite_manager_test0()
 
 void engine_sprite_manager_test1()
 {
-	// Sprite #0
+	// Sprite #1
+	const SpriteDefinition* spriteDef;
+	u16 *data = NULL;
+	spriteDef = spriteDefList[ sprite_type_right ];
+	data = spriteDef->palette->data;
+	VDP_setPalette( PAL3, data );
+	SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
+	SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
+	SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
+	SPR_setVisibility( sprites[ sprite_type_right ], VISIBLE );
+}
+
+void engine_sprite_manager_test2()
+{
+	// Sprite #2
 	const SpriteDefinition* spriteDef;
 	u16 *data = NULL;
 	spriteDef = spriteDefList[ sprite_type_wrong ];
