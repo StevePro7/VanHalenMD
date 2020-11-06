@@ -1,7 +1,7 @@
 #include "image_manager.h"
 #include "gfx.h"
 
-void engine_image_manager_draw( Image image, unsigned char palette, unsigned char index, unsigned char x, unsigned char y )
+void engine_image_manager_draw( Image image, unsigned char palette, unsigned char tiles, unsigned char x, unsigned char y )
 {
 	unsigned short *data = NULL;
 	if( NULL != image.palette )
@@ -10,5 +10,5 @@ void engine_image_manager_draw( Image image, unsigned char palette, unsigned cha
 	}
 
 	VDP_setPalette( palette, data );
-	VDP_drawImageEx( BG_A, &image, TILE_ATTR_FULL( palette, 0, 0, 0, index ), x, y, 0, CPU );
+	VDP_drawImageEx( BG_A, &image, TILE_ATTR_FULL( palette, 0, 0, 0, tiles ), x, y, 0, CPU );
 }

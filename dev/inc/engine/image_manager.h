@@ -7,6 +7,6 @@
 #include <genesis.h>
 #endif
 
-void engine_image_manager_draw( Image image, unsigned char palette, unsigned char index, unsigned char x, unsigned char y );
+void engine_image_manager_draw( Image image, unsigned char palette, unsigned char tiles, unsigned char x, unsigned char y );
 
 #endif//_IMAGE_MANAGER_H_
