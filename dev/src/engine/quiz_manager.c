@@ -342,7 +342,7 @@ void engine_quiz_manager_debug_riffs()
 
 void engine_quiz_manager_debug_stats( unsigned char index )
 {
-	engine_font_manager_data( index, 10, 27 );
-	engine_font_manager_data( quiz_answer[ index ], 15, 27 );
-	engine_font_manager_data( quiz_select[ index ], 20, 27 );
+	engine_font_manager_data( index, 5, 27 );
+	engine_font_manager_data( quiz_answer[ index ], 10, 27 );
+	engine_font_manager_data( quiz_select[ index ], 15, 27 );
 }

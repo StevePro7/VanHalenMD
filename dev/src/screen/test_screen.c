@@ -2,8 +2,16 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "global_manager.h"
+#include "image_manager.h"
 #include "input_manager.h"
 #include "quiz_manager.h"
+#include "gfx.h"
+
+#ifdef _CONSOLE
+#include "_genesis.h"
+#else
+#include <genesis.h>
+#endif
 
 static unsigned char quiz;
 
@@ -11,6 +19,12 @@ void screen_test_screen_load()
 {
 	unsigned char diffulty = difficulty_type_easy;
 	//unsigned char diffulty = difficulty_type_hard;
+
+	// Clear screen.
+	VDP_clearPlane( BG_A, 0 );
+
+	engine_image_manager_draw( gfx_banner, PAL1, PALETTE1_TILES, 0, 0 );
+	engine_image_manager_draw( gfx_eddie_05, PAL2, PALETTE2_TILES, 20, 6 );
 
 	engine_quiz_manager_load_normal( diffulty );
 	//engine_quiz_manager_load_mixing( diffulty );
