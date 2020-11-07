@@ -18,7 +18,6 @@
 struct_quiz_object global_quiz_object;
 
 static void random_options( const unsigned char difficulty, const char default_option );
-
 static void print_year( const char *year, unsigned char x, unsigned char y );
 
 void engine_quiz_manager_init()
@@ -224,66 +223,7 @@ void engine_quiz_manager_load_mixing( const unsigned char difficulty )
 	//}
 }
 
-static void random_options( const unsigned char difficulty, const char default_option )
-{
-	unsigned char idx;
-	unsigned char opt;
-	unsigned char ans;
-	unsigned char riff;
 
-	unsigned char album, songs;
-	unsigned char count;
-
-	// Must iterate and randomize all the riffs before randomize options!
-	for( idx = 0; idx < MAX_RIFFS; idx++ )
-	{
-		riff = quiz_answer[ idx ];
-		album = 0;
-		songs = 0;
-		engine_function_manager_convertByteToNibbles( riff, &album, &songs );
-
-		// Randomize correct answer first.
-		ans = engine_random_manager_data( MAX_OPTION );
-		if( INVALID_INDEX != default_option )
-		{
-			ans = default_option;
-		}
-
-		quiz_select[ idx ] = ans;
-		quiz_option[ idx ][ ans ] = riff;
-
-		for( opt = 0; opt < MAX_OPTION; opt++ )
-		{
-			if( ans == opt )
-			{
-				continue;;
-			}
-
-			while( 1 )
-			{
-				if( difficulty_type_hard == difficulty )
-				{
-					album = engine_random_manager_data( MAX_ALBUMS );
-				}
-
-				count = music_count[ album ];
-				songs = engine_random_manager_data( count );
-				engine_function_manager_convertNibblesToByte( album, songs, &riff );
-
-				if(
-					( riff != quiz_option[ idx ][ 0 ] ) &&
-					( riff != quiz_option[ idx ][ 1 ] ) &&
-					( riff != quiz_option[ idx ][ 2 ] ) &&
-					( riff != quiz_option[ idx ][ 3 ] )
-					)
-				{
-					quiz_option[ idx ][ opt ] = riff;
-					break;
-				}
-			}
-		}
-	}
-}
 
 
 void engine_quiz_manager_draw( unsigned char idx )
@@ -401,6 +341,67 @@ void engine_quiz_manager_draw2()
 	}
 }
 
+static void random_options( const unsigned char difficulty, const char default_option )
+{
+	unsigned char idx;
+	unsigned char opt;
+	unsigned char ans;
+	unsigned char riff;
+
+	unsigned char album, songs;
+	unsigned char count;
+
+	// Must iterate and randomize all the riffs before randomize options!
+	for( idx = 0; idx < MAX_RIFFS; idx++ )
+	{
+		riff = quiz_answer[ idx ];
+		album = 0;
+		songs = 0;
+		engine_function_manager_convertByteToNibbles( riff, &album, &songs );
+
+		// Randomize correct answer first.
+		ans = engine_random_manager_data( MAX_OPTION );
+		if( INVALID_INDEX != default_option )
+		{
+			ans = default_option;
+		}
+
+		quiz_select[ idx ] = ans;
+		quiz_option[ idx ][ ans ] = riff;
+
+		for( opt = 0; opt < MAX_OPTION; opt++ )
+		{
+			if( ans == opt )
+			{
+				continue;;
+			}
+
+			while( 1 )
+			{
+				if( difficulty_type_hard == difficulty )
+				{
+					album = engine_random_manager_data( MAX_ALBUMS );
+				}
+
+				count = music_count[ album ];
+				songs = engine_random_manager_data( count );
+				engine_function_manager_convertNibblesToByte( album, songs, &riff );
+
+				if(
+					( riff != quiz_option[ idx ][ 0 ] ) &&
+					( riff != quiz_option[ idx ][ 1 ] ) &&
+					( riff != quiz_option[ idx ][ 2 ] ) &&
+					( riff != quiz_option[ idx ][ 3 ] )
+					)
+				{
+					quiz_option[ idx ][ opt ] = riff;
+					break;
+				}
+			}
+		}
+	}
+}
+
 static void print_year( const char *years, unsigned char x, unsigned char y )
 {
 	//engine_font_manager_text( &years[3], x, y + 3 );
@@ -411,6 +412,7 @@ static void print_year( const char *years, unsigned char x, unsigned char y )
 	engine_font_manager_char( years[ 3 ], x, y + 3 );
 }
 
+// TODO delete debug functions.
 void engine_quiz_manager_debug_option( unsigned char page )
 {
 	unsigned char lop;
@@ -460,7 +462,6 @@ void engine_quiz_manager_debug_option( unsigned char page )
 		y++;
 	}
 }
-
 void engine_quiz_manager_debug_riffs()
 {
 	unsigned char idx, lop;
@@ -511,6 +512,3 @@ void engine_quiz_manager_debug_riffs()
 		y++;
 	}
 }
-
-
-

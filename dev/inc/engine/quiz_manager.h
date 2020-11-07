@@ -16,6 +16,7 @@ void engine_quiz_manager_load_normal( const unsigned char difficulty );
 void engine_quiz_manager_draw( unsigned char idx );
 void engine_quiz_manager_draw2();
 
+// TODO delete debug functions.
 void engine_quiz_manager_debug_option( unsigned char page );
 void engine_quiz_manager_debug_riffs();
 
