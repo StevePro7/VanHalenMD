@@ -7,15 +7,15 @@
 #include "sprite_manager.h"
 #include "gfx.h"
 
-static unsigned char flag;
+//static unsigned char flag;
 
 void screen_intro_screen_load()
 {
 	engine_image_manager_draw( gfx_banner, PAL1, PALETTE1_TILES, 0, 0 );
-	engine_image_manager_draw( gfx_eddie_17, PAL2, PALETTE2_TILES, 20, 6 );
+	engine_image_manager_draw( gfx_eddie_04, PAL2, PALETTE2_TILES, 20, 6 );
 
-	flag = 1;
-	engine_font_manager_data( flag, 4, 9 );
+	//flag = 1;
+	//engine_font_manager_data( flag, 4, 9 );
 }
 
 void screen_intro_screen_update( unsigned char *screen_type )
@@ -35,13 +35,13 @@ void screen_intro_screen_update( unsigned char *screen_type )
 		engine_sprite_manager_test1();
 	}
 
-	input = engine_input_manager_hold_up();
-	if( input )
-	{
-		engine_font_manager_text( "FLAG!!", 2, 15 );
-		flag = 1 - flag;
-		engine_font_manager_data( flag, 4, 9 );
-	}
+	//input = engine_input_manager_hold_up();
+	//if( input )
+	//{
+	//	engine_font_manager_text( "FLAG!!", 2, 15 );
+	//	flag = 1 - flag;
+	//	engine_font_manager_data( flag, 4, 9 );
+	//}
 
 	input = engine_input_manager_hold_down();
 	if( input )
@@ -50,10 +50,6 @@ void screen_intro_screen_update( unsigned char *screen_type )
 		engine_sprite_manager_test2();
 	}
 
-	if( flag )
-	{
-		engine_sprite_manager_update();
-	}
-
+	engine_sprite_manager_update();
 	*screen_type = screen_type_intro;
 }

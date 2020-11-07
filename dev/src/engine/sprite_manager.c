@@ -31,8 +31,8 @@ static void init_sprite( const unsigned char index )
 
 void engine_sprite_manager_init()
 {
-	const SpriteDefinition* spriteDef;
-	u16 *data = NULL;
+	//const SpriteDefinition* spriteDef;
+	//u16 *data = NULL;
 
 	//sprites[ sprite_type_actor ] = init_sprite( &gfx_actor );
 	//sprites[ sprite_type_right ] = init_sprite( &gfx_right );
@@ -40,29 +40,33 @@ void engine_sprite_manager_init()
 
 	SPR_init( 0, 0, 0 );
 
-	// Sprite #0
-	spriteDef = spriteDefList[ sprite_type_actor ];
-	data = spriteDef->palette->data;
-	VDP_setPalette( PAL3, data );
-	sprites[ sprite_type_actor ] = SPR_addSprite( spriteDef, 0, sprite_positions[ 0 ], TILE_ATTR( PAL3, 0, FALSE, FALSE ) );
-	SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
-	//SPR_setVisibility( sprites[ sprite_type_actor ], VISIBLE );
+	init_sprite( sprite_type_actor );
+	init_sprite( sprite_type_right );
+	init_sprite( sprite_type_wrong );
 
-	// Sprite #1
-	spriteDef = spriteDefList[ sprite_type_right ];
-	data = spriteDef->palette->data;
-	VDP_setPalette( PAL3, data );
-	sprites[ sprite_type_right ] = SPR_addSprite( spriteDef, 0, sprite_positions[ 0 ], TILE_ATTR( PAL3, 0, FALSE, FALSE ) );
-	SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
-	//SPR_setVisibility( sprites[ sprite_type_right ], VISIBLE );
+	//// Sprite #0
+	//spriteDef = spriteDefList[ sprite_type_actor ];
+	//data = spriteDef->palette->data;
+	//VDP_setPalette( PAL3, data );
+	//sprites[ sprite_type_actor ] = SPR_addSprite( spriteDef, 0, sprite_positions[ 0 ], TILE_ATTR( PAL3, 0, FALSE, FALSE ) );
+	//SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
+	////SPR_setVisibility( sprites[ sprite_type_actor ], VISIBLE );
 
-	// Sprite #2
-	spriteDef = spriteDefList[ sprite_type_wrong ];
-	data = spriteDef->palette->data;
-	VDP_setPalette( PAL3, data );
-	sprites[ sprite_type_wrong ] = SPR_addSprite( spriteDef, 0, sprite_positions[ 0 ], TILE_ATTR( PAL3, 0, FALSE, FALSE ) );
-	SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
-	//SPR_setVisibility( sprites[ sprite_type_wrong ], VISIBLE );
+	//// Sprite #1
+	//spriteDef = spriteDefList[ sprite_type_right ];
+	//data = spriteDef->palette->data;
+	//VDP_setPalette( PAL3, data );
+	//sprites[ sprite_type_right ] = SPR_addSprite( spriteDef, 0, sprite_positions[ 0 ], TILE_ATTR( PAL3, 0, FALSE, FALSE ) );
+	//SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
+	////SPR_setVisibility( sprites[ sprite_type_right ], VISIBLE );
+
+	//// Sprite #2
+	//spriteDef = spriteDefList[ sprite_type_wrong ];
+	//data = spriteDef->palette->data;
+	//VDP_setPalette( PAL3, data );
+	//sprites[ sprite_type_wrong ] = SPR_addSprite( spriteDef, 0, sprite_positions[ 0 ], TILE_ATTR( PAL3, 0, FALSE, FALSE ) );
+	//SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
+	////SPR_setVisibility( sprites[ sprite_type_wrong ], VISIBLE );
 
 	////sprite_index = 0;
 }
