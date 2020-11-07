@@ -1,6 +1,13 @@
 # VanHalenMD
 Vintage Van Halen Pick the Riff
 
+07-Nov-2020
+IMPORTANT
+e.g.
+locale_manager.h
+I found that if I changed data here I had to change the corresponding *.c file
+that consume the locale otherwise the locale may not neccesarily update!!
+
 05-Nov-2020
 IMPORTANT
 gfx.h

@@ -123,7 +123,7 @@
     <ClCompile Include="src\engine\sprite_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="src\locale_manager.c">
+    <ClCompile Include="src\engine\locale_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
   </ItemGroup>
@@ -217,7 +217,7 @@
     <ClInclude Include="inc\engine\sprite_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="inc\locale_manager.h">
+    <ClInclude Include="inc\engine\locale_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>

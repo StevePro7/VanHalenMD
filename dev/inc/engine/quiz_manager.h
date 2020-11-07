@@ -13,6 +13,7 @@ void engine_quiz_manager_load_random( const unsigned char difficulty );
 void engine_quiz_manager_load_mixing( const unsigned char difficulty );
 void engine_quiz_manager_load_normal( const unsigned char difficulty );
 
+void engine_quiz_manager_clear();
 void engine_quiz_manager_draw( unsigned char index );
 
 // TODO delete debug functions.

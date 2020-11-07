@@ -18,6 +18,7 @@ void screen_test_screen_load()
 
 	quiz = 0;
 
+	engine_quiz_manager_clear();
 	engine_quiz_manager_draw( quiz );
 	engine_quiz_manager_debug_stats( quiz );		// TODO delete!!
 
@@ -27,19 +28,48 @@ void screen_test_screen_load()
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
-	unsigned char input = engine_input_manager_hold_right();
+	unsigned char input;
+	input = engine_input_manager_hold_left();
 	if( input )
 	{
-		quiz++;
-		if( quiz >= MAX_RIFFS )
+		if( 0 == quiz )
+		{
+			quiz = MAX_RIFFS - 1;
+		}
+		else
+		{
+			quiz--;
+		}
+
+		engine_quiz_manager_clear();
+		engine_quiz_manager_draw( quiz );
+		engine_quiz_manager_debug_stats( quiz );		// TODO delete!!
+		//engine_font_manager_data( ( quiz + 1 ), 30, 20 ); // TODO delete!!
+	}
+
+	input = engine_input_manager_hold_right();
+	if( input )
+	{
+		if( ( MAX_RIFFS - 1 ) == quiz )
 		{
 			quiz = 0;
 		}
+		else
+		{
+			quiz++;
+		}
 
-		engine_font_manager_data( ( quiz + 1 ), 30, 20 ); // TODO delete!!
+		//if( quiz >= MAX_RIFFS )
+		//{
+		//	quiz = 0;
+		//}
+
+		engine_quiz_manager_clear();
 		engine_quiz_manager_draw( quiz );
 		engine_quiz_manager_debug_stats( quiz );		// TODO delete!!
+		//engine_font_manager_data( ( quiz + 1 ), 30, 20 ); // TODO delete!!
 	}
+
 
 	*screen_type = screen_type_test;
 }

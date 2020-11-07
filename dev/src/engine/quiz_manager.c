@@ -4,6 +4,7 @@
 #include "function_manager.h"
 #include "global_manager.h"
 #include "hack_manager.h"
+#include "locale_manager.h"
 #include "music_manager.h"
 #include "random_manager.h"
 #include "music_object.h"
@@ -97,9 +98,25 @@ void engine_quiz_manager_load_normal( const unsigned char difficulty )
 	random_options( difficulty, default_option );
 }
 
+void engine_quiz_manager_clear()
+{
+	unsigned char idx;
+	unsigned char y;
+
+	y = OPTION_Y;
+	for( idx = 0; idx < MAX_OPTION; idx++ )
+	{
+		engine_font_manager_text( LOCALE_BLANK_SIZE18, OPTION_X, y + 0 );
+		engine_font_manager_text( LOCALE_BLANK_SIZE18, OPTION_X, y + 1 );
+		engine_font_manager_text( LOCALE_BLANK_SIZE18, OPTION_X, y + 2 );
+		engine_font_manager_text( LOCALE_BLANK_SIZE18, OPTION_X, y + 3 );
+
+		y += 6;
+	}
+}
+
 void engine_quiz_manager_draw( unsigned char index )
 {
-	//unsigned char idx;
 	unsigned char opt;
 	unsigned char x, y;
 	unsigned char total;
