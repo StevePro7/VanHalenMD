@@ -11,8 +11,8 @@ struct_hack_object global_hack_object;
 
 void engine_hack_manager_init()
 {
-	struct_hack_object *ho = &global_hack_object;
+	//struct_hack_object *ho = &global_hack_object;
 
-	ho->hack_object_random = random_type_diff;
+	//ho->hack_object_random = random_type_diff;
 	//ho->hack_object_random = random_type_same;
 }

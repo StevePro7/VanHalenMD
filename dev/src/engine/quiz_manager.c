@@ -17,6 +17,8 @@
 // Global variables.
 struct_quiz_object global_quiz_object;
 
+static void random_options( const unsigned char difficulty );
+
 static void print_year( const char *year, unsigned char x, unsigned char y );
 
 void engine_quiz_manager_init()
@@ -56,17 +58,31 @@ void engine_quiz_manager_load()
 	}
 }
 
+void engine_quiz_manager_load_normal()
+{
+	unsigned char idx, opt;
+	for( idx = 0; idx < MAX_RIFFS; idx++ )
+	{
+		quiz_answer[ idx ] = music_riffs[ idx ];
+		for( opt = 0; opt < MAX_OPTION; opt++ )
+		{
+			//quiz_option[ idx ][ opt ] = opt;
+			quiz_option[ idx ][ opt ] = music_riffs[ opt ];
+		}
+	}
+}
+
 void engine_quiz_manager_load_random()
 {
-	struct_hack_object *ho = &global_hack_object;
+	//struct_hack_object *ho = &global_hack_object;
 	unsigned char idx;
-	unsigned char opt;
+	//unsigned char opt;
 	unsigned char rnd;
-	unsigned char ans;
-	unsigned char riff;
+	//unsigned char ans;
+	//unsigned char riff;
 	
-	unsigned char album, songs;
-	unsigned char count;
+	//unsigned char album, songs;
+	//unsigned char count;
 
 	for( idx = 0; idx < MAX_RIFFS; idx++ )
 	{
@@ -82,49 +98,51 @@ void engine_quiz_manager_load_random()
 	}
 
 	// Must iterate and randomize all the riffs before randomize options!
-	for( idx = 0; idx < MAX_RIFFS; idx++ )
-	{
-		riff = quiz_answer[ idx ];
-		album = 0;
-		songs = 0;
-		engine_function_manager_convertByteToNibbles( riff, &album, &songs );
+	random_options( 0 );		// TODO inject the difficulty
 
-		// Randomize correct answer first.
-		ans = engine_random_manager_data( MAX_OPTION );
-		quiz_select[ idx ] = ans;
-		quiz_option[ idx ][ ans ] = riff;
+	//for( idx = 0; idx < MAX_RIFFS; idx++ )
+	//{
+	//	riff = quiz_answer[ idx ];
+	//	album = 0;
+	//	songs = 0;
+	//	engine_function_manager_convertByteToNibbles( riff, &album, &songs );
 
-		for( opt = 0; opt < MAX_OPTION; opt++ )
-		{
-			if( ans == opt )
-			{
-				continue;;
-			}
+	//	// Randomize correct answer first.
+	//	ans = engine_random_manager_data( MAX_OPTION );
+	//	quiz_select[ idx ] = ans;
+	//	quiz_option[ idx ][ ans ] = riff;
 
-			while( 1 )
-			{
-				if( random_type_diff == ho->hack_object_random )
-				{
-					album = engine_random_manager_data( MAX_ALBUMS );
-				}
+	//	for( opt = 0; opt < MAX_OPTION; opt++ )
+	//	{
+	//		if( ans == opt )
+	//		{
+	//			continue;;
+	//		}
 
-				count = music_count[ album ];
-				songs = engine_random_manager_data( count );
-				engine_function_manager_convertNibblesToByte( album, songs, &riff );
+	//		while( 1 )
+	//		{
+	//			if( random_type_diff == ho->hack_object_random )
+	//			{
+	//				album = engine_random_manager_data( MAX_ALBUMS );
+	//			}
 
-				if(
-					( riff != quiz_option[ idx ][ 0 ] ) &&
-					( riff != quiz_option[ idx ][ 1 ] ) &&
-					( riff != quiz_option[ idx ][ 2 ] ) &&
-					( riff != quiz_option[ idx ][ 3 ] )
-					)
-				{
-					quiz_option[ idx ][ opt ] = riff;
-					break;
-				}
-			}
-		}
-	}
+	//			count = music_count[ album ];
+	//			songs = engine_random_manager_data( count );
+	//			engine_function_manager_convertNibblesToByte( album, songs, &riff );
+
+	//			if(
+	//				( riff != quiz_option[ idx ][ 0 ] ) &&
+	//				( riff != quiz_option[ idx ][ 1 ] ) &&
+	//				( riff != quiz_option[ idx ][ 2 ] ) &&
+	//				( riff != quiz_option[ idx ][ 3 ] )
+	//				)
+	//			{
+	//				quiz_option[ idx ][ opt ] = riff;
+	//				break;
+	//			}
+	//		}
+	//	}
+	//}
 
 	//quiz_option[ 0 ][ 0 ] = 0x37;
 	//quiz_option[ 0 ][ 1 ] = 0x49;
@@ -139,7 +157,70 @@ void engine_quiz_manager_load_random()
 
 void engine_quiz_manager_load_mixing()
 {
-	struct_hack_object *ho = &global_hack_object;
+	//struct_hack_object *ho = &global_hack_object;
+	unsigned char idx;
+	//unsigned char opt;
+	//unsigned char ans;
+	//unsigned char riff;
+
+	//unsigned char album, songs;
+	//unsigned char count;
+
+	for( idx = 0; idx < MAX_RIFFS; idx++ )
+	{
+		quiz_answer[ idx ] = music_riffs[ idx ];
+	}
+
+	// Must iterate and randomize all the riffs before randomize options!
+	random_options( 0 );		// TODO inject the difficulty
+
+	//for( idx = 0; idx < MAX_RIFFS; idx++ )
+	//{
+	//	riff = quiz_answer[ idx ];
+	//	album = 0;
+	//	songs = 0;
+	//	engine_function_manager_convertByteToNibbles( riff, &album, &songs );
+
+	//	// Randomize correct answer first.
+	//	ans = engine_random_manager_data( MAX_OPTION );
+	//	quiz_select[ idx ] = ans;
+	//	quiz_option[ idx ][ ans ] = riff;
+
+	//	for( opt = 0; opt < MAX_OPTION; opt++ )
+	//	{
+	//		if( ans == opt )
+	//		{
+	//			continue;;
+	//		}
+
+	//		while( 1 )
+	//		{
+	//			if( random_type_diff == ho->hack_object_random )
+	//			{
+	//				album = engine_random_manager_data( MAX_ALBUMS );
+	//			}
+
+	//			count = music_count[ album ];
+	//			songs = engine_random_manager_data( count );
+	//			engine_function_manager_convertNibblesToByte( album, songs, &riff );
+
+	//			if(
+	//				( riff != quiz_option[ idx ][ 0 ] ) &&
+	//				( riff != quiz_option[ idx ][ 1 ] ) &&
+	//				( riff != quiz_option[ idx ][ 2 ] ) &&
+	//				( riff != quiz_option[ idx ][ 3 ] )
+	//				)
+	//			{
+	//				quiz_option[ idx ][ opt ] = riff;
+	//				break;
+	//			}
+	//		}
+	//	}
+	//}
+}
+
+static void random_options( const unsigned char difficulty )
+{
 	unsigned char idx;
 	unsigned char opt;
 	unsigned char ans;
@@ -147,11 +228,6 @@ void engine_quiz_manager_load_mixing()
 
 	unsigned char album, songs;
 	unsigned char count;
-
-	for( idx = 0; idx < MAX_RIFFS; idx++ )
-	{
-		quiz_answer[ idx ] = music_riffs[ idx ];
-	}
 
 	// Must iterate and randomize all the riffs before randomize options!
 	for( idx = 0; idx < MAX_RIFFS; idx++ )
@@ -175,7 +251,7 @@ void engine_quiz_manager_load_mixing()
 
 			while( 1 )
 			{
-				if( random_type_diff == ho->hack_object_random )
+				if( random_difficulty_hard == difficulty )
 				{
 					album = engine_random_manager_data( MAX_ALBUMS );
 				}
@@ -198,6 +274,7 @@ void engine_quiz_manager_load_mixing()
 		}
 	}
 }
+
 
 void engine_quiz_manager_draw( unsigned char idx )
 {
@@ -427,17 +504,3 @@ void engine_quiz_manager_debug_riffs()
 
 
 
-// Normal.
-void engine_quiz_manager_load_normal()
-{
-	unsigned char idx, opt;
-	for( idx = 0; idx < MAX_RIFFS; idx++ )
-	{
-		quiz_answer[ idx ] = music_riffs[ idx ];
-		for( opt = 0; opt < MAX_OPTION; opt++ )
-		{
-			//quiz_option[ idx ][ opt ] = opt;
-			quiz_option[ idx ][ opt ] = music_riffs[ opt ];
-		}
-	}
-}

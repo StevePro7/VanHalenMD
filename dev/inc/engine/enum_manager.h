@@ -21,10 +21,17 @@ typedef enum tag_enum_sprite_type
 
 } enum_sprite_type;
 
-typedef enum tag_enum_random_type
+//typedef enum tag_enum_random_type
+//{
+//	random_type_diff = 0,	// easy
+//	random_type_same = 1,	// hard
+//
+//} enum_random_type;
+
+typedef enum tag_enum_difficulty_type
 {
-	random_type_diff = 0,
-	random_type_same = 1,
+	random_difficulty_easy = 0,
+	random_difficulty_hard = 1,
 
 } enum_random_type;
 
