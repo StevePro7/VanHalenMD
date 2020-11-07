@@ -46,7 +46,11 @@ void engine_sprite_manager_draw( const unsigned char index )
 	}
 
 	spriteDef = spriteDefList[ index ];
-	data = spriteDef->palette->data;
+	if( NULL != spriteDef->palette )
+	{
+		data = spriteDef->palette->data;
+	}
+
 	VDP_setPalette( PAL3, data );
 	//SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
 	//SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
@@ -54,55 +58,55 @@ void engine_sprite_manager_draw( const unsigned char index )
 	SPR_setVisibility( sprites[ index ], VISIBLE );
 }
 
-void engine_sprite_manager_test0()
-{
-	// Sprite #0
-	const SpriteDefinition* spriteDef;
-	u16 *data = NULL;
-	spriteDef = spriteDefList[ sprite_type_actor ];
-	data = spriteDef->palette->data;
-	VDP_setPalette( PAL3, data );
-	SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
-	SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
-	SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
-	SPR_setVisibility( sprites[ sprite_type_actor ], VISIBLE );
-}
-
-void engine_sprite_manager_test1()
-{
-	// Sprite #1
-	const SpriteDefinition* spriteDef;
-	u16 *data = NULL;
-	spriteDef = spriteDefList[ sprite_type_right ];
-	data = spriteDef->palette->data;
-	VDP_setPalette( PAL3, data );
-	SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
-	SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
-	SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
-	SPR_setVisibility( sprites[ sprite_type_right ], VISIBLE );
-}
-
-void engine_sprite_manager_test2()
-{
-	// Sprite #2
-	const SpriteDefinition* spriteDef;
-	u16 *data = NULL;
-	spriteDef = spriteDefList[ sprite_type_wrong ];
-	data = spriteDef->palette->data;
-	VDP_setPalette( PAL3, data );
-	SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
-	SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
-	SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
-	SPR_setVisibility( sprites[ sprite_type_wrong ], VISIBLE );
-}
+//void engine_sprite_manager_test0()
+//{
+//	// Sprite #0
+//	const SpriteDefinition* spriteDef;
+//	u16 *data = NULL;
+//	spriteDef = spriteDefList[ sprite_type_actor ];
+//	data = spriteDef->palette->data;
+//	VDP_setPalette( PAL3, data );
+//	SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
+//	SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
+//	SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
+//	SPR_setVisibility( sprites[ sprite_type_actor ], VISIBLE );
+//}
+//
+//void engine_sprite_manager_test1()
+//{
+//	// Sprite #1
+//	const SpriteDefinition* spriteDef;
+//	u16 *data = NULL;
+//	spriteDef = spriteDefList[ sprite_type_right ];
+//	data = spriteDef->palette->data;
+//	VDP_setPalette( PAL3, data );
+//	SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
+//	SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
+//	SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
+//	SPR_setVisibility( sprites[ sprite_type_right ], VISIBLE );
+//}
+//
+//void engine_sprite_manager_test2()
+//{
+//	// Sprite #2
+//	const SpriteDefinition* spriteDef;
+//	u16 *data = NULL;
+//	spriteDef = spriteDefList[ sprite_type_wrong ];
+//	data = spriteDef->palette->data;
+//	VDP_setPalette( PAL3, data );
+//	SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
+//	SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
+//	SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
+//	SPR_setVisibility( sprites[ sprite_type_wrong ], VISIBLE );
+//}
 
 
 static void init_sprite( const unsigned char index )
 {
 	const SpriteDefinition* spriteDef;
 	unsigned short *data = NULL;
-	spriteDef = spriteDefList[ index ];
 
+	spriteDef = spriteDefList[ index ];
 	if( NULL != spriteDef->palette )
 	{
 		data = spriteDef->palette->data;

@@ -25,14 +25,16 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		engine_font_manager_text( "TEST!!", 2, 15 );
-		engine_sprite_manager_test0();
+		//engine_sprite_manager_test0();
+		engine_sprite_manager_draw( sprite_type_actor );
 	}
 
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
 		engine_font_manager_text( "BLAH!!", 2, 15 );
-		engine_sprite_manager_test1();
+		engine_sprite_manager_draw( sprite_type_right );
+		//engine_sprite_manager_test1();
 	}
 
 	//input = engine_input_manager_hold_up();
@@ -47,9 +49,11 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		engine_font_manager_text( "DOWN!!", 2, 15 );
-		engine_sprite_manager_test2();
+		engine_sprite_manager_draw( sprite_type_wrong );
+		//engine_sprite_manager_test2();
 	}
 
 	engine_sprite_manager_update();
+	//engine_sprite_manager_draw(2);
 	*screen_type = screen_type_intro;
 }
