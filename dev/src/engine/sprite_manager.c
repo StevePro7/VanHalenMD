@@ -38,6 +38,7 @@ void engine_sprite_manager_update()
 void engine_sprite_manager_draw( const unsigned char index )
 {
 	const SpriteDefinition* spriteDef;
+	//Sprite* sprite;
 	unsigned short *data = NULL;
 	unsigned char idx;
 
@@ -53,6 +54,7 @@ void engine_sprite_manager_draw( const unsigned char index )
 	}
 
 	VDP_setPalette( PAL3, data );
+	SPR_setPosition( sprites[ index ], 0, sprite_positions[ sprite_position ] );
 	SPR_setVisibility( sprites[ index ], VISIBLE );
 }
 

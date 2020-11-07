@@ -18,6 +18,12 @@ void screen_intro_screen_load()
 void screen_intro_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
+	input = engine_input_manager_hold_buttonA();
+	if( input )
+	{
+		engine_sprite_manager_draw( sprite_type_actor );
+	}
+
 	input = engine_input_manager_hold_up();
 	if( input )
 	{
@@ -29,12 +35,18 @@ void screen_intro_screen_update( unsigned char *screen_type )
 		engine_sprite_manager_move_down();
 	}
 
-	//input = engine_input_manager_hold_left();
-	//if( input )
-	//{
-	//	engine_font_manager_text( "TEST!!", 2, 15 );
-	//	engine_sprite_manager_draw( sprite_type_actor );
-	//}
+	input = engine_input_manager_hold_left();
+	if( input )
+	{
+		engine_font_manager_text( "1234123412341234", 4, 15 );
+		engine_sprite_manager_draw( sprite_type_right );
+	}
+	input = engine_input_manager_hold_right();
+	if( input )
+	{
+		engine_font_manager_text( "BLAH!!", 3, 15 );
+		engine_sprite_manager_draw( sprite_type_wrong );
+	}
 
 	//input = engine_input_manager_hold_right();
 	//if( input )
