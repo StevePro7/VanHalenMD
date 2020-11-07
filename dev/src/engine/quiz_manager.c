@@ -74,7 +74,7 @@ void engine_quiz_manager_load_normal( const unsigned char difficulty )
 	}
 
 	// Must iterate and randomize all the riffs before randomize options!
-	random_options( 0 );		// TODO inject the difficulty
+	random_options( difficulty );		// TODO inject the difficulty
 
 	// Normal hard code answer option "A".
 	for( idx = 0; idx < MAX_RIFFS; idx++ )
@@ -110,7 +110,7 @@ void engine_quiz_manager_load_random( const unsigned char difficulty )
 	}
 
 	// Must iterate and randomize all the riffs before randomize options!
-	random_options( random_difficulty_easy );		// TODO inject the difficulty
+	random_options( difficulty );		// TODO inject the difficulty
 
 	//for( idx = 0; idx < MAX_RIFFS; idx++ )
 	//{
@@ -263,7 +263,7 @@ static void random_options( const unsigned char difficulty )
 
 			while( 1 )
 			{
-				if( random_difficulty_hard == difficulty )
+				if( difficulty_type_hard == difficulty )
 				{
 					album = engine_random_manager_data( MAX_ALBUMS );
 				}

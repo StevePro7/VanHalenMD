@@ -4,9 +4,11 @@
 
 void screen_test_screen_load()
 {
-	engine_quiz_manager_load_normal( random_difficulty_easy );
-	//engine_quiz_manager_load_mixing();
-	//engine_quiz_manager_load_random();
+	unsigned char diffulty = difficulty_type_easy;
+
+	//engine_quiz_manager_load_normal( diffulty );
+	//engine_quiz_manager_load_mixing( diffulty );
+	engine_quiz_manager_load_random( diffulty );
 
 	//engine_quiz_manager_draw2();
 

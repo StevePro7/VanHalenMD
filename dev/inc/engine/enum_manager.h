@@ -30,10 +30,10 @@ typedef enum tag_enum_sprite_type
 
 typedef enum tag_enum_difficulty_type
 {
-	random_difficulty_easy = 0,
-	random_difficulty_hard = 1,
+	difficulty_type_easy = 0,
+	difficulty_type_hard = 1,
 
-} enum_random_type;
+} enum_difficulty_type;
 
 /*
 typedef enum tag_enum_album_type
