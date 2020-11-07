@@ -4,8 +4,8 @@
 
 void screen_test_screen_load()
 {
-	unsigned char diffulty = difficulty_type_easy;
-	//unsigned char diffulty = difficulty_type_hard;
+	//unsigned char diffulty = difficulty_type_easy;
+	unsigned char diffulty = difficulty_type_hard;
 
 	engine_quiz_manager_load_normal( diffulty );
 	//engine_quiz_manager_load_mixing( diffulty );

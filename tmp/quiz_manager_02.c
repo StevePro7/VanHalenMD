@@ -34,11 +34,60 @@ void engine_quiz_manager_init()
 	}
 }
 
+//void engine_quiz_manager_load()
+//{
+//	unsigned char idx;
+//	unsigned char opt;
+//	unsigned char rnd;
+//	for( idx = 0; idx < MAX_RIFFS; idx++ )
+//	{
+//		while( 1 )
+//		{
+//			rnd = engine_random_manager_data( MAX_RIFFS );
+//			if( 0 == quiz_answer[ rnd ] )
+//			{
+//				quiz_answer[ rnd ] = music_riffs[ idx ];
+//				break;
+//			}
+//		}
+//
+//		for( opt = 0; opt < MAX_OPTION; opt++ )
+//		{
+//			quiz_option[ idx ][ opt ] = opt;
+//		}
+//	}
+//}
+
+void engine_quiz_manager_load_normal( const unsigned char difficulty )
+{
+	unsigned char idx;
+	const unsigned char default_option = 0;
+
+	for( idx = 0; idx < MAX_RIFFS; idx++ )
+	{
+		quiz_answer[ idx ] = music_riffs[ idx ];
+		//for( opt = 0; opt < MAX_OPTION; opt++ )
+		//{
+		//	//quiz_option[ idx ][ opt ] = opt;
+		//	quiz_option[ idx ][ opt ] = music_riffs[ opt ];
+		//}
+	}
+
+	// Must iterate and randomize all the riffs before randomize options!
+	random_options( difficulty, default_option );
+}
+
 void engine_quiz_manager_load_random( const unsigned char difficulty )
 {
 	//struct_hack_object *ho = &global_hack_object;
 	unsigned char idx;
+	//unsigned char opt;
 	unsigned char rnd;
+	//unsigned char ans;
+	//unsigned char riff;
+	
+	//unsigned char album, songs;
+	//unsigned char count;
 
 	for( idx = 0; idx < MAX_RIFFS; idx++ )
 	{
@@ -56,7 +105,50 @@ void engine_quiz_manager_load_random( const unsigned char difficulty )
 	// Must iterate and randomize all the riffs before randomize options!
 	random_options( difficulty, INVALID_INDEX );
 
-	// TODO delete
+	//for( idx = 0; idx < MAX_RIFFS; idx++ )
+	//{
+	//	riff = quiz_answer[ idx ];
+	//	album = 0;
+	//	songs = 0;
+	//	engine_function_manager_convertByteToNibbles( riff, &album, &songs );
+
+	//	// Randomize correct answer first.
+	//	ans = engine_random_manager_data( MAX_OPTION );
+	//	quiz_select[ idx ] = ans;
+	//	quiz_option[ idx ][ ans ] = riff;
+
+	//	for( opt = 0; opt < MAX_OPTION; opt++ )
+	//	{
+	//		if( ans == opt )
+	//		{
+	//			continue;;
+	//		}
+
+	//		while( 1 )
+	//		{
+	//			if( random_type_diff == ho->hack_object_random )
+	//			{
+	//				album = engine_random_manager_data( MAX_ALBUMS );
+	//			}
+
+	//			count = music_count[ album ];
+	//			songs = engine_random_manager_data( count );
+	//			engine_function_manager_convertNibblesToByte( album, songs, &riff );
+
+	//			if(
+	//				( riff != quiz_option[ idx ][ 0 ] ) &&
+	//				( riff != quiz_option[ idx ][ 1 ] ) &&
+	//				( riff != quiz_option[ idx ][ 2 ] ) &&
+	//				( riff != quiz_option[ idx ][ 3 ] )
+	//				)
+	//			{
+	//				quiz_option[ idx ][ opt ] = riff;
+	//				break;
+	//			}
+	//		}
+	//	}
+	//}
+
 	//quiz_option[ 0 ][ 0 ] = 0x37;
 	//quiz_option[ 0 ][ 1 ] = 0x49;
 	//quiz_option[ 0 ][ 2 ] = 0x87;
@@ -70,7 +162,15 @@ void engine_quiz_manager_load_random( const unsigned char difficulty )
 
 void engine_quiz_manager_load_mixing( const unsigned char difficulty )
 {
+	//struct_hack_object *ho = &global_hack_object;
 	unsigned char idx;
+	//unsigned char opt;
+	//unsigned char ans;
+	//unsigned char riff;
+
+	//unsigned char album, songs;
+	//unsigned char count;
+
 	for( idx = 0; idx < MAX_RIFFS; idx++ )
 	{
 		quiz_answer[ idx ] = music_riffs[ idx ];
@@ -78,21 +178,54 @@ void engine_quiz_manager_load_mixing( const unsigned char difficulty )
 
 	// Must iterate and randomize all the riffs before randomize options!
 	random_options( difficulty, INVALID_INDEX );
+
+	//for( idx = 0; idx < MAX_RIFFS; idx++ )
+	//{
+	//	riff = quiz_answer[ idx ];
+	//	album = 0;
+	//	songs = 0;
+	//	engine_function_manager_convertByteToNibbles( riff, &album, &songs );
+
+	//	// Randomize correct answer first.
+	//	ans = engine_random_manager_data( MAX_OPTION );
+	//	quiz_select[ idx ] = ans;
+	//	quiz_option[ idx ][ ans ] = riff;
+
+	//	for( opt = 0; opt < MAX_OPTION; opt++ )
+	//	{
+	//		if( ans == opt )
+	//		{
+	//			continue;;
+	//		}
+
+	//		while( 1 )
+	//		{
+	//			if( random_type_diff == ho->hack_object_random )
+	//			{
+	//				album = engine_random_manager_data( MAX_ALBUMS );
+	//			}
+
+	//			count = music_count[ album ];
+	//			songs = engine_random_manager_data( count );
+	//			engine_function_manager_convertNibblesToByte( album, songs, &riff );
+
+	//			if(
+	//				( riff != quiz_option[ idx ][ 0 ] ) &&
+	//				( riff != quiz_option[ idx ][ 1 ] ) &&
+	//				( riff != quiz_option[ idx ][ 2 ] ) &&
+	//				( riff != quiz_option[ idx ][ 3 ] )
+	//				)
+	//			{
+	//				quiz_option[ idx ][ opt ] = riff;
+	//				break;
+	//			}
+	//		}
+	//	}
+	//}
 }
 
-void engine_quiz_manager_load_normal( const unsigned char difficulty )
-{
-	unsigned char idx;
-	const unsigned char default_option = 0;
 
-	for( idx = 0; idx < MAX_RIFFS; idx++ )
-	{
-		quiz_answer[ idx ] = music_riffs[ idx ];
-	}
 
-	// Must iterate and randomize all the riffs before randomize options!
-	random_options( difficulty, default_option );
-}
 
 void engine_quiz_manager_draw( unsigned char idx )
 {
@@ -272,6 +405,8 @@ static void random_options( const unsigned char difficulty, const char default_o
 
 static void print_year( const char *years, unsigned char x, unsigned char y )
 {
+	//engine_font_manager_text( &years[3], x, y + 3 );
+	//engine_font_manager_text( &years[ 2 ], x, y + 2 );
 	engine_font_manager_char( years[ 0 ], x, y + 0 );
 	engine_font_manager_char( years[ 1 ], x, y + 1 );
 	engine_font_manager_char( years[ 2 ], x, y + 2 );
