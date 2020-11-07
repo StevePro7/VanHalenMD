@@ -47,26 +47,26 @@ void screen_test_screen_load()
 void screen_test_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-	input = engine_input_manager_hold_left();
-	if( input )
-	{
-		if( 0 == quiz )
-		{
-			quiz = MAX_RIFFS - 1;
-		}
-		else
-		{
-			quiz--;
-		}
+	//input = engine_input_manager_hold_left();
+	//if( input )
+	//{
+	//	if( 0 == quiz )
+	//	{
+	//		quiz = MAX_RIFFS - 1;
+	//	}
+	//	else
+	//	{
+	//		quiz--;
+	//	}
 
-		eddie = engine_random_manager_data( MAX_EDDIES );
-		engine_image_manager_eddie( eddie );
+	//	//eddie = engine_random_manager_data( MAX_EDDIES );
+	//	//engine_image_manager_eddie( eddie );
 
-		engine_quiz_manager_clear();
-		engine_quiz_manager_draw( quiz );
-		engine_quiz_manager_debug_stats( quiz );		// TODO delete!!
-		//engine_font_manager_data( ( quiz + 1 ), 30, 20 ); // TODO delete!!
-	}
+	//	//engine_quiz_manager_clear();
+	//	engine_quiz_manager_draw( quiz );
+	//	engine_quiz_manager_debug_stats( quiz );		// TODO delete!!
+	//	//engine_font_manager_data( ( quiz + 1 ), 30, 20 ); // TODO delete!!
+	//}
 
 	input = engine_input_manager_hold_right();
 	if( input )
@@ -85,10 +85,14 @@ void screen_test_screen_update( unsigned char *screen_type )
 		//	quiz = 0;
 		//}
 
+		//VDP_clearPlane( BG_A, 0 );
+		//VDP_resetScreen();
+		BMP_clear();
+		//engine_image_manager_draw( gfx_banner, PAL1, PALETTE1_TILES, 0, 0 );
 		eddie = engine_random_manager_data( MAX_EDDIES );
 		engine_image_manager_eddie( eddie );
 
-		engine_quiz_manager_clear();
+		//engine_quiz_manager_clear();
 		engine_quiz_manager_draw( quiz );
 		engine_quiz_manager_debug_stats( quiz );		// TODO delete!!
 		//engine_font_manager_data( ( quiz + 1 ), 30, 20 ); // TODO delete!!
