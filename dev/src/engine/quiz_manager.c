@@ -15,6 +15,9 @@
 #include <genesis.h>
 #endif
 
+#define OPTION_X	2
+#define OPTION_Y	6
+
 // Global variables.
 //struct_quiz_object global_quiz_object;
 
@@ -94,46 +97,9 @@ void engine_quiz_manager_load_normal( const unsigned char difficulty )
 	random_options( difficulty, default_option );
 }
 
-void engine_quiz_manager_draw( unsigned char idx )
+void engine_quiz_manager_draw( unsigned char index )
 {
 	//unsigned char idx;
-	unsigned char opt;
-	unsigned char x, y;
-	unsigned char total;
-
-	unsigned char album, songs, riff;
-	const char *years;
-	const char *title;
-	const char *music;
-	x = 4;
-	y = 6;
-
-	//idx = 20;
-	//opt = 1;
-	for( opt = 0; opt < MAX_OPTION; opt++ )
-	{
-		riff = quiz_option[ idx ][ opt ];
-		album = 0;
-		songs = 0;
-		engine_function_manager_convertByteToNibbles( riff, &album, &songs );
-
-		years = music_years[ album ];
-		title = music_album[ album ];
-
-		total = music_total[ album ];
-		total += songs;
-		music = music_songs[ total ];
-		engine_font_manager_text( years, x, y + 0 );
-		engine_font_manager_text( title, x, y + 1 );
-		engine_font_manager_text( music, x, y + 2 );
-
-		y += 5;
-	}
-}
-
-void engine_quiz_manager_draw2()
-{
-	unsigned char idx;
 	unsigned char opt;
 	unsigned char x, y;
 	unsigned char total;
@@ -141,61 +107,39 @@ void engine_quiz_manager_draw2()
 
 	unsigned char album, songs, riff;
 	const char *years;
-	//const char *title;
-	//const char *music;
 	const char *title1, *title2;
 	const char *music1, *music2;
 
-	//engine_font_manager_text( "A", 0, 0 );
-	//engine_font_manager_text( "XXXX", 0, 7 );
-	for( idx = 6; idx < 28; idx++ )
-	{
-		//engine_font_manager_data( ( idx + 1 ), 10, idx );
-		//engine_font_manager_text( "123456789A123456789B", 20, idx );
-		//engine_font_manager_text( "123456789A12345678", 22, idx );
-		//engine_font_manager_data( ( idx - 7 ), 35, idx );
-	}
-
-	idx = 0;
-	x = 2;
-	y = 6;
+	x = OPTION_X;
+	y = OPTION_Y;
 	opt = 0;
 	for( opt = 0; opt < MAX_OPTION; opt++ )
 	{
-		riff = quiz_option[ idx ][ opt ];
+		riff = quiz_option[ index ][ opt ];
 		album = 0;
 		songs = 0;
 		engine_function_manager_convertByteToNibbles( riff, &album, &songs );
 
 		years = music_years[ album ];
-		//title = music_album[ album ];
 		title1 = music_album1[ album ];
 		title2 = music_album2[ album ];
 
 		total = music_total[ album ];
 		total += songs;
-		//music = music_songs[ total ];
 		music1 = music_songs1[ total ];
 		music2 = music_songs2[ total ];
 
 		print_year( years, x, y );
-		//engine_font_manager_text( title, x + 2, y + 0 );
-		//engine_font_manager_text( music, x + 2, y + 2 );
 		engine_font_manager_text( title1, x + 2, y );
 		y++;
 
 		length = strlen( title2 );
-		//engine_font_manager_data( length, 10, 2 );
 		if( 0 != length )
 		{
-			//engine_font_manager_text( "EMPTY", x + 2, y + 1 );
 			engine_font_manager_text( title2, x + 2, y );
 			y++;
 		}
-		//else
-		//{
-		//	engine_font_manager_text( title2, x + 2, y + 1 );
-		//}
+
 		engine_font_manager_text( music1, x + 2, y );
 		y++;
 		engine_font_manager_text( music2, x + 2, y );
@@ -377,4 +321,11 @@ void engine_quiz_manager_debug_riffs()
 		engine_font_manager_data( z, x + 10, y );
 		y++;
 	}
+}
+
+void engine_quiz_manager_debug_stats( unsigned char index )
+{
+	engine_font_manager_data( index, 10, 27 );
+	engine_font_manager_data( quiz_answer[ index ], 15, 27 );
+	engine_font_manager_data( quiz_select[ index ], 20, 27 );
 }

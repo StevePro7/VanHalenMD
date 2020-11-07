@@ -7,13 +7,14 @@ void screen_test_screen_load()
 	//unsigned char diffulty = difficulty_type_easy;
 	unsigned char diffulty = difficulty_type_hard;
 
-	engine_quiz_manager_load_normal( diffulty );
+	//engine_quiz_manager_load_normal( diffulty );
 	//engine_quiz_manager_load_mixing( diffulty );
-	//engine_quiz_manager_load_random( diffulty );
+	engine_quiz_manager_load_random( diffulty );
 
-	//engine_quiz_manager_draw2();
+	engine_quiz_manager_draw( 0 );
+	engine_quiz_manager_debug_stats( 0 );
 
-	engine_quiz_manager_debug_option( 0 );
+	//engine_quiz_manager_debug_option( 0 );
 	//engine_quiz_manager_debug_riffs();
 }
 
