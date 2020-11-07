@@ -6,9 +6,11 @@ int main()
 
 	//open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_intro;
-	open_screen_type = screen_type_begin;
+	//open_screen_type = screen_type_begin;
+	open_screen_type = screen_type_quiz;
 
 	engine_screen_manager_init( open_screen_type );
+	engine_quiz_manager_init();
 	engine_sprite_manager_init();
 	while( 1 )
 	{

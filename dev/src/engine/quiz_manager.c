@@ -210,8 +210,8 @@ void engine_quiz_manager_draw( unsigned char idx )
 	const char *years;
 	const char *title;
 	const char *music;
-	x = 2;
-	y = 1;
+	x = 4;
+	y = 6;
 
 	//idx = 20;
 	//opt = 1;
