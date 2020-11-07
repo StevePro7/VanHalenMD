@@ -9,6 +9,7 @@
 #define MAX_RIFFS				50
 #define MAX_OPTION				4
 #define MAX_SPRITES				3
+#define MAX_EDDIES				17
 
 #define PALETTE1_TILES			1
 #define PALETTE2_TILES			240

@@ -5,6 +5,7 @@
 #include "image_manager.h"
 #include "input_manager.h"
 #include "quiz_manager.h"
+#include "random_manager.h"
 #include "gfx.h"
 
 #ifdef _CONSOLE
@@ -14,17 +15,20 @@
 #endif
 
 static unsigned char quiz;
+static unsigned char eddie;
 
 void screen_test_screen_load()
 {
 	unsigned char diffulty = difficulty_type_easy;
+	eddie = engine_random_manager_data( MAX_EDDIES );
 	//unsigned char diffulty = difficulty_type_hard;
 
 	// Clear screen.
 	VDP_clearPlane( BG_A, 0 );
 
 	engine_image_manager_draw( gfx_banner, PAL1, PALETTE1_TILES, 0, 0 );
-	engine_image_manager_draw( gfx_eddie_05, PAL2, PALETTE2_TILES, 20, 6 );
+	engine_image_manager_eddie( eddie );
+	//engine_image_manager_draw( gfx_eddie_05, PAL2, PALETTE2_TILES, 20, 6 );
 
 	engine_quiz_manager_load_normal( diffulty );
 	//engine_quiz_manager_load_mixing( diffulty );
@@ -55,6 +59,9 @@ void screen_test_screen_update( unsigned char *screen_type )
 			quiz--;
 		}
 
+		eddie = engine_random_manager_data( MAX_EDDIES );
+		engine_image_manager_eddie( eddie );
+
 		engine_quiz_manager_clear();
 		engine_quiz_manager_draw( quiz );
 		engine_quiz_manager_debug_stats( quiz );		// TODO delete!!
@@ -77,6 +84,9 @@ void screen_test_screen_update( unsigned char *screen_type )
 		//{
 		//	quiz = 0;
 		//}
+
+		eddie = engine_random_manager_data( MAX_EDDIES );
+		engine_image_manager_eddie( eddie );
 
 		engine_quiz_manager_clear();
 		engine_quiz_manager_draw( quiz );

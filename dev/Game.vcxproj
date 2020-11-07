@@ -167,6 +167,7 @@
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\object\audio_object.c" />
     <ClCompile Include="src\object\hack_object.c" />
+    <ClCompile Include="src\object\image_object.c" />
     <ClCompile Include="src\object\music_object.c" />
     <ClCompile Include="src\object\quiz_object.c" />
     <ClCompile Include="src\screen\begin_screen.c" />
@@ -199,6 +200,7 @@
     <ClInclude Include="inc\main.h" />
     <ClInclude Include="inc\object\audio_object.h" />
     <ClInclude Include="inc\object\hack_object.h" />
+    <ClInclude Include="inc\object\image_object.h" />
     <ClInclude Include="inc\object\music_object.h" />
     <ClInclude Include="inc\object\quiz_object.h" />
     <ClInclude Include="inc\screen\begin_screen.h" />

@@ -7,6 +7,7 @@
 #include <genesis.h>
 #endif
 
+void engine_image_manager_eddie( const unsigned char index );
 void engine_image_manager_draw( Image image, unsigned char palette, unsigned char tiles, unsigned char x, unsigned char y );
 
 #endif//_IMAGE_MANAGER_H_
