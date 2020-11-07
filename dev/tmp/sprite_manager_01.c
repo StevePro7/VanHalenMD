@@ -13,21 +13,70 @@
 unsigned char sprite_positions[ MAX_OPTION ] = { 1 * 48, 2 * 48, 3 * 48, 4 * 48 };
 //static unsigned char sprite_index;
 
-Sprite* sprites[ MAX_SPRITES ] = { NULL, NULL, NULL };
+Sprite* sprites[ MAX_SPRITES ];
 const SpriteDefinition* spriteDefList[ MAX_SPRITES ] = { &gfx_actor, &gfx_right, &gfx_wrong };
 
-static void init_sprite( const unsigned char index )
-{
-	const SpriteDefinition* spriteDef;
-	u16 *data = NULL;
-	spriteDef = spriteDefList[ index ];
-	data = spriteDef->palette->data;
-	VDP_setPalette( PAL3, data );
-	sprites[ index ] = SPR_addSprite( spriteDef, 0, sprite_positions[ 0 ], TILE_ATTR( PAL3, 0, FALSE, FALSE ) );
-	SPR_setVisibility( sprites[ index ], HIDDEN );
-}
+//static Sprite* init_sprite( const SpriteDefinition* spriteDef )
+//{
+//	Sprite* sprite;
+//	u16 *data = NULL;
+//
+//	if( NULL != spriteDef->palette )
+//	{
+//		data = spriteDef->palette->data;
+//	}
+//
+//	VDP_setPalette( PAL3, data );
+//	sprite = SPR_addSprite( spriteDef, 0, sprite_positions[ 0 ], TILE_ATTR( PAL3, 0, FALSE, FALSE ) );
+//	return sprite;
+//	//return SPR_addSprite( spriteDef, 0, sprite_positions[ 0 ], TILE_ATTR( PAL3, 0, FALSE, FALSE ) );
+//}
 
-
+//static void setPalette_sprite( unsigned char index )
+//{
+//	//const SpriteDefinition* spriteDef;
+//	const SpriteDefinition* spriteDef = &gfx_right;
+//	Sprite* sprite;
+//	unsigned short *data = NULL;
+//	//unsigned char idx;
+//
+//	//for( idx = 0; idx < MAX_SPRITES; idx++ )
+//	//{
+//	//	sprite = sprites[ sprite_type_actor ];
+//	//	SPR_setVisibility( sprite, HIDDEN );
+//	//}
+//
+//	//spriteDef = NULL;
+//	//sprite = sprites[ index ];
+//	//if( NULL != sprite && NULL != sprite->definition )
+//	//{
+//	//	spriteDef = sprite->definition;
+//	//}
+//
+//	//if( NULL != spriteDef && NULL != spriteDef->palette )
+//	//{
+//	//	data = spriteDef->palette->data;
+//	//}
+//
+//	//VDP_setPalette( PAL3, data );
+//	//sprite = sprites[ index ];
+//
+//	//SPR_setVisibility( sprite, VISIBLE );
+//
+//	
+//	//const SpriteDefinition* spriteDef = &gfx_actor;
+//	//u16 *data = NULL;
+//
+//
+//
+//	if( NULL != spriteDef->palette )
+//	{
+//		data = spriteDef->palette->data;
+//	}
+//
+//	////sprite_index = 0;
+//	VDP_setPalette( PAL3, data );
+//}
 
 void engine_sprite_manager_init()
 {
