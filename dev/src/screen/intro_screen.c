@@ -7,8 +7,17 @@
 #include "sprite_manager.h"
 #include "gfx.h"
 
+#ifdef _CONSOLE
+#include "_genesis.h"
+#else
+#include <genesis.h>
+#endif
+
 void screen_intro_screen_load()
 {
+	// Clear screen.
+	VDP_clearPlane( BG_A, 0 );
+
 	engine_image_manager_draw( gfx_banner, PAL1, PALETTE1_TILES, 0, 0 );
 	engine_image_manager_draw( gfx_eddie_05, PAL2, PALETTE2_TILES, 20, 6 );
 
