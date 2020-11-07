@@ -13,4 +13,6 @@
 #define PALETTE1_TILES			1
 #define PALETTE2_TILES			240
 
+#define INVALID_INDEX			-1
+
 #endif//__GLOBAL_MANAGER__

@@ -17,7 +17,7 @@
 // Global variables.
 struct_quiz_object global_quiz_object;
 
-static void random_options( const unsigned char difficulty );
+static void random_options( const unsigned char difficulty, const char default_option );
 
 static void print_year( const char *year, unsigned char x, unsigned char y );
 
@@ -34,34 +34,34 @@ void engine_quiz_manager_init()
 	}
 }
 
-void engine_quiz_manager_load()
-{
-	unsigned char idx;
-	unsigned char opt;
-	unsigned char rnd;
-	for( idx = 0; idx < MAX_RIFFS; idx++ )
-	{
-		while( 1 )
-		{
-			rnd = engine_random_manager_data( MAX_RIFFS );
-			if( 0 == quiz_answer[ rnd ] )
-			{
-				quiz_answer[ rnd ] = music_riffs[ idx ];
-				break;
-			}
-		}
-
-		for( opt = 0; opt < MAX_OPTION; opt++ )
-		{
-			quiz_option[ idx ][ opt ] = opt;
-		}
-	}
-}
+//void engine_quiz_manager_load()
+//{
+//	unsigned char idx;
+//	unsigned char opt;
+//	unsigned char rnd;
+//	for( idx = 0; idx < MAX_RIFFS; idx++ )
+//	{
+//		while( 1 )
+//		{
+//			rnd = engine_random_manager_data( MAX_RIFFS );
+//			if( 0 == quiz_answer[ rnd ] )
+//			{
+//				quiz_answer[ rnd ] = music_riffs[ idx ];
+//				break;
+//			}
+//		}
+//
+//		for( opt = 0; opt < MAX_OPTION; opt++ )
+//		{
+//			quiz_option[ idx ][ opt ] = opt;
+//		}
+//	}
+//}
 
 void engine_quiz_manager_load_normal( const unsigned char difficulty )
 {
 	unsigned char idx;
-	const unsigned char ans = 0;
+	const unsigned char default_option = 0;
 
 	for( idx = 0; idx < MAX_RIFFS; idx++ )
 	{
@@ -74,14 +74,7 @@ void engine_quiz_manager_load_normal( const unsigned char difficulty )
 	}
 
 	// Must iterate and randomize all the riffs before randomize options!
-	random_options( difficulty );		// TODO inject the difficulty
-
-	// Normal hard code answer option "A".
-	for( idx = 0; idx < MAX_RIFFS; idx++ )
-	{
-		quiz_select[ idx ] = ans;
-		quiz_option[ idx ][ ans ] = quiz_answer[ idx ];
-	}
+	random_options( difficulty, default_option );
 }
 
 void engine_quiz_manager_load_random( const unsigned char difficulty )
@@ -110,7 +103,7 @@ void engine_quiz_manager_load_random( const unsigned char difficulty )
 	}
 
 	// Must iterate and randomize all the riffs before randomize options!
-	random_options( difficulty );		// TODO inject the difficulty
+	random_options( difficulty, INVALID_INDEX );
 
 	//for( idx = 0; idx < MAX_RIFFS; idx++ )
 	//{
@@ -184,7 +177,7 @@ void engine_quiz_manager_load_mixing( const unsigned char difficulty )
 	}
 
 	// Must iterate and randomize all the riffs before randomize options!
-	random_options( difficulty );		// TODO inject the difficulty
+	random_options( difficulty, INVALID_INDEX );
 
 	//for( idx = 0; idx < MAX_RIFFS; idx++ )
 	//{
@@ -231,7 +224,7 @@ void engine_quiz_manager_load_mixing( const unsigned char difficulty )
 	//}
 }
 
-static void random_options( const unsigned char difficulty )
+static void random_options( const unsigned char difficulty, const char default_option )
 {
 	unsigned char idx;
 	unsigned char opt;
@@ -251,6 +244,11 @@ static void random_options( const unsigned char difficulty )
 
 		// Randomize correct answer first.
 		ans = engine_random_manager_data( MAX_OPTION );
+		if( INVALID_INDEX != default_option )
+		{
+			ans = default_option;
+		}
+
 		quiz_select[ idx ] = ans;
 		quiz_option[ idx ][ ans ] = riff;
 
