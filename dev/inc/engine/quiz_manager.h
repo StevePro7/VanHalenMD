@@ -9,9 +9,9 @@ extern struct_quiz_object global_quiz_object;
 void engine_quiz_manager_init();
 
 void engine_quiz_manager_load();
-void engine_quiz_manager_load_random();
-void engine_quiz_manager_load_mixing();
-void engine_quiz_manager_load_normal();
+void engine_quiz_manager_load_random( const unsigned char difficulty );
+void engine_quiz_manager_load_mixing( const unsigned char difficulty );
+void engine_quiz_manager_load_normal( const unsigned char difficulty );
 
 void engine_quiz_manager_draw( unsigned char idx );
 void engine_quiz_manager_draw2();

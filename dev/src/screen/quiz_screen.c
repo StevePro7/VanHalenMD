@@ -21,7 +21,7 @@ void screen_quiz_screen_load()
 	quiz = 0;
 	//engine_quiz_manager_load();
 	//engine_quiz_manager_load_normal();
-	engine_quiz_manager_load_mixing();
+	engine_quiz_manager_load_mixing( random_difficulty_easy );
 
 	engine_font_manager_data( ( quiz + 1 ), 30, 20 );
 	engine_quiz_manager_draw( quiz );

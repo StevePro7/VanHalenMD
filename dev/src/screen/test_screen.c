@@ -4,8 +4,8 @@
 
 void screen_test_screen_load()
 {
-	//engine_quiz_manager_load_normal();
-	engine_quiz_manager_load_mixing();
+	engine_quiz_manager_load_normal( random_difficulty_easy );
+	//engine_quiz_manager_load_mixing();
 	//engine_quiz_manager_load_random();
 
 	//engine_quiz_manager_draw2();
