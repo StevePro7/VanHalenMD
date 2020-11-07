@@ -10,12 +10,13 @@
 #include <genesis.h>
 #endif
 
-
+// Private fields.
 Sprite* sprites[ MAX_SPRITES ] = { NULL, NULL, NULL };
 const SpriteDefinition* spriteDefList[ MAX_SPRITES ] = { &gfx_actor, &gfx_right, &gfx_wrong };
 unsigned char sprite_positions[ MAX_OPTION ] = { 1 * 48, 2 * 48, 3 * 48, 4 * 48 };
 static unsigned char sprite_position;
 
+// Private function.
 static void init_sprite( const unsigned char index );
 
 void engine_sprite_manager_init()
@@ -52,54 +53,8 @@ void engine_sprite_manager_draw( const unsigned char index )
 	}
 
 	VDP_setPalette( PAL3, data );
-	//SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
-	//SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
-	//SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
 	SPR_setVisibility( sprites[ index ], VISIBLE );
 }
-
-//void engine_sprite_manager_test0()
-//{
-//	// Sprite #0
-//	const SpriteDefinition* spriteDef;
-//	u16 *data = NULL;
-//	spriteDef = spriteDefList[ sprite_type_actor ];
-//	data = spriteDef->palette->data;
-//	VDP_setPalette( PAL3, data );
-//	SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
-//	SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
-//	SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
-//	SPR_setVisibility( sprites[ sprite_type_actor ], VISIBLE );
-//}
-//
-//void engine_sprite_manager_test1()
-//{
-//	// Sprite #1
-//	const SpriteDefinition* spriteDef;
-//	u16 *data = NULL;
-//	spriteDef = spriteDefList[ sprite_type_right ];
-//	data = spriteDef->palette->data;
-//	VDP_setPalette( PAL3, data );
-//	SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
-//	SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
-//	SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
-//	SPR_setVisibility( sprites[ sprite_type_right ], VISIBLE );
-//}
-//
-//void engine_sprite_manager_test2()
-//{
-//	// Sprite #2
-//	const SpriteDefinition* spriteDef;
-//	u16 *data = NULL;
-//	spriteDef = spriteDefList[ sprite_type_wrong ];
-//	data = spriteDef->palette->data;
-//	VDP_setPalette( PAL3, data );
-//	SPR_setVisibility( sprites[ sprite_type_actor ], HIDDEN );
-//	SPR_setVisibility( sprites[ sprite_type_right ], HIDDEN );
-//	SPR_setVisibility( sprites[ sprite_type_wrong ], HIDDEN );
-//	SPR_setVisibility( sprites[ sprite_type_wrong ], VISIBLE );
-//}
-
 
 static void init_sprite( const unsigned char index )
 {
