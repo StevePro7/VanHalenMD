@@ -6,7 +6,7 @@ IMPORTANT
 e.g.
 locale_manager.h
 I found that if I changed data here I had to change the corresponding *.c file
-that consume the locale otherwise the locale may not neccesarily update!!
+that consume the locale otherwise the locale may not necessarily update!!
 
 05-Nov-2020
 IMPORTANT
