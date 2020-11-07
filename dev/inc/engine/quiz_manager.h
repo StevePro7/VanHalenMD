@@ -1,10 +1,10 @@
 #ifndef __QUIZ_MANAGER__
 #define __QUIZ_MANAGER__
 
-#include "quiz_object.h"
+//#include "quiz_object.h"
 
 // Global variables.
-extern struct_quiz_object global_quiz_object;
+//extern struct_quiz_object global_quiz_object;
 
 void engine_quiz_manager_init();
 

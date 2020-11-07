@@ -7,15 +7,16 @@
 #include "music_manager.h"
 #include "random_manager.h"
 #include "music_object.h"
+#include "quiz_object.h"
+
 #ifdef _CONSOLE
 #include <string.h>
 #else
 #include <genesis.h>
 #endif
 
-
 // Global variables.
-struct_quiz_object global_quiz_object;
+//struct_quiz_object global_quiz_object;
 
 static void random_options( const unsigned char difficulty, const char default_option );
 static void print_year( const char *year, unsigned char x, unsigned char y );

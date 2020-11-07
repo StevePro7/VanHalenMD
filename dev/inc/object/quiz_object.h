@@ -4,11 +4,11 @@
 #include "global_manager.h"
 
 // Music Manager.
-typedef struct tag_struct_quiz_object
-{
-	unsigned char select;
-
-} struct_quiz_object;
+//typedef struct tag_struct_quiz_object
+//{
+//	unsigned char select;
+//
+//} struct_quiz_object;
 
 extern unsigned char quiz_answer[ MAX_RIFFS ];
 extern unsigned char quiz_select[ MAX_RIFFS ];
