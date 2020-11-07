@@ -163,6 +163,7 @@
     <ClCompile Include="src\engine\random_manager.c" />
     <ClCompile Include="src\engine\screen_manager.c" />
     <ClCompile Include="src\engine\sprite_manager.c" />
+    <ClCompile Include="src\locale_manager.c" />
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\object\audio_object.c" />
     <ClCompile Include="src\object\hack_object.c" />
@@ -194,6 +195,7 @@
     <ClInclude Include="inc\engine\random_manager.h" />
     <ClInclude Include="inc\engine\screen_manager.h" />
     <ClInclude Include="inc\engine\sprite_manager.h" />
+    <ClInclude Include="inc\locale_manager.h" />
     <ClInclude Include="inc\main.h" />
     <ClInclude Include="inc\object\audio_object.h" />
     <ClInclude Include="inc\object\hack_object.h" />

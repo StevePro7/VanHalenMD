@@ -126,7 +126,7 @@ void engine_quiz_manager_load_random()
 		}
 	}
 
-	quiz_option[ 0 ][ 0 ] = 0x37;
+	//quiz_option[ 0 ][ 0 ] = 0x37;
 	//quiz_option[ 0 ][ 1 ] = 0x49;
 	//quiz_option[ 0 ][ 2 ] = 0x87;
 	//quiz_option[ 0 ][ 3 ] = 0x9A;
@@ -324,7 +324,7 @@ static void print_year( const char *years, unsigned char x, unsigned char y )
 	engine_font_manager_char( years[ 3 ], x, y + 3 );
 }
 
-void engine_quiz_manager_draw_option()
+void engine_quiz_manager_debug_option( unsigned char page )
 {
 	unsigned char lop;
 	unsigned char idx;
@@ -334,10 +334,14 @@ void engine_quiz_manager_draw_option()
 
 	x = 0;
 	y = 0;
+	if( page > 1 )
+	{
+		page = 1;
+	}
+
 	for( lop = 0; lop < 25; lop++ )
 	{
-		idx = 25 * 0 + lop;
-		//idx = 25 * 1 + lop;
+		idx = 25 * page + lop;
 
 		ans = quiz_option[ idx ][ 3 ];	engine_font_manager_data( ans, x + 22, y );
 		ans = quiz_option[ idx ][ 2 ];	engine_font_manager_data( ans, x + 18, y );
@@ -370,7 +374,7 @@ void engine_quiz_manager_draw_option()
 	}
 }
 
-void engine_quiz_manager_draw_riffs()
+void engine_quiz_manager_debug_riffs()
 {
 	unsigned char idx, lop;
 	unsigned char ans, bob;

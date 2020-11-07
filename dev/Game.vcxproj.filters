@@ -123,6 +123,9 @@
     <ClCompile Include="src\engine\sprite_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
+    <ClCompile Include="src\locale_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat">
@@ -212,6 +215,9 @@
       <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="inc\engine\sprite_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\locale_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>

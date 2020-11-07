@@ -15,7 +15,8 @@ void engine_quiz_manager_load_normal();
 
 void engine_quiz_manager_draw( unsigned char idx );
 void engine_quiz_manager_draw2();
-void engine_quiz_manager_draw_option();
-void engine_quiz_manager_draw_riffs();
+
+void engine_quiz_manager_debug_option( unsigned char page );
+void engine_quiz_manager_debug_riffs();
 
 #endif//__QUIZ_MANAGER__
