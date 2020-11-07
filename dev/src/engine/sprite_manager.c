@@ -56,6 +56,34 @@ void engine_sprite_manager_draw( const unsigned char index )
 	SPR_setVisibility( sprites[ index ], VISIBLE );
 }
 
+void engine_sprite_manager_move_up()
+{
+	if( 0 == sprite_position )
+	{
+		sprite_position = MAX_OPTION - 1;
+	}
+	else
+	{
+		sprite_position--;
+	}
+
+	SPR_setPosition( sprites[ sprite_type_actor ], 0, sprite_positions[ sprite_position ] );
+}
+
+void engine_sprite_manager_move_down()
+{
+	if( ( MAX_OPTION - 1 ) == sprite_position )
+	{
+		sprite_position = 0;
+	}
+	else
+	{
+		sprite_position++;
+	}
+
+	SPR_setPosition( sprites[ sprite_type_actor ], 0, sprite_positions[ sprite_position ] );
+}
+
 static void init_sprite( const unsigned char index )
 {
 	const SpriteDefinition* spriteDef;
