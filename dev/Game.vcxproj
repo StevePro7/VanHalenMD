@@ -147,6 +147,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\gfx\res\gfx_eddies.c" />
+    <ClCompile Include="..\gfx\res\gfx_sprites.c" />
+    <ClCompile Include="..\gfx\res\gfx_tiles.c" />
+    <ClCompile Include="..\sfx\res\sfx_effects.c" />
+    <ClCompile Include="..\sfx\res\sfx_riffs.c" />
     <ClCompile Include="src\main.c" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +159,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\main.h" />
+    <ClInclude Include="res\gfx_eddies.h" />
+    <ClInclude Include="res\gfx_sprites.h" />
+    <ClInclude Include="res\gfx_tiles.h" />
+    <ClInclude Include="res\sfx_effects.h" />
+    <ClInclude Include="res\sfx_riffs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
