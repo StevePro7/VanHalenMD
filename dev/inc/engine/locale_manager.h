@@ -1,7 +1,0 @@
-#ifndef _LOCALE_MANAGER_
-#define _LOCALE_MANAGER_
-
-#define LOCALE_BLANK_SIZE18			"                  "
-//#define LOCALE_BLANK_SIZE18		"ABC456789123456XYZ"
-
-#endif//_LOCALE_MANAGER_
