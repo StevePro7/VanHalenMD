@@ -32,13 +32,6 @@ typedef enum tag_enum_sprite_type
 
 } enum_sprite_type;
 
-//typedef enum tag_enum_random_type
-//{
-//	random_type_diff = 0,	// easy
-//	random_type_same = 1,	// hard
-//
-//} enum_random_type;
-
 typedef enum tag_enum_difficulty_type
 {
 	difficulty_type_easy = 0,
@@ -75,23 +68,13 @@ typedef enum tag_enum_stage_type
 
 } enum_stage_type;
 
-/*
-typedef enum tag_enum_album_type
+typedef enum tag_enum_effects_type
 {
-album_1978 = 0,		// Van Halen
-album_1979 = 1,		// Van Halen II
-album_1980 = 2,		// Women and Children First
-album_1981 = 3,		// Fair Warning
-album_1982 = 4,		// Diver Down
-album_1984 = 5,		// 1984
-album_1986 = 6,		// 5150
-album_1988 = 7,		// OU812
-album_1991 = 8,		// For Unlawful Carnal Knowledge
-album_1995 = 9,		// Balance
-album_1998 = 10,	// Van Halen III
-album_2012 = 11,	// A Different Kind of Truth
+	effects_type_wrong = 0,
+	effects_type_right = 1,
+	effects_type_ready = 2,
+	effects_type_cheat = 3,
 
-} enum_album_type;
-*/
+} enum_effects_type;
 
 #endif//__ENUM_MANAGER__

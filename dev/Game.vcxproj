@@ -174,9 +174,11 @@
     <ClCompile Include="src\engine\text_manager.c" />
     <ClCompile Include="src\engine\timer_manager.c" />
     <ClCompile Include="src\main.c" />
+    <ClCompile Include="src\object\audio_object.c" />
     <ClCompile Include="src\object\cursor_object.c" />
     <ClCompile Include="src\object\game_object.c" />
     <ClCompile Include="src\object\hack_object.c" />
+    <ClCompile Include="src\object\image_object.c" />
     <ClCompile Include="src\object\music_object.c" />
     <ClCompile Include="src\object\quiz_object.c" />
     <ClCompile Include="src\object\score_object.c" />
@@ -229,9 +231,11 @@
     <ClInclude Include="inc\engine\text_manager.h" />
     <ClInclude Include="inc\engine\timer_manager.h" />
     <ClInclude Include="inc\main.h" />
+    <ClInclude Include="inc\object\audio_object.h" />
     <ClInclude Include="inc\object\cursor_object.h" />
     <ClInclude Include="inc\object\game_object.h" />
     <ClInclude Include="inc\object\hack_object.h" />
+    <ClInclude Include="inc\object\image_object.h" />
     <ClInclude Include="inc\object\music_object.h" />
     <ClInclude Include="inc\object\quiz_object.h" />
     <ClInclude Include="inc\object\score_object.h" />
