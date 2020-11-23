@@ -52,6 +52,18 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		print_text( eddie );
 	}
 
+
+	// TODO delete
+	input = engine_input_manager_hold_buttonB();
+	input2 = engine_input_manager_hold_left();		// TODO delete
+	if( input || input2 )
+	{
+		*screen_type = screen_type_func;
+		return;
+	}
+	// TODO delete
+
+
 	input = engine_input_manager_hold_buttonA();
 	input2 = engine_input_manager_hold_buttonStart();
 	input3 = engine_input_manager_hold_right();		// TODO delete
