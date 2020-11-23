@@ -2,6 +2,7 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "graphics_manager.h"
+#include "image_manager.h"
 #include "input_manager.h"
 #include "locale_manager.h"
 #include "text_manager.h"
@@ -16,12 +17,15 @@ static void print_text( unsigned char index );
 void screen_begin_screen_load()
 {
 	engine_graphics_manager_clear_area();
-	engine_delay_manager_load( BEGIN_SCREEN_DELAY );
 
 	// TODO banner + eddie image!
+	engine_image_manager_draw_banner();
+	engine_image_manager_draw_eddie( MAX_EDDIES - 1, 14, 6 );
+
+	engine_delay_manager_load( BEGIN_SCREEN_DELAY );
 
 	// TODO replace hard coded co-ordinates.
-	engine_font_manager_text( "EDWARD VAN HALEN", 12, 4 );
+	engine_font_manager_text( LOCALE_EDWARD_TITLE, 12, 4 );
 	engine_font_manager_text( LOCALE_BIRTH_DEATH, 14, 22 );
 
 	eddie = 0;

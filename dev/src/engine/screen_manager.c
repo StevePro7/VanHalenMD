@@ -18,7 +18,7 @@
 #include "quiz_screen.h"
 #include "score_screen.h"
 #include "over_screen.h"
-//#include "test_screen.h"
+#include "test_screen.h"
 //#include "func_screen.h"
 
 static unsigned char curr_screen_type;
@@ -48,7 +48,7 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	load_method[ screen_type_quiz ] = screen_quiz_screen_load;
 	load_method[ screen_type_score ] = screen_score_screen_load;
 	load_method[ screen_type_over ] = screen_over_screen_load;
-	//load_method[ screen_type_test ] = screen_test_screen_load;
+	load_method[ screen_type_test ] = screen_test_screen_load;
 	//load_method[ screen_type_func ] = screen_func_screen_load;
 
 	// Set update methods.
@@ -67,7 +67,7 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	update_method[ screen_type_quiz ] = screen_quiz_screen_update;
 	update_method[ screen_type_score ] = screen_score_screen_update;
 	update_method[ screen_type_over ] = screen_over_screen_update;
-	//update_method[ screen_type_test ] = screen_test_screen_update;
+	update_method[ screen_type_test ] = screen_test_screen_update;
 	//update_method[ screen_type_func ] = screen_func_screen_update;
 }
 
