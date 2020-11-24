@@ -10,9 +10,8 @@
 
 void screen_title_screen_load()
 {
-	//engine_graphics_manager_clear_plane();
-
 	// TODO delete
+	engine_graphics_manager_clear_plane();
 	engine_image_manager_draw_banner();
 	// TODO delete
 
