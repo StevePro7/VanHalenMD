@@ -1,0 +1,26 @@
+TODO
+24/11/2020
+
+
+Build version No. on Begin screen
+
+Splash screen
+SRAM
+Hack mgr
+
+Add 2x fields to score mgr
+1. num_riff counter
+2. num_DIFF counter
+
+
+Title screen
+* play quiz
+* gamer stats
+* famous quotes
+* credits
+
+
+Ready screen
+where is the screen design?
+E:\Steven\XNA\Testing\VanHalenScreens
+E:\GitHub\StevePro7\VanHalenTest\Code\03-ActionShots
