@@ -19,7 +19,7 @@ void screen_score_screen_load()
 	engine_graphics_manager_clear_half();
 
 	engine_font_manager_text( LOCALE_SUMMARY_SCORE, 1, 7 );
-	engine_text_manager_draw_lines( 4, 4 );
+	engine_text_manager_draw_lines( 4, 8 );
 	engine_score_manager_draw_summary( qo->quiz_riffs_play );
 }
 
