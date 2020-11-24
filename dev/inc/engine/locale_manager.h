@@ -13,7 +13,7 @@
 #define LOCALE_EDWARD_TITLE		"EDWARD VAN HALEN"
 #define LOCALE_BIRTH_DEATH		"1955 to 2020"
 #define LOCALE_SUMMARY_SCORE	"InGame Statistics"
-#define LOCALE_SUMMARY_OVER		"Tester Complete "
+#define LOCALE_SUMMARY_OVER		"TESTER COMPLETE "
 #define LOCALE_BULLET_POINTS	"**"
 
 #define LOCALE_RIFF_TEXT		"Riff"

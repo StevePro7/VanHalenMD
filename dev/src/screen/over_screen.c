@@ -27,11 +27,11 @@ void screen_over_screen_load()
 void screen_over_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-	unsigned char input2;		// TODO delete
+	//unsigned char input2;		// TODO delete
 
 	input = engine_input_manager_hold_buttonA();
-	input2 = engine_input_manager_hold_right();		// TODO delete
-	if( input || input2 )
+	//input2 = engine_input_manager_hold_right();		// TODO delete
+	if( input ) // || input2 )
 	{
 		*screen_type = screen_type_riff;
 		return;
