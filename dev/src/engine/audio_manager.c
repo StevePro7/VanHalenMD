@@ -8,6 +8,9 @@
 #include <genesis.h>
 #endif
 
+// Private helper function.
+static void play_audio( const u8 id, const u8 priority, const u16 channel );
+
 void engine_audio_manager_init()
 {
 	unsigned char idx;
@@ -33,10 +36,20 @@ void engine_audio_manager_init()
 
 void engine_audio_manager_play_riff( unsigned char index )
 {
-	XGM_startPlayPCM( SFX_RIFF_START + index, 1, SOUND_PCM_CH1 );
+	play_audio( SFX_RIFF_START + index, 1, SOUND_PCM_CH1 );
 }
 
 void engine_audio_manager_play_effect( unsigned char index )
 {
-	XGM_startPlayPCM( SFX_EFFECT_START + index, 1, SOUND_PCM_CH2 );
+	play_audio( SFX_EFFECT_START + index, 1, SOUND_PCM_CH2 );
+}
+
+static void play_audio( const u8 id, const u8 priority, const u16 channel )
+{
+	if( XGM_isPlaying() )
+	{
+		XGM_stopPlay();
+	}
+
+	XGM_startPlayPCM( id, priority, channel );
 }
