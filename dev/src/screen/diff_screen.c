@@ -19,8 +19,8 @@ static void print_extra( unsigned char index );
 void screen_diff_screen_load()
 {
 	struct_game_object *go = &global_game_object;
-	engine_font_manager_text( "DIFF SCREEN", 10, 2 );
-	engine_graphics_manager_clear_area();
+	//engine_font_manager_text( "DIFF SCREEN", 10, 2 );
+	engine_graphics_manager_clear_half();
 	//engine_font_manager_text( LOCALE_BANNER_TITLE, 5, 4 );		// TODO move somewhere else!!
 
 	//DiffScreen();

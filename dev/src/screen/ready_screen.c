@@ -13,9 +13,13 @@ void screen_ready_screen_load()
 {
 	engine_font_manager_text( "READY SCREEN", 10, 2 );
 
-	engine_graphics_manager_clear_area();
+	engine_graphics_manager_clear_half();
 	//engine_frame_manager_load( 100 );
 	//engine_sprite_manager_load( 1 );
+
+
+	//TODO delete
+	engine_font_manager_text( "GET READY...", 4, 20 );
 }
 
 void screen_ready_screen_update( unsigned char *screen_type )
@@ -29,7 +33,7 @@ void screen_ready_screen_update( unsigned char *screen_type )
 	input2 = engine_input_manager_hold_right();		// TODO delete
 	if( input || input2 )
 	{
-		engine_font_manager_text( "begin", 0, 0 );
+		//engine_font_manager_text( "begin", 0, 0 );
 		*screen_type = screen_type_load;
 		return;
 	}
