@@ -53,6 +53,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		correct = quiz_select[ riff_index ];
 		answer = co->selects == correct ? sprite_type_right : sprite_type_wrong;
 
+		engine_audio_manager_play_effect( answer );
 		engine_score_manager_update( save_index, answer );
 		engine_cursor_manager_action( answer );
 		//engine_debug_manager_answer( answer );
