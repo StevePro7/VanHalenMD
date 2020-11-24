@@ -13,7 +13,7 @@
 void screen_play_screen_load()
 {
 	struct_quiz_object *qo = &global_quiz_object;
-	engine_font_manager_text( "PLAY SCREEN", 10, 2 );
+	//engine_font_manager_text( "PLAY SCREEN", 10, 2 );
 	engine_graphics_manager_clear_half();
 
 	// TODO try to get the score percent working from SRAM.
@@ -54,7 +54,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 		engine_score_manager_update( save_index, answer );
 		engine_cursor_manager_action( answer );
-		engine_debug_manager_answer( answer );
+		//engine_debug_manager_answer( answer );
 
 		*screen_type = screen_type_quiz;
 		return;
