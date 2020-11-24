@@ -8,7 +8,6 @@
 #include "text_manager.h"
 #include "timer_manager.h"
 
-
 void screen_title_screen_load()
 {
 	engine_graphics_manager_clear_area();
@@ -19,6 +18,8 @@ void screen_title_screen_load()
 
 	engine_font_manager_text( LOCALE_BANNER_TITLE, 5, 4 );
 	//engine_font_manager_text( "TITLE SCREEN!!", 10, 2 );
+
+	engine_image_manager_draw_eddie( 0, 20, 6 );
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
