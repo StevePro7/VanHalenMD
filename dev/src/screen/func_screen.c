@@ -10,6 +10,8 @@ void screen_func_screen_load()
 	//engine_font_manager_text( "FUNC SCREEN", 10, 2 );
 	engine_font_manager_text( LOCALE_BLANK_SIZE30, 5, BANNER_Y );
 
+	//engine_font_manager_text( "Riff 01/05  Score 00    OK   0%", 5, 4 );
+
 	//engine_quiz_manager_load_testing();
 	//engine_quiz_manager_load_normal();
 	//engine_quiz_manager_load_mixing();
