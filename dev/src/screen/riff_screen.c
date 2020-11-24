@@ -1,4 +1,5 @@
 #include "riff_screen.h"
+#include "audio_manager.h"
 #include "cursor_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
@@ -24,12 +25,12 @@ void screen_riff_screen_load()
 	//engine_font_manager_text( "RIFF SCREEN!!", 10, 2 );
 
 	// TODO delete
-	engine_graphics_manager_clear_plane();
-	engine_image_manager_draw_banner();
+	//engine_graphics_manager_clear_plane();
+	//engine_image_manager_draw_banner();
 	// TODO delete
 
-	engine_graphics_manager_clear_area();
-	engine_image_manager_draw_eddie( 0, 20, 6 );
+	engine_graphics_manager_clear_half();
+	//engine_image_manager_draw_eddie( 0, 20, 6 );
 
 	engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
 	//engine_graphics_manager_clear_area();
@@ -46,7 +47,7 @@ void screen_riff_screen_update( unsigned char *screen_type )
 	struct_cursor_object *co = &global_cursor_object;
 	unsigned char delay;
 	unsigned char input;
-	unsigned char input2;		// TODO delete
+	//unsigned char input2;		// TODO delete
 
 	engine_sprite_manager_update();
 	if( event_stage_menus == stage )
@@ -74,11 +75,10 @@ void screen_riff_screen_update( unsigned char *screen_type )
 	}
 
 	input = engine_input_manager_hold_buttonA();
-	input2 = engine_input_manager_hold_right();		// TODO delete
-	if( input || input2 )
+	//input2 = engine_input_manager_hold_right();		// TODO delete
+	if( input )// || input2 )
 	{
-		// TODO - "right" sound effect!
-		//engine_audio_manager_SFX()
+		engine_audio_manager_play_effect( effects_type_right );
 
 		engine_game_manager_set_riff_select( co->selects );
 		engine_quiz_manager_set_riffs_play( co->selects );

@@ -11,7 +11,7 @@
 
 void screen_ready_screen_load()
 {
-	engine_font_manager_text( "READY SCREEN", 10, 2 );
+	//engine_font_manager_text( "READY SCREEN", 10, 2 );
 
 	engine_graphics_manager_clear_half();
 	//engine_frame_manager_load( 100 );

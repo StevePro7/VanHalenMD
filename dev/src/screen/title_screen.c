@@ -37,7 +37,8 @@ void screen_title_screen_update( unsigned char *screen_type )
 		engine_quiz_manager_set_difficulty( difficulty_type_hard );
 		//TODO testing
 
-		*screen_type = screen_type_load;
+		//*screen_type = screen_type_load;
+		*screen_type = screen_type_riff;
 		//*screen_type = screen_type_func;
 		return;
 	}

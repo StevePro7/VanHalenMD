@@ -1,4 +1,5 @@
 #include "diff_screen.h"
+#include "audio_manager.h"
 #include "cursor_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
@@ -21,7 +22,6 @@ void screen_diff_screen_load()
 	struct_game_object *go = &global_game_object;
 	//engine_font_manager_text( "DIFF SCREEN", 10, 2 );
 	engine_graphics_manager_clear_half();
-	//engine_font_manager_text( LOCALE_BANNER_TITLE, 5, 4 );		// TODO move somewhere else!!
 
 	//DiffScreen();
 	engine_text_manager_draw_lines( 2, 2 );
@@ -37,7 +37,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	struct_cursor_object *co = &global_cursor_object;
 	unsigned char delay;
 	unsigned char input;
-	unsigned char input2;		// TODO delete
+	//unsigned char input2;		// TODO delete
 
 	engine_sprite_manager_update();
 	if( event_stage_menus == stage )
@@ -65,21 +65,19 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	}
 
 	input = engine_input_manager_hold_buttonB();
-	input2 = engine_input_manager_hold_left();		// TODO delete
-	if( input || input2 )
+	//input2 = engine_input_manager_hold_left();		// TODO delete
+	if( input ) //||input2 )
 	{
-		// TODO - "wrong" sound effect!
-		//engine_audio_manager_SFX()
+		engine_audio_manager_play_effect( effects_type_wrong );
 		*screen_type = screen_type_riff;
 		return;
 	}
 
 	input = engine_input_manager_hold_buttonA();
-	input2 = engine_input_manager_hold_right();		// TODO delete
-	if( input || input2 )
+	//input2 = engine_input_manager_hold_right();		// TODO delete
+	if( input )// || input2 )
 	{
-		// TODO - "right" sound effect!
-		//engine_audio_manager_SFX()
+		engine_audio_manager_play_effect( effects_type_right );
 
 		engine_game_manager_set_diff_select( co->selects );
 		engine_quiz_manager_set_difficulty( co->selects );

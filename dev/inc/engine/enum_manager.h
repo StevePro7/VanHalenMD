@@ -70,10 +70,10 @@ typedef enum tag_enum_stage_type
 
 typedef enum tag_enum_effects_type
 {
-	effects_type_wrong = 0,
-	effects_type_right = 1,
-	effects_type_ready = 2,
-	effects_type_cheat = 3,
+	effects_type_cheat = 0,
+	effects_type_ready = 1,
+	effects_type_wrong = 3,
+	effects_type_right = 2,
 
 } enum_effects_type;
 
