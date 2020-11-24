@@ -1,4 +1,5 @@
 #include "play_screen.h"
+#include "audio_manager.h"
 #include "cursor_manager.h"
 #include "debug_manager.h"
 #include "enum_manager.h"
@@ -35,7 +36,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	struct_quiz_object *qo = &global_quiz_object;
 
 	unsigned char input;
-	unsigned char input2;		// TODO delete
+	//unsigned char input2;		// TODO delete
 	unsigned char correct;
 	unsigned char riff_index;
 	unsigned char save_index;
@@ -44,8 +45,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 	engine_sprite_manager_update();
 
 	input = engine_input_manager_hold_buttonA();
-	input2 = engine_input_manager_hold_right();		// TODO delete
-	if( input || input2 )
+	//input2 = engine_input_manager_hold_right();		// TODO delete
+	if( input ) //|| input2 )
 	{
 		riff_index = qo->quiz_riff_index;
 		save_index = quiz_saving[ riff_index ];
@@ -61,8 +62,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 	}
 
 	input = engine_input_manager_hold_buttonB();
-	input2 = engine_input_manager_hold_left();		// TODO delete
-	if( input || input2 )
+	//input2 = engine_input_manager_hold_left();		// TODO delete
+	if( input ) // || input2 )
 	{
 		*screen_type = screen_type_score;
 		return;
@@ -72,6 +73,9 @@ void screen_play_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold_buttonC();
 	if( input )
 	{
+		riff_index = qo->quiz_riff_index;
+		save_index = quiz_saving[ riff_index ];
+		engine_audio_manager_play_riff( save_index );
 	}
 	// TODO replay riff.
 
