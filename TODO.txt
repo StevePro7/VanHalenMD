@@ -1,5 +1,11 @@
 TODO
 24/11/2020
+TESTER COMPLETE
+audio stop
+switch eddie	find random code
+
+
+24/11/2020
 
 
 Build version No. on Begin screen
