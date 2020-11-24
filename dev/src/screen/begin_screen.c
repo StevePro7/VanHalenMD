@@ -92,7 +92,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 
 static void print_text( unsigned char index )
 {
-	const unsigned char start = 12 + index * 4;
+	const unsigned char start = 14 + index * 4;
 	const unsigned char lines = 4;
 
 	engine_graphics_manager_clear_bottom();

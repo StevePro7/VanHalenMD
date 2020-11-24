@@ -7,7 +7,7 @@
 void engine_debug_manager_cheat( unsigned char select )
 {
 	// TODO replace hard coded co-ordinates.
-	engine_font_manager_data( select, 15, 27 );
+	engine_font_manager_data( select, 17, 27 );
 }
 
 void engine_debug_manager_answer( unsigned char answer )
