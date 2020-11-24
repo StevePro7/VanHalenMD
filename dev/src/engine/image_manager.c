@@ -41,28 +41,32 @@ void engine_image_manager_draw_splash()
 
 void engine_image_manager_draw_banner()
 {
-	unsigned short *data = NULL;
-	const Image image = gfx_banner;
+	//unsigned short *data = NULL;
+	//const Image image = gfx_banner;
 
-	if( NULL != image.palette )
-	{
-		data = image.palette->data;
-	}
+	//if( NULL != image.palette )
+	//{
+	//	data = image.palette->data;
+	//}
 
-	VDP_setPalette( PAL1, data );
-	VDP_drawImageEx( BG_A, &image, TILE_ATTR_FULL( PAL1, 0, 0, 0, PALETTE1_TILES ), 0, 0, 0, CPU );
+	//VDP_setPalette( PAL1, data );
+	//VDP_drawImageEx( BG_A, &image, TILE_ATTR_FULL( PAL1, 0, 0, 0, PALETTE1_TILES ), 0, 0, 0, CPU );
+
+	draw_image( gfx_banner, PAL1, PALETTE1_TILES, 0, 0 );
 }
 
 void engine_image_manager_draw_eddie( unsigned char index, unsigned char x, unsigned char y )
 {
-	unsigned short *data = NULL;
+	//unsigned short *data = NULL;
 	const Image image = *image_eddie[ index ];
 
-	if( NULL != image.palette )
-	{
-		data = image.palette->data;
-	}
+	//if( NULL != image.palette )
+	//{
+	//	data = image.palette->data;
+	//}
 
-	VDP_setPalette( PAL2, data );
-	VDP_drawImageEx( BG_A, &image, TILE_ATTR_FULL( PAL2, 0, 0, 0, PALETTE2_TILES ), x, y, 0, CPU );
+	//VDP_setPalette( PAL2, data );
+	//VDP_drawImageEx( BG_A, &image, TILE_ATTR_FULL( PAL2, 0, 0, 0, PALETTE2_TILES ), x, y, 0, CPU );
+
+	draw_image( image, PAL2, PALETTE2_TILES, x, y );
 }
