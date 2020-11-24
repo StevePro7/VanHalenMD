@@ -6,7 +6,8 @@
 #define LOCALE_BLANK_SIZE20		"                    "
 #define LOCALE_BLANK_SIZE38		"                                      "
 
-#define LOCALE_BANNER_TITLE		"CLASSIC \"PICK THE RIFF\" TESTER "
+#define BOB 7
+#define LOCALE_BANNER_TITLE		"CLASSIC \"PICK THE RIFF\" TESTER"
 #define LOCALE_EDWARD_TITLE		"EDWARD VAN HALEN"
 #define LOCALE_BIRTH_DEATH		"1955 to 2020"
 #define LOCALE_SUMMARY_SCORE	"InGame Statistics"
