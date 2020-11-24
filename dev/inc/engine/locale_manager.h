@@ -4,6 +4,8 @@
 #define LOCALE_BLANK_SIZE4		"    "
 #define LOCALE_BLANK_SIZE18		"                  "
 #define LOCALE_BLANK_SIZE20		"                    "
+#define LOCALE_BLANK_SIZE30		"                              "
+//#define LOCALE_BLANK_SIZE30	"123456789012345678901234567890"
 #define LOCALE_BLANK_SIZE38		"                                      "
 
 #define BOB 7

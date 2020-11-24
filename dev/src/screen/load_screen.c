@@ -17,7 +17,9 @@ void screen_load_screen_load()
 	//TODO testing
 
 	// Reset variables.
-	engine_font_manager_text( LOCALE_BLANK_SIZE38, 1, BANNER_Y );
+	engine_font_manager_text( LOCALE_BLANK_SIZE30, 5, BANNER_Y );
+	engine_font_manager_text( LOCALE_BLANK_SIZE30, 5, BANNER_Y + 1);
+
 	engine_banner_manager_stats();
 	engine_score_manager_reset();
 	engine_quiz_manager_reset();
