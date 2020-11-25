@@ -25,7 +25,7 @@ void screen_title_screen_load()
 
 	engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
 
-	engine_font_manager_text( "TITLE SCREEN", 4, 10 );
+	engine_font_manager_text( "TITLE SCREEN...!!", 4, 10 );
 	//engine_font_manager_text( "TITLE SCREEN!!", 10, 2 );
 }
 
