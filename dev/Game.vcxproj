@@ -156,6 +156,7 @@
     <ClCompile Include="src\engine\banner_manager.c" />
     <ClCompile Include="src\engine\cursor_manager.c" />
     <ClCompile Include="src\engine\debug_manager.c" />
+    <ClCompile Include="src\engine\eddie_manager.c" />
     <ClCompile Include="src\engine\enum_manager.c" />
     <ClCompile Include="src\engine\font_manager.c" />
     <ClCompile Include="src\engine\function_manager.c" />
@@ -178,6 +179,7 @@
     <ClCompile Include="src\main.c" />
     <ClCompile Include="src\object\audio_object.c" />
     <ClCompile Include="src\object\cursor_object.c" />
+    <ClCompile Include="src\object\eddie_object.c" />
     <ClCompile Include="src\object\game_object.c" />
     <ClCompile Include="src\object\hack_object.c" />
     <ClCompile Include="src\object\image_object.c" />
@@ -215,6 +217,7 @@
     <ClInclude Include="inc\engine\banner_manager.h" />
     <ClInclude Include="inc\engine\cursor_manager.h" />
     <ClInclude Include="inc\engine\debug_manager.h" />
+    <ClInclude Include="inc\engine\eddie_manager.h" />
     <ClInclude Include="inc\engine\enum_manager.h" />
     <ClInclude Include="inc\engine\font_manager.h" />
     <ClInclude Include="inc\engine\function_manager.h" />
@@ -237,6 +240,7 @@
     <ClInclude Include="inc\main.h" />
     <ClInclude Include="inc\object\audio_object.h" />
     <ClInclude Include="inc\object\cursor_object.h" />
+    <ClInclude Include="inc\object\eddie_object.h" />
     <ClInclude Include="inc\object\game_object.h" />
     <ClInclude Include="inc\object\hack_object.h" />
     <ClInclude Include="inc\object\image_object.h" />

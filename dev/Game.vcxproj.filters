@@ -216,6 +216,12 @@
     <ClCompile Include="src\engine\image_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
+    <ClCompile Include="src\engine\eddie_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\object\eddie_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat">
@@ -399,6 +405,12 @@
     </ClInclude>
     <ClInclude Include="inc\engine\image_manager.h">
       <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\engine\eddie_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\object\eddie_object.h">
+      <Filter>Header Files\object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
