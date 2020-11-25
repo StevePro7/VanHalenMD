@@ -8,6 +8,7 @@
 #endif
 
 #include "audio_manager.h"
+#include "eddie_manager.h"
 #include "enum_manager.h"
 //#include "font_manager.h"
 #include "game_manager.h"

@@ -5,6 +5,7 @@ int main()
 	unsigned char open_screen_type;
 
 	//TODO move into init_screen.
+	engine_eddie_manager_init();
 	engine_audio_manager_init();
 	engine_game_manager_init();
 	engine_hack_manager_init();

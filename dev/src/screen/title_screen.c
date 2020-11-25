@@ -1,4 +1,5 @@
 #include "title_screen.h"
+#include "eddie_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "graphics_manager.h"
@@ -10,13 +11,15 @@
 
 void screen_title_screen_load()
 {
+	unsigned char eddie_image;
 	// TODO delete
 	engine_graphics_manager_clear_plane();
 	engine_image_manager_draw_banner();
 	// TODO delete
 
+	eddie_image = engine_eddie_manager_next();
 	engine_graphics_manager_clear_area();
-	engine_image_manager_draw_eddie( 0, 20, 6 );
+	engine_image_manager_draw_eddie( eddie_image, 20, 6 );
 
 
 	engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
