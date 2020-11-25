@@ -15,7 +15,7 @@
 
 void engine_storage_manager_read()
 {
-	struct_quiz_object *qo = &global_quiz_object;
+	//struct_quiz_object *qo = &global_quiz_object;
 	//struct_storage_object *so = &global_storage_object;
 
 	unsigned short sRamOffSet;

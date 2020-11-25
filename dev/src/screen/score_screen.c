@@ -13,7 +13,7 @@
 void screen_score_screen_load()
 {
 	struct_quiz_object *qo = &global_quiz_object;
-	engine_font_manager_text( "SCRE SCREEN", 10, 2 );
+	//engine_font_manager_text( "SCRE SCREEN", 10, 2 );
 
 	engine_cursor_manager_hide();
 	engine_graphics_manager_clear_half();

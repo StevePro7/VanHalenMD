@@ -13,7 +13,7 @@ static unsigned char stage;
 
 void screen_quiz_screen_load()
 {
-	engine_font_manager_text( "QUIZ SCREEN", 10, 2 );
+	//engine_font_manager_text( "QUIZ SCREEN", 10, 2 );
 
 	engine_delay_manager_load( QUIZ_SCREEN_DELAY );
 	stage = event_stage_start;
