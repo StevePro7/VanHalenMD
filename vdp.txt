@@ -1,0 +1,24 @@
+vdp
+25/11/2020
+
+begin OK
+16	banner
+256	eddie small
+
+
+
+I think I found the problem!
+
+for some reason clearPlane was causing all sorts of crazy graphics glitches
+VDP_clearPlane( BG_A, 0 );
+
+so I removed and I currently just have this
+engine_graphics_manager_clear_area
+
+VDP_clearTileMapRect( BG_A, GAME_AREA_X, GAME_AREA_Y, GAME_AREA_W, GAME_AREA_H );
+}
+
+
+I may have FULL and use instead...
+
+TODO must test FULL instead of clearPlane!!

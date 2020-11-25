@@ -13,13 +13,19 @@ void screen_title_screen_load()
 {
 	unsigned char eddie_image;
 
-	// TODO delete
-	engine_graphics_manager_clear_plane();
+	engine_graphics_manager_clear_area();
+
+	// TODO banner + eddie image!
 	engine_image_manager_draw_banner();
+	//engine_image_manager_draw_eddie( MAX_EDDIES - 1, 14, 6 );
+
 	// TODO delete
+	//engine_graphics_manager_clear_plane();
+	//engine_graphics_manager_clear_area();
+	//engine_image_manager_draw_banner();
+	//// TODO delete
 
 	eddie_image = engine_eddie_manager_next();
-	engine_graphics_manager_clear_area();
 	engine_image_manager_draw_eddie( eddie_image, 20, 6 );
 
 

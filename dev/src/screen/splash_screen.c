@@ -6,7 +6,7 @@
 
 void screen_splash_screen_load()
 {
-	engine_graphics_manager_clear_plane();
+	//engine_graphics_manager_clear_plane();
 	engine_image_manager_draw_splash();
 }
 
