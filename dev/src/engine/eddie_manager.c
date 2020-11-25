@@ -32,7 +32,12 @@ unsigned char engine_eddie_manager_next()
 			( eddie_image != eo->eddie_images[ 1 ] ) &&
 			( eddie_image != eo->eddie_images[ 2 ] ) &&
 			( eddie_image != eo->eddie_images[ 3 ] ) &&
-			( eddie_image != eo->eddie_images[ 4 ] )
+			( eddie_image != eo->eddie_images[ 4 ] ) &&
+			( eddie_image != eo->eddie_images[ 5 ] ) &&
+			( eddie_image != eo->eddie_images[ 6 ] ) &&
+			( eddie_image != eo->eddie_images[ 7 ] ) &&
+			( eddie_image != eo->eddie_images[ 8 ] ) &&
+			( eddie_image != eo->eddie_images[ 9 ] )
 			)
 		{
 			eo->eddie_images[ eo->eddie_index ] = eddie_image;
