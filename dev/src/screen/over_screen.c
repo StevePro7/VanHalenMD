@@ -1,4 +1,5 @@
 #include "over_screen.h"
+#include "audio_manager.h"
 #include "cursor_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
@@ -22,6 +23,8 @@ void screen_over_screen_load()
 	engine_text_manager_draw_lines( 4, 4 );
 	engine_text_manager_draw_lines( 12, 2 );
 	engine_score_manager_draw_summary( qo->quiz_riffs_play );
+
+	engine_audio_manager_stop();
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
