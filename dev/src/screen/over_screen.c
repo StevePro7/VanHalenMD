@@ -36,7 +36,8 @@ void screen_over_screen_update( unsigned char *screen_type )
 	//input2 = engine_input_manager_hold_right();		// TODO delete
 	if( input ) // || input2 )
 	{
-		*screen_type = screen_type_riff;
+		//*screen_type = screen_type_riff;
+		*screen_type = screen_type_title;
 		return;
 	}
 

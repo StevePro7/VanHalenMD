@@ -12,8 +12,8 @@ void screen_load_screen_load()
 	//engine_font_manager_text( "LOAD SCREEN", 10, 2 );
 
 	//TODO testing
-	engine_quiz_manager_set_riffs_play( 0 );
-	engine_quiz_manager_set_difficulty( difficulty_type_easy );
+	//engine_quiz_manager_set_riffs_play( 0 );
+	//engine_quiz_manager_set_difficulty( difficulty_type_easy );
 	//TODO testing
 
 	// Reset variables.

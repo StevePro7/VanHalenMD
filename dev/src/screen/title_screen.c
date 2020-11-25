@@ -12,6 +12,7 @@
 void screen_title_screen_load()
 {
 	unsigned char eddie_image;
+
 	// TODO delete
 	engine_graphics_manager_clear_plane();
 	engine_image_manager_draw_banner();
@@ -24,7 +25,7 @@ void screen_title_screen_load()
 
 	engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
 
-//	engine_font_manager_text( "TITLE SCREEN!!", 10, 2 );
+	engine_font_manager_text( "TITLE SCREEN!!", 10, 2 );
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
@@ -41,11 +42,11 @@ void screen_title_screen_update( unsigned char *screen_type )
 		//TODO testing
 
 		//*screen_type = screen_type_load;
-		//*screen_type = screen_type_riff;
+		*screen_type = screen_type_riff;
 		//*screen_type = screen_type_func;
 		return;
 	}
 
-	//*screen_type = screen_type_title;
-	*screen_type = screen_type_load;
+	*screen_type = screen_type_title;
+	//*screen_type = screen_type_load;
 }
