@@ -1,5 +1,8 @@
 TODO
 25/11/2020
+
+Don't change Eddie between Title and Riff screen!!
+
 Game Over tune at the end
 
 24/11/2020
