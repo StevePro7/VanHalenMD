@@ -227,12 +227,19 @@ void engine_quiz_manager_reset()
 void engine_quiz_manager_set_riffs_play( unsigned char index )
 {
 	struct_quiz_object *qo = &global_quiz_object;
-	qo->quiz_riffs_play = quiz_number[ index ];
+	if( index < MAX_OPTION )
+	{
+		qo->quiz_riff_numbs = index;
+		qo->quiz_riffs_play = quiz_number[ index ];
+	}
 }
 void engine_quiz_manager_set_difficulty( unsigned char index )
 {
 	struct_quiz_object *qo = &global_quiz_object;
-	qo->quiz_difficulty = index;
+	if( difficulty_type_easy == index || difficulty_type_hard == index )
+	{
+		qo->quiz_difficulty = index;
+	}
 }
 
 static void reset_quiz()

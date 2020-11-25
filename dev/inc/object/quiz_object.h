@@ -6,6 +6,7 @@
 // Quiz Manager.
 typedef struct tag_struct_quiz_object
 {
+	unsigned char quiz_riff_numbs;
 	unsigned char quiz_riffs_play;
 	unsigned char quiz_difficulty;
 	unsigned char quiz_riff_index;
