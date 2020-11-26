@@ -10,6 +10,7 @@ typedef struct tag_struct_quiz_object
 	unsigned char quiz_riffs_play;
 	unsigned char quiz_difficulty;
 	unsigned char quiz_riff_index;
+	//unsigned char quiz_riff_plays;	TODO rename quiz_riff_index => quiz_riff_plays and rename quiz_riff_numbs => quiz_riff_index
 	unsigned char quiz_selections;
 	unsigned short	quiz_saved[ MAX_OPTION * MAX_DIFFICULTY ];
 	unsigned short	quiz_total;
