@@ -30,6 +30,7 @@ void screen_riff_screen_load()
 	// TODO delete
 
 	engine_graphics_manager_clear_half();
+	engine_image_manager_draw_eddie( 0, 20, 6 );
 
 	engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
 	//engine_graphics_manager_clear_area();

@@ -24,7 +24,7 @@ void engine_graphics_manager_clear_half()
 
 void engine_graphics_manager_clear_full()
 {
-	VDP_clearTileMapRect( BG_A, GAME_AREA_X, GAME_AREA_X, GAME_AREA_W, GAME_AREA_H );
+	VDP_clearTileMapRect( BG_A, GAME_AREA_X, GAME_AREA_X, GAME_AREA_W, GAME_AREA_Y + GAME_AREA_H );
 }
 
 void engine_graphics_manager_clear_bottom()
