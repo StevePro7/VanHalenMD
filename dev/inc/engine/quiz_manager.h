@@ -25,6 +25,8 @@ unsigned char engine_quiz_manager_increment( unsigned char quiz_selection );
 void engine_quiz_manager_reset();
 void engine_quiz_manager_set_riffs_play( unsigned char index );
 void engine_quiz_manager_set_difficulty( unsigned char index );
-void engine_quiz_manager_set_quiz_saved();
+void engine_quiz_manager_set_quiz_saved_all();
+void engine_quiz_manager_set_quiz_saved( unsigned char index, unsigned short saved );
+void engine_quiz_manager_set_quiz_total( unsigned short total );
 
 #endif//__QUIZ_MANAGER__

@@ -35,7 +35,7 @@ void screen_ready_screen_update( unsigned char *screen_type )
 	if( input || input2 )
 	{
 		//engine_font_manager_text( "begin", 0, 0 );
-		engine_quiz_manager_set_quiz_saved();
+		engine_quiz_manager_set_quiz_saved_all();
 
 		*screen_type = screen_type_load;
 		return;

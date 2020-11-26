@@ -244,7 +244,7 @@ void engine_quiz_manager_set_difficulty( unsigned char index )
 	}
 }
 
-void engine_quiz_manager_set_quiz_saved()
+void engine_quiz_manager_set_quiz_saved_all()
 {
 	struct_quiz_object *qo = &global_quiz_object;
 	unsigned char index = qo->quiz_difficulty * MAX_OPTION + qo->quiz_riff_numbs;
@@ -262,6 +262,17 @@ void engine_quiz_manager_set_quiz_saved()
 
 		qo->quiz_total = 0;
 	}
+}
+
+void engine_quiz_manager_set_quiz_saved( unsigned char index, unsigned short saved )
+{
+	struct_quiz_object *qo = &global_quiz_object;
+	qo->quiz_saved[ index ] = saved;
+}
+void engine_quiz_manager_set_quiz_total( unsigned short total )
+{
+	struct_quiz_object *qo = &global_quiz_object;
+	qo->quiz_total = total;
 }
 
 static void reset_quiz()
