@@ -46,15 +46,18 @@ void screen_title_screen_update( unsigned char *screen_type )
 	{
 		//TODO testing
 		engine_quiz_manager_set_riffs_play( 0 );
-		engine_quiz_manager_set_difficulty( difficulty_type_hard );
+		engine_quiz_manager_set_difficulty( difficulty_type_easy );
 		//TODO testing
 
 		//*screen_type = screen_type_load;
-		*screen_type = screen_type_riff;
+		//*screen_type = screen_type_riff;
+		*screen_type = screen_type_ready;
 		//*screen_type = screen_type_func;
 		return;
 	}
 
-	*screen_type = screen_type_title;
+
+	//*screen_type = screen_type_title;
 	//*screen_type = screen_type_load;
+	*screen_type = screen_type_ready;
 }

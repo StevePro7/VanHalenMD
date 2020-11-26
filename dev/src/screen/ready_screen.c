@@ -5,8 +5,9 @@
 #include "graphics_manager.h"
 #include "input_manager.h"
 //#include "locale_manager.h"
-//#include "quiz_manager.h"
+#include "quiz_manager.h"
 #include "sprite_manager.h"
+#include "storage_manager.h"
 //#include "timer_manager.h"
 
 void screen_ready_screen_load()
@@ -34,9 +35,12 @@ void screen_ready_screen_update( unsigned char *screen_type )
 	if( input || input2 )
 	{
 		//engine_font_manager_text( "begin", 0, 0 );
+		engine_quiz_manager_set_quiz_saved();
+
 		*screen_type = screen_type_load;
 		return;
 	}
+
 
 	engine_sprite_manager_update();
 	*screen_type = screen_type_ready;

@@ -22,20 +22,21 @@ static void random_options(const char default_option );
 void engine_quiz_manager_init()
 {
 	struct_quiz_object *qo = &global_quiz_object;
+	unsigned char idx;
+
 	qo->quiz_riffs_play = quiz_number[ 0 ];
 	qo->quiz_difficulty = difficulty_type_easy;
 	qo->quiz_riff_index = 0;
 	qo->quiz_selections = 0;
 
 	reset_quiz();
-	//for( idx = 0; idx < MAX_RIFFS; idx++ )
-	//{
-	//	quiz_answer[ idx ] = 0;
-	//	for( opt = 0; opt < MAX_OPTION; opt++ )
-	//	{
-	//		quiz_option[ idx ][ opt ] = 0;
-	//	}
-	//}
+
+	// Used in storage.
+	qo->quiz_total = 0;
+	for( idx = 0; idx < MAX_OPTION * MAX_DIFFICULTY; idx++ )
+	{
+		qo->quiz_saved[ idx ] = 0;
+	}
 }
 
 void engine_quiz_manager_load_random()
@@ -60,6 +61,7 @@ void engine_quiz_manager_load_random()
 
 	// Must iterate and randomize all the riffs before randomize options!
 	random_options( INVALID_INDEX );
+	//random_options( 0 );
 
 	// TODO delete
 	//quiz_option[ 0 ][ 0 ] = 0x03;
@@ -239,6 +241,26 @@ void engine_quiz_manager_set_difficulty( unsigned char index )
 	if( difficulty_type_easy == index || difficulty_type_hard == index )
 	{
 		qo->quiz_difficulty = index;
+	}
+}
+
+void engine_quiz_manager_set_quiz_saved()
+{
+	struct_quiz_object *qo = &global_quiz_object;
+	unsigned char index = qo->quiz_difficulty * MAX_OPTION + qo->quiz_riff_numbs;
+
+	qo->quiz_saved[ index ]++;
+	qo->quiz_total++;
+
+	// Attempt to prevent overflow!
+	if( qo->quiz_total >= MAX_INT_VALUE )
+	{
+		for( index = 0; index < MAX_OPTION * MAX_DIFFICULTY; index++ )
+		{
+			qo->quiz_saved[ index ] = 0;
+		}
+
+		qo->quiz_total = 0;
 	}
 }
 
