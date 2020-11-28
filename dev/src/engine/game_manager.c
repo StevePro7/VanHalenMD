@@ -10,12 +10,8 @@ void engine_game_manager_init()
 	go->riff_selections = 0;
 	go->diff_selections = difficulty_type_easy;
 	//go->diff_selections = difficulty_type_hard;
+	go->game_completion = 0;
 }
-
-//TODO override with the hack MGR
-//void engine_game_manager_load()
-//{
-//}
 
 void engine_game_manager_set_riff_select( unsigned char index )
 {
@@ -27,4 +23,10 @@ void engine_game_manager_set_diff_select( unsigned char index )
 {
 	struct_game_object *go = &global_game_object;
 	go->diff_selections = index;
+}
+
+void engine_game_manager_set_game_finish( unsigned char ended )
+{
+	struct_game_object *go = &global_game_object;
+	go->game_completion = ended;
 }

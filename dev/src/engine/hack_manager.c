@@ -1,6 +1,7 @@
 #include "hack_manager.h"
 #include "enum_manager.h"
 #include "global_manager.h"
+#include "game_manager.h"
 #include "quiz_manager.h"
 
 // Global variable.
@@ -56,6 +57,7 @@ void engine_hack_manager_save()
 		if( ho->hack_riffselect >= 1 && ho->hack_riffselect <= MAX_OPTION )
 		{
 			index = ho->hack_riffselect - 1;
+			engine_game_manager_set_riff_select( index );
 			engine_quiz_manager_set_riffs_play( index );
 		}
 	}
@@ -64,10 +66,17 @@ void engine_hack_manager_save()
 	if( ho->hack_diffselect && HACKER_SPACE != ho->hack_diffselect )
 	{
 		index = ( difficulty_type_hard + 1 ) == ho->hack_diffselect ? difficulty_type_hard : difficulty_type_easy;
+		engine_game_manager_set_diff_select( index );
 		engine_quiz_manager_set_difficulty( index );
 	}
 
 
 	// TODO delete
 	//ho->hack_delayspeed = 1;
+	//ho->hack_invincible = 1;
+
+	//index = difficulty_type_hard;
+	//engine_game_manager_set_diff_select( index );
+	//engine_quiz_manager_set_difficulty( index );
+	// TODO delete
 }

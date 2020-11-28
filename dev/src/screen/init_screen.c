@@ -1,28 +1,38 @@
 #include "init_screen.h"
+#include "eddie_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "game_manager.h"
 #include "graphics_manager.h"
+#include "hack_manager.h"
 #include "quiz_manager.h"
+#include "score_manager.h"
+#include "screen_manager.h"
 #include "sprite_manager.h"
+#include "storage_manager.h"
 
 void screen_init_screen_load()
 {
-//	//struct_quiz_object *qo = &global_quiz_object;
-	engine_font_manager_text( "INIT SCREEN", 10, 2 );
-//	engine_graphics_manager_clear_area();
-//
-//	engine_quiz_manager_riff();
-//
-//	// TODO add hack manager to check if cheat enabled
-//	//engine_quiz_manager_cheat();
-//	// TODO add hack manager to check if cheat enabled
-//
-//	//engine_cursor_manager_load_large( MAX_OPTION, qo->quiz_selections, OPTION_X, quiz_yPos, quiz_years, quiz_line1, quiz_line2, quiz_line3, quiz_line4 );
-//	////engine_cursor_manager_load_large( MAX_OPTION, 1, OPTION_X, quiz_yPos, quiz_years, quiz_line1, quiz_line2, quiz_line3, quiz_line4 );
-//	//engine_cursor_manager_draw();
+	// Initialize + bootstrap:
+	engine_eddie_manager_init();
+	engine_game_manager_init();
+	engine_quiz_manager_init();
+	engine_score_manager_init();
+	engine_sprite_manager_init();
+
+	engine_hack_manager_init();
+	engine_hack_manager_load();
+	engine_storage_manager_read();
+	engine_hack_manager_save();
+
+	engine_graphics_manager_clear_full();
+	engine_font_manager_text( "INIT SCREEN  ", 10, 2 );
 }
 
 void screen_init_screen_update( unsigned char *screen_type )
 {
+	// From here goto : begin / intro / title / riff / load screen...
 	*screen_type = screen_type_init;
+	//*screen_type = screen_type_load;
+	//*screen_type = screen_type_title;
 }
