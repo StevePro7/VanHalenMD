@@ -6,7 +6,8 @@
 //	//unsigned long Magic;
 //	//unsigned long save_high_score;
 //
-//	//unsigned char save_trees_type;
+//	unsigned char save_riff_index;
+//	unsigned char save_difficulty;
 //	//unsigned char save_exits_type;
 //	//unsigned char save_difficulty;
 //	//unsigned char save_game_speed;
