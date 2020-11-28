@@ -1,6 +1,7 @@
 #include "score_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "function_manager.h"
 #include "global_manager.h"
 #include "locale_manager.h"
 
@@ -13,7 +14,7 @@
 // Global variables.
 struct_score_object global_socre_object;
 
-static unsigned short calculate_percentage( unsigned short numerator, unsigned short denominator );
+//static unsigned short calculate_percentage( unsigned short numerator, unsigned short denominator );
 
 void engine_score_manager_init()
 {
@@ -70,7 +71,8 @@ void engine_score_manager_draw_percent( unsigned char index )
 	struct_score_object *so = &global_socre_object;
 	unsigned short correct = so->saved_correct[ index ];
 	unsigned short answerd = so->saved_answerd[ index ];
-	unsigned short percent = calculate_percentage( correct, answerd );
+	//unsigned short percent = calculate_percentage( correct, answerd );
+	unsigned short percent = engine_function_manager_calculate_percentage( correct, answerd );
 	engine_font_manager_data( percent, 32, BANNER_Y );
 }
 
@@ -79,7 +81,8 @@ void engine_score_manager_draw_summary( unsigned char played )
 	struct_score_object *so = &global_socre_object;
 	unsigned char correct = so->score_correct;
 	unsigned char answerd = so->score_answerd;
-	unsigned short percent = calculate_percentage( correct, answerd );
+	//unsigned short percent = calculate_percentage( correct, answerd );
+	unsigned short percent = engine_function_manager_calculate_percentage( correct, answerd );
 
 	// TODO replace hard coded co-ordinates.
 	engine_font_manager_zero( played, 17, 11 );
@@ -118,13 +121,13 @@ void engine_score_manager_set_score_answerd( unsigned char index, unsigned short
 	so->saved_answerd[ index ] = saved;
 }
 
-static unsigned short calculate_percentage( unsigned short numerator, unsigned short denominator )
-{
-	unsigned short percent = 0;
-	if( 0 != denominator )
-	{
-		percent = numerator * 100 / denominator;
-	}
-
-	return percent;
-}
+//static unsigned short calculate_percentage( unsigned short numerator, unsigned short denominator )
+//{
+//	unsigned short percent = 0;
+//	if( 0 != denominator )
+//	{
+//		percent = numerator * 100 / denominator;
+//	}
+//
+//	return percent;
+//}

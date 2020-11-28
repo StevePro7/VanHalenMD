@@ -32,6 +32,7 @@ void engine_quiz_manager_init()
 	reset_quiz();
 
 	// Used in storage.
+	qo->quiz_ended = 0;
 	qo->quiz_total = 0;
 	for( idx = 0; idx < MAX_OPTION * MAX_DIFFICULTY; idx++ )
 	{
@@ -250,6 +251,9 @@ void engine_quiz_manager_set_quiz_saved_all()
 	unsigned char index = qo->quiz_difficulty * MAX_OPTION + qo->quiz_riff_numbs;
 
 	qo->quiz_saved[ index ]++;
+	// TODO add logic for game_completion!!
+	qo->quiz_ended++;
+	// TODO add logic for game_completion!!
 	qo->quiz_total++;
 
 	// Attempt to prevent overflow!
@@ -260,6 +264,7 @@ void engine_quiz_manager_set_quiz_saved_all()
 			qo->quiz_saved[ index ] = 0;
 		}
 
+		qo->quiz_ended = 0;
 		qo->quiz_total = 0;
 	}
 }
