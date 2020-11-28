@@ -1,5 +1,4 @@
 #include "init_screen.h"
-//#include "cursor_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "graphics_manager.h"
@@ -9,7 +8,7 @@
 void screen_init_screen_load()
 {
 //	//struct_quiz_object *qo = &global_quiz_object;
-//	engine_font_manager_text( "INIT SCREEN", 10, 2 );
+	engine_font_manager_text( "INIT SCREEN", 10, 2 );
 //	engine_graphics_manager_clear_area();
 //
 //	engine_quiz_manager_riff();
