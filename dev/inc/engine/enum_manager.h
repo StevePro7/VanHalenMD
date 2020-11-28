@@ -5,13 +5,13 @@ typedef enum tag_enum_screen_type
 {
 	screen_type_none = 0,
 	screen_type_splash = 1,
-	screen_type_intro = 2,
+	screen_type_init = 2,
 	screen_type_begin = 3,
-	screen_type_title = 4,
-	screen_type_riff = 5,
-	screen_type_diff = 6,
-	screen_type_ready = 7,
-	screen_type_init = 8,
+	screen_type_intro = 4,
+	screen_type_title = 5,
+	screen_type_riff = 6,
+	screen_type_diff = 7,
+	screen_type_ready = 8,
 	screen_type_load = 9,
 	screen_type_part = 10,
 	screen_type_play = 11,
@@ -76,5 +76,24 @@ typedef enum tag_enum_effects_type
 	effects_type_wrong = 3,
 
 } enum_effects_type;
+
+/*
+typedef enum tag_enum_album_type
+{
+album_1978 = 0,		// Van Halen
+album_1979 = 1,		// Van Halen II
+album_1980 = 2,		// Women and Children First
+album_1981 = 3,		// Fair Warning
+album_1982 = 4,		// Diver Down
+album_1984 = 5,		// 1984
+album_1986 = 6,		// 5150
+album_1988 = 7,		// OU812
+album_1991 = 8,		// For Unlawful Carnal Knowledge
+album_1995 = 9,		// Balance
+album_1998 = 10,	// Van Halen III
+album_2012 = 11,	// A Different Kind of Truth
+
+} enum_album_type;
+*/
 
 #endif//__ENUM_MANAGER__

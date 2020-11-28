@@ -269,11 +269,17 @@ void engine_quiz_manager_set_quiz_saved( unsigned char index, unsigned short sav
 	struct_quiz_object *qo = &global_quiz_object;
 	qo->quiz_saved[ index ] = saved;
 }
+void engine_quiz_manager_set_quiz_ended( unsigned short ended )
+{
+	struct_quiz_object *qo = &global_quiz_object;
+	qo->quiz_ended = ended;
+}
 void engine_quiz_manager_set_quiz_total( unsigned short total )
 {
 	struct_quiz_object *qo = &global_quiz_object;
 	qo->quiz_total = total;
 }
+
 
 static void reset_quiz()
 {

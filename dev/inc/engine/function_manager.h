@@ -7,4 +7,6 @@ void engine_function_manager_convertZtoXY( unsigned char divide, unsigned char z
 void engine_function_manager_convertByteToNibbles( unsigned char byte, unsigned char *upper_nibble, unsigned char *lower_nibble );
 void engine_function_manager_convertNibblesToByte( unsigned char upper_nibble, unsigned char lower_nibble, unsigned char *byte );
 
+unsigned short engine_function_manager_calculate_percentage( unsigned short numerator, unsigned short denominator );
+
 #endif//__FUNCTION_MANAGER_H__

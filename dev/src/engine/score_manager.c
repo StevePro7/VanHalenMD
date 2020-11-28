@@ -89,6 +89,35 @@ void engine_score_manager_draw_summary( unsigned char played )
 	engine_font_manager_text( LOCALE_PERCENT_SYM, 19, 23 );
 }
 
+void engine_score_manager_set_score_percent( unsigned char index, unsigned char input )
+{
+	struct_score_object *so = &global_socre_object;
+	so->saved_correct[ index ] += input;
+	so->saved_answerd[ index ]++;
+
+	// Attempt to prevent overflow!
+	if( so->saved_answerd[ index ] >= MAX_INT_VALUE )
+	{
+		for( index = 0; index < MAX_RIFFS; index++ )
+		{
+			so->saved_correct[ index ] = 0;
+			so->saved_answerd[ index ] = 0;
+		}
+	}
+}
+
+void engine_score_manager_set_score_correct( unsigned char index, unsigned short saved )
+{
+	struct_score_object *so = &global_socre_object;
+	so->saved_correct[ index ] = saved;
+}
+
+void engine_score_manager_set_score_answerd( unsigned char index, unsigned short saved )
+{
+	struct_score_object *so = &global_socre_object;
+	so->saved_answerd[ index ] = saved;
+}
+
 static unsigned short calculate_percentage( unsigned short numerator, unsigned short denominator )
 {
 	unsigned short percent = 0;

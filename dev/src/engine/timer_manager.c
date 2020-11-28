@@ -5,6 +5,7 @@
 // Global variables.
 struct_delay_object global_delay_object;
 //struct_frame_object global_frame_object;
+struct_reset_object global_reset_object;
 
 // Delay Manager.
 void engine_delay_manager_load( unsigned int delay )
@@ -35,6 +36,7 @@ unsigned char engine_delay_manager_update()
 	return test;
 }
 
+
 // Frame Manager.
 //void engine_frame_manager_load( unsigned int timer )
 //{
@@ -51,3 +53,31 @@ unsigned char engine_delay_manager_update()
 //		fo->frame_count = 0;
 //	}
 //}
+
+
+// Reset Manager.
+void engine_reset_manager_load( unsigned char delay )
+{
+	struct_reset_object *ro = &global_reset_object;
+	ro->reset_value = delay;
+	engine_reset_manager_reset();
+}
+unsigned char engine_reset_manager_update()
+{
+	struct_reset_object *ro = &global_reset_object;
+	unsigned char test;
+
+	ro->reset_timer++;
+	test = ro->reset_timer >= ro->reset_value;
+	if( test )
+	{
+		ro->reset_timer = 0;
+	}
+
+	return test;
+}
+void engine_reset_manager_reset()
+{
+	struct_reset_object *ro = &global_reset_object;
+	ro->reset_timer = 0;
+}

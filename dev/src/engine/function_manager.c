@@ -21,3 +21,14 @@ void engine_function_manager_convertNibblesToByte( unsigned char upper_nibble, u
 {
 	*byte = lower_nibble | ( upper_nibble << 4 );
 }
+
+unsigned short engine_function_manager_calculate_percentage( unsigned short numerator, unsigned short denominator )
+{
+	unsigned short percent = 0;
+	if( 0 != denominator )
+	{
+		percent = numerator * 100 / denominator;
+	}
+
+	return percent;
+}

@@ -17,4 +17,12 @@ typedef struct tag_struct_delay_object
 //
 //} struct_frame_object;
 
+// Reset Object.
+typedef struct tag_struct_reset_object
+{
+	unsigned char reset_value;
+	unsigned char reset_timer;
+
+} struct_reset_object;
+
 #endif//_TIMER_OBJECT_H_
