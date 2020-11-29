@@ -4,7 +4,7 @@
 #include "graphics_manager.h"
 //#include "input_manager.h"
 //#include "quiz_manager.h"
-//#include "storage_manager.h"
+#include "storage_manager.h"
 //
 //static void display();
 //
@@ -18,6 +18,10 @@ void screen_test_screen_load()
 //
 	engine_graphics_manager_clear_full();
 	engine_font_manager_text( "TEST SCREEN", 10, 2 );
+
+	engine_storage_manager_write();
+
+	engine_font_manager_text( "Saved data!", 10, 4 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
