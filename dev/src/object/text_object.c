@@ -2,7 +2,7 @@
 
 // Global variable.
 // TODO set maximum once established
-const struct_text_object global_text_object[ 26 ] =
+const struct_text_object global_text_object[ 30 ] =
 {
 	// Riff screen.
 	{ 1, 7, "Pick how many riffs" },
@@ -12,13 +12,21 @@ const struct_text_object global_text_object[ 26 ] =
 	{ 1, 7, "Select option mixup" },
 	{ 1, 8, "foreach riff played" },
 
+	// Ready screen.
+	{ 1, 21, "Button [ A ]" },
+	{ 1, 22, "Button [ B ]" },
+	{ 1, 23, "Button [ C ]" },
+	{ 14, 21, "Select" },
+	{ 14, 22, "Census" },
+	{ 14, 23, "Replay" },
+
 	// Summary screen.
 	{ 2, 10, "Riffs Total" },
 	{ 2, 14, "Riffs Solved" },
 	{ 2, 18, "Riffs Correct" },
 	{ 2, 22, "Riffs Percent" },
-	{ 1, 26, "Button [ A ]" },
-	{ 1, 27, "Button [ B ]" },
+	//{ 1, 26, "Button [ A ]" },
+	//{ 1, 27, "Button [ B ]" },
 	{ 16, 26, "Quit" },
 	{ 16, 27, "Back" },
 	{ 1, 26, "Thanks for playing!" },
