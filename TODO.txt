@@ -1,6 +1,10 @@
 TODO
 29/11/2020
 
+Title screen
+- build version
+- cheat impl
+
 Ready screen
 yellow text for the options selected
 

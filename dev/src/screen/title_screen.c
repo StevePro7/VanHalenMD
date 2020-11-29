@@ -18,12 +18,15 @@ void screen_title_screen_load()
 
 	if( ho->hack_navigation )
 	{
-		engine_graphics_manager_clear_full();
-		engine_image_manager_draw_banner();
-		engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
-		eddie_image = engine_eddie_manager_next();
-		engine_image_manager_draw_eddie( eddie_image, 20, 6 );
+		//
 	}
+
+	engine_image_manager_draw_banner();
+	engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
+	engine_graphics_manager_clear_area();
+	eddie_image = engine_eddie_manager_next();
+	engine_image_manager_draw_eddie( eddie_image, 20, 6 );
+
 
 	//engine_font_manager_text( "TITLE SCREEN...!", 4, 10 );
 	engine_font_manager_text( "123456789A123456789A", 0, 7 );

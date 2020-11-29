@@ -16,7 +16,8 @@ static void print_text( unsigned char index );
 
 void screen_begin_screen_load()
 {
-	engine_graphics_manager_clear_area();
+	engine_graphics_manager_clear_full();
+	//engine_graphics_manager_clear_area();
 
 	// TODO banner + eddie image!
 	engine_image_manager_draw_banner();
@@ -37,7 +38,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	unsigned char delay;
 	unsigned char input;
 	unsigned char input2;
-	unsigned char input3;		// TODO delete
+	//unsigned char input3;		// TODO delete
 	delay = engine_delay_manager_update();
 	if( delay )
 	{
@@ -45,7 +46,8 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		eddie++;
 		if( eddie > 2 )
 		{
-			*screen_type = screen_type_intro;
+			//*screen_type = screen_type_intro;
+			*screen_type = screen_type_title;
 			return;
 		}
 
@@ -54,22 +56,23 @@ void screen_begin_screen_update( unsigned char *screen_type )
 
 
 	// TODO delete
-	input = engine_input_manager_hold_buttonB();
-	input2 = engine_input_manager_hold_left();		// TODO delete
-	if( input || input2 )
-	{
-		*screen_type = screen_type_func;
-		return;
-	}
+	//input = engine_input_manager_hold_buttonB();
+	//input2 = engine_input_manager_hold_left();		// TODO delete
+	//if( input || input2 )
+	//{
+	//	*screen_type = screen_type_func;
+	//	return;
+	//}
 	// TODO delete
 
 
 	input = engine_input_manager_hold_buttonA();
 	input2 = engine_input_manager_hold_buttonStart();
-	input3 = engine_input_manager_hold_right();		// TODO delete
-	if( input || input2 || input3 )
+	//input3 = engine_input_manager_hold_right();		// TODO delete
+	if( input || input2 ) //|| input3 )
 	{
-		*screen_type = screen_type_intro;
+		//*screen_type = screen_type_intro;
+		*screen_type = screen_type_title;
 		return;
 	}
 
@@ -92,7 +95,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 
 static void print_text( unsigned char index )
 {
-	const unsigned char start = 14 + index * 4;
+	const unsigned char start = 18 + index * 4;
 	const unsigned char lines = 4;
 
 	engine_graphics_manager_clear_bottom();
