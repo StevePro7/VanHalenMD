@@ -24,6 +24,7 @@ void engine_quiz_manager_init()
 	struct_quiz_object *qo = &global_quiz_object;
 	unsigned char idx;
 
+	qo->quiz_riff_numbs = 0;
 	qo->quiz_riffs_play = quiz_number[ 0 ];
 	qo->quiz_difficulty = difficulty_type_easy;
 	qo->quiz_riff_index = 0;
