@@ -11,6 +11,7 @@
 *.ihx
 *.lk
 *.noi
+*.bak
 main.rel
 
 # Prerequisites

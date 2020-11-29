@@ -40,7 +40,7 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	load_method[ screen_type_intro ] = screen_intro_screen_load;
 	//load_method[ screen_type_title ] = screen_title_screen_load;
 	load_method[ screen_type_riff ] = screen_riff_screen_load;
-	//load_method[ screen_type_diff ] = screen_diff_screen_load;
+	load_method[ screen_type_diff ] = screen_diff_screen_load;
 	//load_method[ screen_type_ready ] = screen_ready_screen_load;
 	load_method[ screen_type_load ] = screen_load_screen_load;
 	//load_method[ screen_type_part ] = screen_part_screen_load;
@@ -59,7 +59,7 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	update_method[ screen_type_intro ] = screen_intro_screen_update;
 	//update_method[ screen_type_title ] = screen_title_screen_update;
 	update_method[ screen_type_riff ] = screen_riff_screen_update;
-	//update_method[ screen_type_diff ] = screen_diff_screen_update;
+	update_method[ screen_type_diff ] = screen_diff_screen_update;
 	//update_method[ screen_type_ready ] = screen_ready_screen_update;
 	update_method[ screen_type_load ] = screen_load_screen_update;
 	//update_method[ screen_type_part ] = screen_part_screen_update;
