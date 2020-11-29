@@ -16,6 +16,7 @@ struct_hack_object global_hack_object;
 void engine_hack_manager_init()
 {
 	struct_hack_object *ho = &global_hack_object;
+	ho->hack_navigation = 0;
 	ho->hack_delayspeed = 0;
 	ho->hack_invincible = 0;
 	ho->hack_riffselect = 0;
@@ -72,8 +73,13 @@ void engine_hack_manager_save()
 
 
 	// TODO delete
+	ho->hack_navigation = 1;
 	//ho->hack_delayspeed = 1;
 	//ho->hack_invincible = 1;
+
+	//index = 3;
+	//engine_game_manager_set_riff_select( index );
+	//engine_quiz_manager_set_riffs_play( index );
 
 	//index = difficulty_type_hard;
 	//engine_game_manager_set_diff_select( index );

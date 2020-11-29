@@ -1,9 +1,11 @@
 #include "riff_screen.h"
 #include "audio_manager.h"
 #include "cursor_manager.h"
+#include "eddie_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "game_manager.h"
+#include "hack_manager.h"
 #include "global_manager.h"
 #include "graphics_manager.h"
 #include "image_manager.h"
@@ -22,11 +24,17 @@ static unsigned char stage;
 void screen_riff_screen_load()
 {
 	struct_game_object *go = &global_game_object;
+	struct_hack_object *ho = &global_hack_object;
+	unsigned char eddie_image;
 	//engine_font_manager_text( "RIFF SCREEN!!", 10, 2 );
 
 	// TODO delete
-	//engine_graphics_manager_clear_plane();
-	engine_image_manager_draw_banner();
+	if( ho->hack_navigation )
+	{
+		engine_image_manager_draw_banner();
+		eddie_image = engine_eddie_manager_next();
+		engine_image_manager_draw_eddie( eddie_image, 20, 6 );
+	}
 	// TODO delete
 
 	engine_graphics_manager_clear_half();
