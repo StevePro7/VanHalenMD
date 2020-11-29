@@ -2,6 +2,7 @@
 #include "cursor_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "game_manager.h"
 #include "graphics_manager.h"
 #include "input_manager.h"
 #include "locale_manager.h"
@@ -32,6 +33,8 @@ void screen_score_screen_update( unsigned char *screen_type )
 	input2 = engine_input_manager_hold_right();		// TODO delete
 	if( input || input2 )
 	{
+		// Game is not completed!
+		engine_game_manager_set_game_finish( completion_type_nop );
 		*screen_type = screen_type_over;
 		return;
 	}

@@ -39,6 +39,13 @@ typedef enum tag_enum_difficulty_type
 
 } enum_difficulty_type;
 
+typedef enum tag_enum_completion_type
+{
+	completion_type_nop = 0,
+	completion_type_yes = 1,
+
+} enum_completion_type;
+
 typedef enum tag_enum_cursor_type
 {
 	cursor_type_small = 0,
@@ -53,12 +60,12 @@ typedef enum tag_enum_movement_type
 
 } enum_movement_type;
 
-typedef enum tag_enum_horizontal_type
-{
-	horizontal_type_left = 0,
-	horizontal_type_right = 1,
-
-} enum_horizontal_type;
+//typedef enum tag_enum_horizontal_type
+//{
+//	horizontal_type_left = 0,
+//	horizontal_type_right = 1,
+//
+//} enum_horizontal_type;
 
 typedef enum tag_enum_stage_type
 {

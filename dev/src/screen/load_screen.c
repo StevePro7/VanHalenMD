@@ -2,6 +2,7 @@
 #include "banner_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "game_manager.h"
 #include "locale_manager.h"
 #include "quiz_manager.h"
 #include "score_manager.h"
@@ -31,6 +32,9 @@ void screen_load_screen_load()
 	//engine_quiz_manager_load_normal();
 	//engine_quiz_manager_load_mixing();
 	engine_quiz_manager_load_random();
+
+	// Assume the game will be completed.
+	engine_game_manager_set_game_finish( completion_type_yes );
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
