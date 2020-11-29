@@ -92,7 +92,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 		//TODO testing
 
 		//*screen_type = screen_type_load;
-		//*screen_type = screen_type_riff;
+		*screen_type = screen_type_riff;
 		//*screen_type = screen_type_ready;
 		//*screen_type = screen_type_func;
 		return;

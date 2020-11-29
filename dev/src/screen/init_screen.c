@@ -33,8 +33,8 @@ void screen_init_screen_update( unsigned char *screen_type )
 {
 	// From here goto : begin / intro / title / riff / load screen...
 	//*screen_type = screen_type_init;
-	*screen_type = screen_type_title;
-	//*screen_type = screen_type_begin;
+	*screen_type = screen_type_begin;
+	//*screen_type = screen_type_title;
 	//*screen_type = screen_type_riff;
 	//*screen_type = screen_type_ready;
 	//*screen_type = screen_type_load;
