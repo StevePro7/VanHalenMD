@@ -47,11 +47,18 @@ const struct_text_object global_text_object[ 35 ] =
 	{ 2, 27, "artists." },
 
 	// Title screen.
-	{ 0, 11, "There's only one way" },
-	{ 0, 12, "to rock! Vintage Van" },
-	{ 0, 13, "Halen celebrates 40x" },
-	{ 0, 14, "awesome riffs played" },
-	{ 0, 15, "by Eddie Van Halen." },
+	{ 1, 11, "Theres only one way" },
+	{ 1, 12, "to rock Vintage Van" },
+	{ 1, 13, "Halen celebrates 40" },
+	{ 1, 14, "awesome riffs shred" },
+	{ 1, 15, "by Eddie Van Halen." },
+
+	// OLD Title screen - too wide
+	//{ 0, 11, "There's only one way" },
+	//{ 0, 12, "to rock! Vintage Van" },
+	//{ 0, 13, "Halen celebrates 40x" },
+	//{ 0, 14, "awesome riffs played" },
+	//{ 0, 15, "by Eddie Van Halen." },
 };
 
 // Riff Screen.
