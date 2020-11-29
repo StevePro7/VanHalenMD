@@ -26,14 +26,15 @@ void screen_init_screen_load()
 	engine_hack_manager_save();
 
 	engine_graphics_manager_clear_full();
-	engine_font_manager_text( "INIT SCREEN  ", 10, 2 );
+	//engine_font_manager_text( "INIT SCREEN  ", 10, 2 );
 }
 
 void screen_init_screen_update( unsigned char *screen_type )
 {
 	// From here goto : begin / intro / title / riff / load screen...
 	//*screen_type = screen_type_init;
-	//*screen_type = screen_type_title;
-	*screen_type = screen_type_riff;
+	*screen_type = screen_type_title;
+	//*screen_type = screen_type_riff;
 	//*screen_type = screen_type_ready;
+	//*screen_type = screen_type_load;
 }
