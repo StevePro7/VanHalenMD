@@ -17,6 +17,7 @@
 void screen_ready_screen_load()
 {
 	struct_hack_object *ho = &global_hack_object;
+	struct_quiz_object *qo = &global_quiz_object;
 	unsigned char eddie_image;
 	//engine_font_manager_text( "RIFF SCREEN!!", 10, 2 );
 
@@ -34,16 +35,16 @@ void screen_ready_screen_load()
 
 	engine_text_manager_draw_lines( 0, 2 );
 	engine_text_manager_draw_lines_extra( 2, 2, 7 );
-	engine_text_manager_draw_lines_extra( 8, 2, -5 );
+	//engine_text_manager_draw_lines_extra( 8, 2, -5 );
 
 	engine_font_manager_text( LOCALE_BULLET_POINT, 2, 10 );
 	engine_font_manager_text( LOCALE_BULLET_POINT, 2, 17 );
 
-	engine_font_manager_text( riff_line1[ 0 ], 4, 10 );
-	engine_font_manager_text( riff_line2[ 0 ], 4, 11 );
+	engine_font_manager_text( riff_line1[ qo->quiz_riff_numbs ], 4, 10 );
+	engine_font_manager_text( riff_line2[ qo->quiz_riff_numbs ], 4, 11 );
 
-	engine_font_manager_text( diff_line1[ 0 ], 4, 17 );
-	engine_font_manager_text( diff_line2[ 0 ], 4, 18 );
+	engine_font_manager_text( diff_line1[ qo->quiz_difficulty ], 4, 17 );
+	engine_font_manager_text( diff_line2[ qo->quiz_difficulty ], 4, 18 );
 
 	//TODO delete
 	//engine_font_manager_text( "GET READY...", 4, 20 );
