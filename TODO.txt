@@ -1,8 +1,25 @@
 TODO
 29/11/2020
 
+Splash		DONE
+Intro		TODO		Vintage VH [pic] "and the cradle will rock"
+Title		TODO		Cheat mode + sfx when select i.e. pause b4 riff
+				Thanks text [short]
+Riff 		TODO		B butto goes back to Title
+Ready		TODO	 	Yellow for riff + diff, delay + "GetReady" pause
+Load		TODO		remove SaveAll
+Play		TODO		test riff 0 "bug"...?
+Score		TODO		if goto Over then ended = 1
+Over		TODO		Quiz SaveAll, Score saveAll + SRAM write
+				Game Over music delay and goto Title
+Stats		TODO		Hidden stats screen for riff + diff stats
+				integrate from Title screen
+
+set SRAM for "last eddie"...?
+
+
 Title screen
-- build version
+- build version	DONE
 - cheat impl
 
 Ready screen
