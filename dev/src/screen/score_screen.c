@@ -21,7 +21,7 @@ void screen_score_screen_load()
 
 	engine_font_manager_text( LOCALE_SUMMARY_SCORE, 1, 7 );
 	engine_text_manager_draw_lines( 10, 6 );
-	engine_text_manager_draw_lines_extra( 4, 2 );
+	engine_text_manager_draw_lines_extra( 4, 2, 5 );
 	engine_score_manager_draw_summary( qo->quiz_riffs_play );
 }
 

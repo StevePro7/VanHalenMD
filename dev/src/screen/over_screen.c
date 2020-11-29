@@ -20,8 +20,10 @@ void screen_over_screen_load()
 	engine_graphics_manager_clear_half();
 
 	engine_font_manager_text( LOCALE_SUMMARY_OVER, 1, 7 );
-	engine_text_manager_draw_lines( 4, 4 );
-	engine_text_manager_draw_lines( 12, 2 );
+	engine_text_manager_draw_lines( 10, 4 );
+	engine_text_manager_draw_lines( 16, 2 );
+	//engine_text_manager_draw_lines( 4, 4 );
+	//engine_text_manager_draw_lines( 12, 2 );
 	engine_score_manager_draw_summary( qo->quiz_riffs_play );
 
 	engine_audio_manager_stop();
