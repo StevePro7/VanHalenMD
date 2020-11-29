@@ -1,9 +1,16 @@
 TODO
-25/11/2020
+29/11/2020
 
+Ready screen
+yellow text for the options selected
+
+Get Ready text to flash
+
+25/11/2020
 Don't change Eddie between Title and Riff screen!!
 
 Game Over tune at the end
+
 
 24/11/2020
 TESTER COMPLETE

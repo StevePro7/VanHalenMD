@@ -16,19 +16,19 @@
 
 void screen_ready_screen_load()
 {
-	struct_hack_object *ho = &global_hack_object;
+	//struct_hack_object *ho = &global_hack_object;
 	struct_quiz_object *qo = &global_quiz_object;
-	unsigned char eddie_image;
+	//unsigned char eddie_image;
 	//engine_font_manager_text( "RIFF SCREEN!!", 10, 2 );
 
 	// TODO delete
-	if( ho->hack_navigation )
-	{
-		engine_image_manager_draw_banner();
-		engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
-		eddie_image = engine_eddie_manager_next();
-		engine_image_manager_draw_eddie( eddie_image, 20, 6 );
-	}
+	//if( ho->hack_navigation )
+	//{
+	//	engine_image_manager_draw_banner();
+	//	engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
+	//	eddie_image = engine_eddie_manager_next();
+	//	engine_image_manager_draw_eddie( eddie_image, 20, 6 );
+	//}
 	// TODO delete
 
 	engine_graphics_manager_clear_half();
