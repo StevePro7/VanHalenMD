@@ -35,6 +35,7 @@ void screen_ready_screen_load()
 
 	engine_text_manager_draw_lines( 0, 2 );
 	engine_text_manager_draw_lines_extra( 2, 2, 7 );
+	engine_text_manager_draw_lines( 4, 6 );
 	//engine_text_manager_draw_lines_extra( 8, 2, -5 );
 
 	engine_font_manager_text( LOCALE_BULLET_POINT, 2, 10 );
