@@ -6,6 +6,7 @@ typedef struct tag_struct_game_object
 {
 	unsigned char riff_selections;
 	unsigned char diff_selections;
+	unsigned char game_localcheat;
 	unsigned char game_completion;
 
 } struct_game_object;

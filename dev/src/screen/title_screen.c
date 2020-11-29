@@ -2,18 +2,27 @@
 #include "eddie_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "game_manager.h"
 #include "graphics_manager.h"
 #include "hack_manager.h"
 #include "image_manager.h"
 #include "input_manager.h"
 #include "locale_manager.h"
 #include "quiz_manager.h"
+#include "random_manager.h"
 #include "text_manager.h"
 #include "timer_manager.h"
 
+#define TITLE_FLASH_DELAY	50
+#define LOCAL_CHEAT_TOTAL	5
+
+static unsigned char event_stage;
+static unsigned char flash_count;
+static unsigned char cheat_count;
+
 void screen_title_screen_load()
 {
-	//struct_hack_object *ho = &global_hack_object;
+	struct_hack_object *ho = &global_hack_object;
 	unsigned char eddie_image;
 
 	//if( ho->hack_navigation )
@@ -28,18 +37,51 @@ void screen_title_screen_load()
 
 
 	//engine_font_manager_text( "TITLE SCREEN...!", 4, 10 );
-	//engine_font_manager_text( "123456789A123456789A", 0, 6 );
+	//engine_font_manager_text( "123456789A123456789A", 0, 26 );
 
 	engine_font_manager_text( LOCALE_TITLE_VINTAGE,7, 7 );
 	engine_font_manager_text( LOCALE_TITLE_VANHALEN, 6, 8 );
 
 	engine_text_manager_draw_lines( 30, 5 );
+
+	engine_game_manager_set_local_cheat( completion_type_nop );
+	if( ho->hack_invincible )
+	{
+		engine_game_manager_set_local_cheat( completion_type_yes );
+	}
+
+	engine_font_manager_text( LOCALE_TITLE_VANHALEN, 5, 24 );
+	engine_delay_manager_load( TITLE_FLASH_DELAY );
+	event_stage = event_stage_start;
+	flash_count = 0;
+	cheat_count = 0;
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
 {
+	struct_hack_object *ho = &global_hack_object;
+	unsigned char delay;
 	unsigned char input;
 	unsigned char input2;
+
+	delay = engine_delay_manager_update();
+	if( delay )
+	{
+		if( !ho->hack_delayspeed )
+		{
+			flash_count = 1 - flash_count;
+		}
+
+		if( flash_count )
+		{
+			engine_font_manager_text( LOCALE_BLANK_SIZE18, 2, 24 );
+		}
+		else
+		{
+			engine_font_manager_text( LOCALE_TITLE_START, 5, 24 );
+		}
+	}
+
 	input = engine_input_manager_hold_buttonA();
 	input2 = engine_input_manager_hold_buttonStart();
 	if( input || input2 )
@@ -56,7 +98,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 		return;
 	}
 
-
+	engine_random_manager_rand();
 	*screen_type = screen_type_title;
 	//*screen_type = screen_type_riff;
 	//*screen_type = screen_type_load;
