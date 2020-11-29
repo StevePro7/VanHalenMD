@@ -13,13 +13,12 @@
 
 void screen_title_screen_load()
 {
-	struct_hack_object *ho = &global_hack_object;
+	//struct_hack_object *ho = &global_hack_object;
 	unsigned char eddie_image;
 
-	if( ho->hack_navigation )
-	{
-		//
-	}
+	//if( ho->hack_navigation )
+	//{
+	//}
 
 	engine_image_manager_draw_banner();
 	engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
@@ -29,7 +28,10 @@ void screen_title_screen_load()
 
 
 	//engine_font_manager_text( "TITLE SCREEN...!", 4, 10 );
-	engine_font_manager_text( "123456789A123456789A", 0, 7 );
+	engine_font_manager_text( "123456789A123456789A", 0, 6 );
+
+	engine_font_manager_text( LOCALE_TITLE_VINTAGE,7, 7 );
+	engine_font_manager_text( LOCALE_TITLE_VANHALEN, 6, 8 );
 
 	engine_text_manager_draw_lines( 30, 5 );
 }
@@ -56,6 +58,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 
 
 	*screen_type = screen_type_title;
+	//*screen_type = screen_type_riff;
 	//*screen_type = screen_type_load;
 	//*screen_type = screen_type_ready;
 }
