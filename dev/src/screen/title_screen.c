@@ -28,7 +28,7 @@ void screen_title_screen_load()
 
 
 	//engine_font_manager_text( "TITLE SCREEN...!", 4, 10 );
-	engine_font_manager_text( "123456789A123456789A", 0, 6 );
+	//engine_font_manager_text( "123456789A123456789A", 0, 6 );
 
 	engine_font_manager_text( LOCALE_TITLE_VINTAGE,7, 7 );
 	engine_font_manager_text( LOCALE_TITLE_VANHALEN, 6, 8 );

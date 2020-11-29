@@ -51,7 +51,7 @@ const struct_text_object global_text_object[ 35 ] =
 	{ 0, 12, "to rock! Vintage Van" },
 	{ 0, 13, "Halen celebrates 40x" },
 	{ 0, 14, "awesome riffs played" },
-	{ 0, 15, "by Eddie." },
+	{ 0, 15, "by Eddie Van Halen." },
 };
 
 // Riff Screen.

@@ -100,4 +100,9 @@ static void print_text( unsigned char index )
 
 	engine_graphics_manager_clear_bottom();
 	engine_text_manager_draw_lines( start, lines );
+
+	if( 2 != index )
+	{
+		engine_font_manager_text( LOCALE_BUILD_VERSION, 36, 27 );
+	}
 }

@@ -7,6 +7,7 @@
 #define LOCALE_BLANK_SIZE30		"                              "
 #define LOCALE_BLANK_SIZE38		"                                      "
 
+#define LOCALE_BUILD_VERSION	"V1.0"
 #define LOCALE_SPLASH_TEXT		"(C) 2020"
 
 #define LOCALE_BANNER_TITLE		"CLASSIC \"PICK THE RIFF\" TESTER"
