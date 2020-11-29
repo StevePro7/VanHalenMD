@@ -24,20 +24,20 @@ static unsigned char stage;
 void screen_riff_screen_load()
 {
 	struct_game_object *go = &global_game_object;
-	struct_hack_object *ho = &global_hack_object;
-	unsigned char eddie_image;
+	//struct_hack_object *ho = &global_hack_object;
+	//unsigned char eddie_image;
 	//engine_font_manager_text( "RIFF SCREEN!!", 10, 2 );
 
 	// TODO delete
-	if( ho->hack_navigation )
-	{
-		engine_graphics_manager_clear_full();
-		engine_image_manager_draw_banner();
-		engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
-		eddie_image = engine_eddie_manager_next();
-		//eddie_image = 18;
-		engine_image_manager_draw_eddie( eddie_image, 20, 6 );
-	}
+	//if( ho->hack_navigation )
+	//{
+	//	engine_graphics_manager_clear_full();
+	//	engine_image_manager_draw_banner();
+	//	engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
+	//	eddie_image = engine_eddie_manager_next();
+	//	//eddie_image = 18;
+	//	engine_image_manager_draw_eddie( eddie_image, 20, 6 );
+	//}
 	// TODO delete
 
 	engine_graphics_manager_clear_half();

@@ -2,7 +2,7 @@
 
 // Global variable.
 // TODO set maximum once established
-const struct_text_object global_text_object[ 30 ] =
+const struct_text_object global_text_object[ 35 ] =
 {
 	// Riff screen.
 	{ 1, 7, "Pick how many riffs" },
@@ -45,6 +45,13 @@ const struct_text_object global_text_object[ 30 ] =
 	{ 2, 25, "most memorable riffs ever and his band" },
 	{ 2, 26, "remains one of the world's top selling" },
 	{ 2, 27, "artists." },
+
+	// Title screen.
+	{ 0, 11, "There's only one way" },
+	{ 0, 12, "to rock! Vintage Van" },
+	{ 0, 13, "Halen celebrates 40x" },
+	{ 0, 14, "awesome riffs played" },
+	{ 0, 15, "by Eddie." },
 };
 
 // Riff Screen.
