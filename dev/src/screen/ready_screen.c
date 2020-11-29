@@ -37,7 +37,11 @@ void screen_ready_screen_update( unsigned char *screen_type )
 		//engine_font_manager_text( "begin", 0, 0 );
 		engine_quiz_manager_set_quiz_saved_all();
 
-		*screen_type = screen_type_load;
+		// TODO re-instate!!
+		//*screen_type = screen_type_load;
+		// TODO re-instate!!
+
+		*screen_type = screen_type_test;
 		return;
 	}
 
