@@ -1,4 +1,5 @@
 #include "init_screen.h"
+#include "audio_manager.h"
 #include "eddie_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
@@ -14,6 +15,7 @@
 void screen_init_screen_load()
 {
 	// Initialize + bootstrap:
+	engine_audio_manager_init();
 	engine_eddie_manager_init();
 	engine_game_manager_init();
 	engine_quiz_manager_init();
