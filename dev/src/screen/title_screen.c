@@ -50,7 +50,7 @@ void screen_title_screen_load()
 		engine_game_manager_set_local_cheat( completion_type_yes );
 	}
 
-	engine_font_manager_text( LOCALE_TITLE_VANHALEN, 5, 24 );
+	engine_font_manager_text( LOCALE_TITLE_START, 5, 24 );
 	engine_delay_manager_load( TITLE_FLASH_DELAY );
 	event_stage = event_stage_start;
 	flash_count = 0;
