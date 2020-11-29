@@ -32,6 +32,7 @@ void screen_riff_screen_load()
 	if( ho->hack_navigation )
 	{
 		engine_image_manager_draw_banner();
+		engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
 		eddie_image = engine_eddie_manager_next();
 		engine_image_manager_draw_eddie( eddie_image, 20, 6 );
 	}
@@ -39,7 +40,6 @@ void screen_riff_screen_load()
 
 	engine_graphics_manager_clear_half();
 
-	engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
 	//engine_graphics_manager_clear_area();
 
 	engine_text_manager_draw_lines( 0, 2 );

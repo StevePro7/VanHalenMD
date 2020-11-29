@@ -15,6 +15,7 @@
 #define LOCALE_SUMMARY_SCORE	"InGame Statistics"
 #define LOCALE_SUMMARY_OVER		"TESTER COMPLETE "
 #define LOCALE_BULLET_POINTS	"**"
+#define LOCALE_BULLET_POINT		"*"
 
 #define LOCALE_RIFF_TEXT		"Riff"
 #define LOCALE_SCORE_TEXT		"Score"
