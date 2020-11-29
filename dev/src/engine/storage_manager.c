@@ -1,5 +1,6 @@
 #include "storage_manager.h"
 #include "enum_manager.h"
+#include "game_manager.h"
 #include "global_manager.h"
 #include "quiz_manager.h"
 #include "score_manager.h"
@@ -14,7 +15,7 @@ void engine_storage_manager_read()
 {
 	unsigned short sRamOffSet;
 	unsigned short word;
-	unsigned char byte;
+	signed char byte;
 	unsigned char idx;
 
 	sRamOffSet = 0x0000;
@@ -23,8 +24,19 @@ void engine_storage_manager_read()
 
 	// Quiz most recent number + difficulty.
 	byte = SRAM_readByte( sRamOffSet++ );
+	if( INVALID_INDEX == byte )
+	{
+		byte = 0;
+	}
+	engine_game_manager_set_riff_select( byte );
 	engine_quiz_manager_set_riffs_play( byte );
+
 	byte = SRAM_readByte( sRamOffSet++ );
+	if( INVALID_INDEX == byte )
+	{
+		byte = 0;
+	}
+	engine_game_manager_set_diff_select( byte );
 	engine_quiz_manager_set_difficulty( byte );
 
 
