@@ -99,6 +99,22 @@ void screen_start_screen_update( unsigned char *screen_type )
 		return;
 	}
 
+	if( !ho->hack_invincible )
+	{
+		input = engine_input_manager_hold_buttonC();
+		if( input )
+		{
+			cheat_count++;
+			if( cheat_count >= LOCAL_CHEAT_TOTAL )
+			{
+				engine_audio_manager_play_effect( effects_type_cheat );
+
+				engine_font_manager_text( LOCALE_CHEAT_MARKER, 18, 27 );
+				engine_game_manager_set_local_cheat( completion_type_yes );
+			}
+		}
+	}
+
 	engine_random_manager_rand();
 	engine_sprite_manager_update();
 	*screen_type = screen_type_start;

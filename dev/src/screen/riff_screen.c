@@ -59,6 +59,7 @@ void screen_riff_screen_update( unsigned char *screen_type )
 		if( delay )
 		{
 			engine_cursor_manager_hide();
+			engine_sprite_manager_update();
 			engine_delay_manager_load( RIFF_SCREEN_PAUSE );
 			stage = event_stage_menus;
 		}
