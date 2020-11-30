@@ -1,25 +1,25 @@
 #include "start_screen.h"
-#include "eddie_manager.h"
+#include "audio_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "game_manager.h"
 #include "graphics_manager.h"
 #include "hack_manager.h"
-#include "image_manager.h"
 #include "input_manager.h"
 #include "locale_manager.h"
-#include "quiz_manager.h"
 #include "random_manager.h"
 #include "sprite_manager.h"
 #include "text_manager.h"
 #include "timer_manager.h"
 
-#define START_FLASH_DELAY	50
-#define LOCAL_CHEAT_TOTAL	5
+#define START_FLASH_DELAY		50
+#define START_SCREEN_DELAY		100
+#define LOCAL_CHEAT_TOTAL		5
 
 static unsigned char event_stage;
 static unsigned char flash_count;
 static unsigned char cheat_count;
+static unsigned char stage;
 
 void screen_start_screen_load()
 {
@@ -42,6 +42,7 @@ void screen_start_screen_load()
 	event_stage = event_stage_start;
 	flash_count = 0;
 	cheat_count = 0;
+	stage = event_stage_start;
 }
 
 void screen_start_screen_update( unsigned char *screen_type )
@@ -52,6 +53,17 @@ void screen_start_screen_update( unsigned char *screen_type )
 	unsigned char input2;
 
 	engine_sprite_manager_update();
+	if( event_stage_pause == stage )
+	{
+		delay = engine_delay_manager_update();
+		if( delay )
+		{
+			*screen_type = screen_type_riff;
+		}
+
+		return;
+	}
+
 	delay = engine_delay_manager_update();
 	if( delay )
 	{
@@ -74,10 +86,16 @@ void screen_start_screen_update( unsigned char *screen_type )
 	input2 = engine_input_manager_hold_buttonStart();
 	if( input || input2 )
 	{
+		engine_audio_manager_play_effect( effects_type_right );
+		engine_font_manager_text( LOCALE_TITLE_START, 5, 24 );
+
 		//*screen_type = screen_type_load;
-		*screen_type = screen_type_riff;
+		//*screen_type = screen_type_riff;
 		//*screen_type = screen_type_ready;
 		//*screen_type = screen_type_func;
+
+		engine_delay_manager_load( START_SCREEN_DELAY );
+		stage = event_stage_pause;
 		return;
 	}
 
