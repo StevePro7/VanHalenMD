@@ -1,5 +1,6 @@
 #include "audio_manager.h"
 #include "global_manager.h"
+#include "hack_manager.h"
 #include "audio_object.h"
 
 #ifdef _CONSOLE
@@ -42,6 +43,12 @@ void engine_audio_manager_play_riff( unsigned char index )
 
 void engine_audio_manager_play_effect( unsigned char index )
 {
+	struct_hack_object *ho = &global_hack_object;
+	if( ho->hack_delayspeed )
+	{
+		return;
+	}
+
 	play_audio( SFX_EFFECT_START + index, 1, SOUND_PCM_CH2 );
 }
 
