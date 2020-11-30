@@ -9,17 +9,19 @@
 #include "timer_manager.h"
 
 #define SPLASH_SCREEN_DELAY		150
-//#define SPLASH_SCREEN_DELAY		1
+//#define SPLASH_SCREEN_DELAY		1			// TODO remove check!!
 #define ERASE_SCREEN_DELAY		75
 
 void screen_splash_screen_load()
 {
 	engine_graphics_manager_clear_full();
 
+	// TODO remove check!!
 	if( 1 != SPLASH_SCREEN_DELAY )
 	{
 		engine_image_manager_draw_splash();
 	}
+	// TODO remove check!!
 
 	engine_delay_manager_load( SPLASH_SCREEN_DELAY );
 	engine_reset_manager_load( ERASE_SCREEN_DELAY );
