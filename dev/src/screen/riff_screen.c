@@ -73,7 +73,7 @@ void screen_riff_screen_update( unsigned char *screen_type )
 		engine_cursor_manager_hide();
 		engine_sprite_manager_update();
 		engine_audio_manager_play_effect( effects_type_wrong );
-		*screen_type = screen_type_title;
+		*screen_type = screen_type_start;
 		return;
 	}
 

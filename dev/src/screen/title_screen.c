@@ -10,7 +10,7 @@
 #include "locale_manager.h"
 //#include "quiz_manager.h"
 //#include "random_manager.h"
-//#include "sprite_manager.h"
+#include "sprite_manager.h"
 //#include "text_manager.h"
 //#include "timer_manager.h"
 
@@ -26,6 +26,8 @@ void screen_title_screen_load()
 
 void screen_title_screen_update( unsigned char *screen_type )
 {
+	engine_sprite_manager_update();
+	// From here goto : begin / intro / title / riff / load screen...
 	*screen_type = screen_type_start;
 	//*screen_type = screen_type_title;
 }
