@@ -206,6 +206,7 @@
     <ClCompile Include="src\screen\riff_screen.c" />
     <ClCompile Include="src\screen\score_screen.c" />
     <ClCompile Include="src\screen\splash_screen.c" />
+    <ClCompile Include="src\screen\start_screen.c" />
     <ClCompile Include="src\screen\test_screen.c" />
     <ClCompile Include="src\screen\title_screen.c" />
   </ItemGroup>
@@ -267,6 +268,7 @@
     <ClInclude Include="inc\screen\riff_screen.h" />
     <ClInclude Include="inc\screen\score_screen.h" />
     <ClInclude Include="inc\screen\splash_screen.h" />
+    <ClInclude Include="inc\screen\start_screen.h" />
     <ClInclude Include="inc\screen\test_screen.h" />
     <ClInclude Include="inc\screen\title_screen.h" />
     <ClInclude Include="res\gfx_eddies.h" />
