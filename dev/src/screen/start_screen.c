@@ -113,16 +113,18 @@ void screen_start_screen_update( unsigned char *screen_type )
 		}
 	}
 
-	input = engine_input_manager_move_down();
+	input = engine_input_manager_move_buttonB();
 	if( input )
 	{
 		check = engine_reset_manager_update();
 		if( check )
 		{
-			input2 = engine_input_manager_hold_buttonB();
+			input2 = engine_input_manager_move_down();
 			if( input2 )
 			{
-				*screen_type = screen_type_stats;
+				// TODO uncomment this next line when want to integrate STATS screen.
+				//*screen_type = screen_type_stats;
+				return;
 			}
 		}
 	}
