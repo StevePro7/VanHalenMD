@@ -4,7 +4,7 @@
 
 void screen_stats_screen_load()
 {
-	engine_font_manager_text( "STATS SCREEN!!", 10, 2 );
+	engine_font_manager_text( "STATS SCREEN!!", 10, 20 );
 }
 
 void screen_stats_screen_update( unsigned char *screen_type )

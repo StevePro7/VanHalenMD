@@ -14,6 +14,7 @@
 
 #define START_FLASH_DELAY		50
 #define START_SCREEN_DELAY		100
+#define STATS_SCREEN_DELAY		75
 #define LOCAL_CHEAT_TOTAL		5
 
 static unsigned char event_stage;
@@ -39,6 +40,7 @@ void screen_start_screen_load()
 
 	engine_font_manager_text( LOCALE_TITLE_START, 5, 24 );
 	engine_delay_manager_load( START_FLASH_DELAY );
+	engine_reset_manager_load( STATS_SCREEN_DELAY );
 	event_stage = event_stage_start;
 	flash_count = 0;
 	cheat_count = 0;
@@ -51,6 +53,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 	unsigned char delay;
 	unsigned char input;
 	unsigned char input2;
+	unsigned char check;
 
 	engine_sprite_manager_update();
 	if( event_stage_pause == stage )
@@ -89,11 +92,6 @@ void screen_start_screen_update( unsigned char *screen_type )
 		engine_audio_manager_play_effect( effects_type_right );
 		engine_font_manager_text( LOCALE_TITLE_START, 5, 24 );
 
-		//*screen_type = screen_type_load;
-		//*screen_type = screen_type_riff;
-		//*screen_type = screen_type_ready;
-		//*screen_type = screen_type_func;
-
 		engine_delay_manager_load( START_SCREEN_DELAY );
 		stage = event_stage_pause;
 		return;
@@ -113,6 +111,24 @@ void screen_start_screen_update( unsigned char *screen_type )
 				engine_game_manager_set_local_cheat( completion_type_yes );
 			}
 		}
+	}
+
+	input = engine_input_manager_move_down();
+	if( input )
+	{
+		check = engine_reset_manager_update();
+		if( check )
+		{
+			input2 = engine_input_manager_hold_buttonB();
+			if( input2 )
+			{
+				*screen_type = screen_type_stats;
+			}
+		}
+	}
+	else
+	{
+		engine_reset_manager_reset();
 	}
 
 	engine_random_manager_rand();
