@@ -29,10 +29,10 @@ void engine_hack_manager_load()
 
 #ifndef _CONSOLE
 
-	ho->hack_delayspeed = PEEK( HACKER_START - 1 );			// 0x01DF		// Used to speed through any game delay.
-	ho->hack_invincible = PEEK( HACKER_START + 0 );			// 0x01E0		// Non-zero value enables always cheats.
-	ho->hack_riffselect = PEEK( HACKER_START + 1 );			// 0x01E1		// Set value to 2,3,4 index otherwise 1.
-	ho->hack_diffselect = PEEK( HACKER_START + 2 );			// 0x01E2		// Set value to 1=Easy otherwise 2=Hard.
+	ho->hack_delayspeed = PEEK( HACKER_START - 2 );			// 0x01DE		// Used to speed through any game delay.
+	ho->hack_invincible = PEEK( HACKER_START - 1 );			// 0x01DF		// Non-zero value enables always cheats.
+	ho->hack_riffselect = PEEK( HACKER_START + 1 );			// 0x01E0		// Set value to 2,3,4 index otherwise 1.
+	ho->hack_diffselect = PEEK( HACKER_START + 2 );			// 0x01E1		// Set value to 1=Easy otherwise 2=Hard.
 
 #endif
 }

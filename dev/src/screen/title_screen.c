@@ -10,6 +10,7 @@
 #include "locale_manager.h"
 #include "quiz_manager.h"
 #include "random_manager.h"
+#include "sprite_manager.h"
 #include "text_manager.h"
 #include "timer_manager.h"
 
@@ -47,6 +48,7 @@ void screen_title_screen_load()
 	engine_game_manager_set_local_cheat( completion_type_nop );
 	if( ho->hack_invincible )
 	{
+		engine_font_manager_text( LOCALE_CHEAT_MARKER, 18, 27 );
 		engine_game_manager_set_local_cheat( completion_type_yes );
 	}
 
@@ -64,6 +66,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char input2;
 
+	engine_sprite_manager_update();
 	delay = engine_delay_manager_update();
 	if( delay )
 	{
@@ -99,6 +102,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 	}
 
 	engine_random_manager_rand();
+	engine_sprite_manager_update();
 	*screen_type = screen_type_title;
 	//*screen_type = screen_type_riff;
 	//*screen_type = screen_type_load;

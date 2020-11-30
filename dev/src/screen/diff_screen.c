@@ -20,7 +20,6 @@ static void print_extra( unsigned char index );
 void screen_diff_screen_load()
 {
 	struct_game_object *go = &global_game_object;
-	//engine_font_manager_text( "DIFF SCREEN", 10, 2 );
 	engine_graphics_manager_clear_half();
 
 	//DiffScreen();
@@ -69,6 +68,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	if( input ) //||input2 )
 	{
 		engine_audio_manager_play_effect( effects_type_wrong );
+		engine_cursor_manager_hide();
 		*screen_type = screen_type_riff;
 		return;
 	}

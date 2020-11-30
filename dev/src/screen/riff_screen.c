@@ -24,26 +24,9 @@ static unsigned char stage;
 void screen_riff_screen_load()
 {
 	struct_game_object *go = &global_game_object;
-	//struct_hack_object *ho = &global_hack_object;
-	//unsigned char eddie_image;
-	//engine_font_manager_text( "RIFF SCREEN!!", 10, 2 );
-
-	// TODO delete
-	//if( ho->hack_navigation )
-	//{
-	//	engine_graphics_manager_clear_full();
-	//	engine_image_manager_draw_banner();
-	//	engine_font_manager_text( LOCALE_BANNER_TITLE, 5, BANNER_Y );
-	//	eddie_image = engine_eddie_manager_next();
-	//	//eddie_image = 18;
-	//	engine_image_manager_draw_eddie( eddie_image, 20, 6 );
-	//}
-	// TODO delete
-
 	engine_graphics_manager_clear_half();
 
-	//engine_graphics_manager_clear_area();
-
+	//RiffScreen();
 	engine_text_manager_draw_lines( 0, 2 );
 	engine_cursor_manager_load_small( MAX_OPTION, go->riff_selections, OPTION_X, riff_yPos, riff_line1, riff_line2 );
 	engine_cursor_manager_draw();
@@ -80,6 +63,17 @@ void screen_riff_screen_update( unsigned char *screen_type )
 			stage = event_stage_menus;
 		}
 
+		return;
+	}
+
+	input = engine_input_manager_hold_buttonB();
+	//input2 = engine_input_manager_hold_left();		// TODO delete
+	if( input ) //||input2 )
+	{
+		engine_cursor_manager_hide();
+		engine_sprite_manager_update();
+		engine_audio_manager_play_effect( effects_type_wrong );
+		*screen_type = screen_type_title;
 		return;
 	}
 
