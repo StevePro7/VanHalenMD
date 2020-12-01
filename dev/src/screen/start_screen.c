@@ -30,7 +30,7 @@ void screen_start_screen_load()
 	engine_font_manager_text( LOCALE_TITLE_VINTAGE, 7, 7 );
 	engine_font_manager_text( LOCALE_TITLE_VANHALEN, 6, 8 );
 	engine_text_manager_draw_lines( 30, 8 );
-	//engine_text_manager_draw_lines( 30, 9 );		// TODO include Suzanne and Adriana
+	//engine_text_manager_draw_lines( 30, 9 );		// TODO include Suzanne and Adriana??
 
 	engine_game_manager_set_local_cheat( completion_type_nop );
 	if( ho->hack_invincible )
@@ -50,6 +50,7 @@ void screen_start_screen_load()
 
 void screen_start_screen_update( unsigned char *screen_type )
 {
+	struct_game_object *go = &global_game_object;
 	struct_hack_object *ho = &global_hack_object;
 	unsigned char delay;
 	unsigned char input;
@@ -98,7 +99,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 		return;
 	}
 
-	if( !ho->hack_invincible )
+	if( !ho->hack_invincible && !go->game_localcheat )
 	{
 		input = engine_input_manager_hold_buttonC();
 		if( input )
@@ -114,14 +115,6 @@ void screen_start_screen_update( unsigned char *screen_type )
 		}
 	}
 
-	// TODO delete
-	//input = engine_input_manager_hold_buttonB();
-	//if( input )
-	//{
-	//	*screen_type = screen_type_stats;
-	//	return;
-	//}
-	// TODO delete
 	input = engine_input_manager_move_buttonB();
 	if( input )
 	{
