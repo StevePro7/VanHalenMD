@@ -2,7 +2,7 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "graphics_manager.h"
-//#include "input_manager.h"
+#include "input_manager.h"
 //#include "quiz_manager.h"
 #include "storage_manager.h"
 //
@@ -20,19 +20,20 @@ void screen_test_screen_load()
 	engine_font_manager_text( "TEST SCREEN", 10, 2 );
 
 	engine_storage_manager_write();
-
-	engine_font_manager_text( "Saved data!", 10, 4 );
+		engine_font_manager_text( "Saved data!", 10, 4 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
 //	struct_quiz_object *qo = &global_quiz_object;
-//	unsigned char input;
-//
-//	input = engine_input_manager_hold2_down();
-//	if( input )
-//	{
-//	}
+	unsigned char input;
+
+	input = engine_input_manager_hold_buttonB();
+	if( input )
+	{
+		*screen_type = screen_type_title;
+		return;
+	}
 //
 //	//engine_sprite_manager_update();
 	*screen_type = screen_type_test;

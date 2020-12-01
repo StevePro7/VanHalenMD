@@ -96,8 +96,8 @@ const char *riff_line2[ MAX_OPTION ] =
 const unsigned char diff_yPos[ MAX_MENUS ] = { 12, 16 };
 const char *diff_line1[ MAX_MENUS ] =
 {
-	"Easy  [ mixup ]",
-	"Hard  [ mixup ]",
+	"Easy   [ mixup ]",
+	"Hard   [ mixup ]",
 };
 const char *diff_line2[ MAX_MENUS ] =
 {

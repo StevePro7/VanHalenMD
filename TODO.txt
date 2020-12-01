@@ -4,7 +4,7 @@ TODO
 Splash		DONE
 Intro		TODO		Vintage VH [pic] "and the cradle will rock"
 Title		TODO		Cheat mode + sfx when select i.e. pause b4 riff		DONE
-				Thanks text [short]
+				Thanks text [short]					DONE
 Riff 		TODO		B button goes back to Title				DONE
 Ready		TODO	 	Yellow for riff + diff, delay + "GetReady" pause
 Load		TODO		remove SaveAll
@@ -13,7 +13,7 @@ Score		TODO		if goto Over then ended = 1
 Over		TODO		Quiz SaveAll, Score saveAll + SRAM write
 				Game Over music delay and goto Title
 Stats		TODO		Hidden stats screen for riff + diff stats
-				integrate from Title screen
+				integrate from Title screen				DONE
 
 set SRAM for "last eddie"...?
 
