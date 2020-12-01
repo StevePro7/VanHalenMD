@@ -3,9 +3,9 @@ TODO
 
 Splash		DONE
 Intro		TODO		Vintage VH [pic] "and the cradle will rock"
-Title		TODO		Cheat mode + sfx when select i.e. pause b4 riff
+Title		TODO		Cheat mode + sfx when select i.e. pause b4 riff		DONE
 				Thanks text [short]
-Riff 		TODO		B butto goes back to Title
+Riff 		TODO		B button goes back to Title				DONE
 Ready		TODO	 	Yellow for riff + diff, delay + "GetReady" pause
 Load		TODO		remove SaveAll
 Play		TODO		test riff 0 "bug"...?
@@ -20,12 +20,12 @@ set SRAM for "last eddie"...?
 
 Title screen
 - build version	DONE
-- cheat impl
+- cheat impl	DONE
 
 Ready screen
 yellow text for the options selected
 
-Get Ready text to flash
+Get Ready text to flash OR just play sfx
 
 25/11/2020
 Don't change Eddie between Title and Riff screen!!
