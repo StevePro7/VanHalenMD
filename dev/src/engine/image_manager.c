@@ -17,9 +17,14 @@ void engine_image_manager_draw_splash()
 	draw_image( gfx_splash, PAL1, PALETTE1_TILES, 4, 2 );
 }
 
+void engine_image_manager_draw_header()
+{
+	draw_image( gfx_header, PAL1, PALETTE1_TILES, 2, 7 );
+}
+
 void engine_image_manager_draw_banner()
 {
-	draw_image( gfx_banner, PAL1, 1, 0, 0 );
+	draw_image( gfx_banner, PAL1, PALETTE1_TILES, 0, 0 );
 }
 
 void engine_image_manager_draw_eddie( unsigned char index, unsigned char x, unsigned char y )
