@@ -115,12 +115,12 @@ void screen_start_screen_update( unsigned char *screen_type )
 	}
 
 	// TODO delete
-	input = engine_input_manager_hold_buttonB();
-	if( input )
-	{
-		*screen_type = screen_type_stats;
-		return;
-	}
+	//input = engine_input_manager_hold_buttonB();
+	//if( input )
+	//{
+	//	*screen_type = screen_type_stats;
+	//	return;
+	//}
 	// TODO delete
 	input = engine_input_manager_move_buttonB();
 	if( input )
@@ -131,8 +131,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 			input2 = engine_input_manager_move_down();
 			if( input2 )
 			{
-				// TODO uncomment this next line when want to integrate STATS screen.
-				//*screen_type = screen_type_stats;
+				*screen_type = screen_type_stats;
 				return;
 			}
 		}
