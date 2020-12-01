@@ -4,7 +4,7 @@
 #include "debug_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
-#include "game_manager.h"
+//#include "game_manager.h"
 #include "global_manager.h"
 #include "graphics_manager.h"
 #include "hack_manager.h"
@@ -15,7 +15,7 @@
 
 void screen_play_screen_load()
 {
-	struct_game_object *go = &global_game_object;
+	//struct_game_object *go = &global_game_object;
 	struct_quiz_object *qo = &global_quiz_object;
 	engine_graphics_manager_clear_half();
 
