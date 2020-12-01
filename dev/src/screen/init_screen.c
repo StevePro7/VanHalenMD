@@ -32,5 +32,6 @@ void screen_init_screen_load()
 
 void screen_init_screen_update( unsigned char *screen_type )
 {
-	*screen_type = screen_type_title;
+	//*screen_type = screen_type_title;
+	*screen_type = screen_type_begin;
 }
