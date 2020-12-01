@@ -114,6 +114,14 @@ void screen_start_screen_update( unsigned char *screen_type )
 		}
 	}
 
+	// TODO delete
+	input = engine_input_manager_hold_buttonB();
+	if( input )
+	{
+		*screen_type = screen_type_stats;
+		return;
+	}
+	// TODO delete
 	input = engine_input_manager_move_buttonB();
 	if( input )
 	{

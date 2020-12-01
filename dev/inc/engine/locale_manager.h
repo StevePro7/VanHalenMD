@@ -19,6 +19,9 @@
 #define LOCALE_CHEAT_MARKER		"!!"
 #define LOCALE_SUMMARY_SCORE	"InGame Statistics"
 #define LOCALE_SUMMARY_OVER		"TESTER COMPLETE "
+#define LOCALE_STATS_TITLES		"STATISTICS"
+#define LOCALE_STATS_FINISH		"Complete"
+#define LOCALE_STATS_RIFFS		"riffs"
 #define LOCALE_BULLET_POINTS	"**"
 #define LOCALE_BULLET_POINT		"*"
 
