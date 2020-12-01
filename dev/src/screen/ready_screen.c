@@ -56,10 +56,10 @@ void screen_ready_screen_update( unsigned char *screen_type )
 		engine_quiz_manager_set_quiz_saved_all();
 
 		// TODO re-instate!!
-		//*screen_type = screen_type_load;
+		*screen_type = screen_type_load;
 		// TODO re-instate!!
 
-		*screen_type = screen_type_test;
+		//*screen_type = screen_type_test;
 		return;
 	}
 

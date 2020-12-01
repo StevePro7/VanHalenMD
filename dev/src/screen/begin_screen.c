@@ -4,6 +4,7 @@
 #include "graphics_manager.h"
 #include "image_manager.h"
 #include "input_manager.h"
+#include "locale_manager.h"
 #include "timer_manager.h"
 
 static void draw_texter();
@@ -12,6 +13,9 @@ void screen_begin_screen_load()
 {
 	engine_graphics_manager_clear_full();
 	draw_texter();
+	engine_font_manager_text( LOCALE_BUILD_VERSION, 36, 27 );
+
+	// TODO render image after pause...
 	engine_image_manager_draw_header();
 }
 
