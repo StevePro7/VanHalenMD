@@ -22,7 +22,6 @@ void screen_diff_screen_load()
 	struct_game_object *go = &global_game_object;
 	engine_graphics_manager_clear_half();
 
-	//DiffScreen();
 	engine_text_manager_draw_lines( 2, 2 );
 	engine_cursor_manager_load_small( MAX_MENUS, go->diff_selections, OPTION_X, diff_yPos, diff_line1, diff_line2 );
 	engine_cursor_manager_draw();
@@ -36,7 +35,6 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	struct_cursor_object *co = &global_cursor_object;
 	unsigned char delay;
 	unsigned char input;
-	//unsigned char input2;		// TODO delete
 
 	engine_sprite_manager_update();
 	if( event_stage_menus == stage )
@@ -65,18 +63,15 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	}
 
 	input = engine_input_manager_hold_buttonB();
-	//input2 = engine_input_manager_hold_left();		// TODO delete
-	if( input ) //||input2 )
+	if( input )
 	{
-		//engine_audio_manager_play_effect( effects_type_wrong );
 		engine_cursor_manager_hide();
 		*screen_type = screen_type_riff;
 		return;
 	}
 
 	input = engine_input_manager_hold_buttonA();
-	//input2 = engine_input_manager_hold_right();		// TODO delete
-	if( input )// || input2 )
+	if( input )
 	{
 		engine_audio_manager_play_effect( effects_type_right );
 
