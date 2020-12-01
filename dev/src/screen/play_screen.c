@@ -73,6 +73,9 @@ void screen_play_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold_buttonB();
 	if( input )
 	{
+		engine_cursor_manager_hide();
+		engine_sprite_manager_update();
+		engine_quiz_manager_selection( co->selects );
 		*screen_type = screen_type_score;
 		return;
 	}

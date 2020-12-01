@@ -184,6 +184,13 @@ unsigned char engine_quiz_manager_increment( unsigned char quiz_selection )
 
 	return qo->quiz_riff_index >= qo->quiz_riffs_play;
 }
+
+void engine_quiz_manager_selection( unsigned char quiz_selection )
+{
+	struct_quiz_object *qo = &global_quiz_object;
+	qo->quiz_selections = quiz_selection;
+}
+
 //void engine_quiz_manager_decrement( unsigned char quiz_selection )
 //{
 //	struct_quiz_object *qo = &global_quiz_object;
