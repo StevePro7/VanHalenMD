@@ -116,7 +116,8 @@ void engine_quiz_manager_cheat()
 {
 	// TODO replace hard coded co-ordinates.
 	struct_quiz_object *qo = &global_quiz_object;
-	engine_font_manager_data( quiz_select[ qo->quiz_riff_index ], 17, 27 );
+	unsigned char cheat = quiz_select[ qo->quiz_riff_index ] + 1;
+	engine_font_manager_data( cheat, 17, 27 );
 }
 
 void engine_quiz_manager_riff()
