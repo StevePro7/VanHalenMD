@@ -1,4 +1,7 @@
 TODO
+01/12/2020
+Start		TODO		record "last" Eddie so don't always show same Eddie
+
 29/11/2020
 
 Splash		DONE
