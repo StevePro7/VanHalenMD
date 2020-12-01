@@ -15,6 +15,14 @@ Over		TODO		Quiz SaveAll, Score saveAll + SRAM write
 Stats		TODO		Hidden stats screen for riff + diff stats
 				integrate from Title screen				DONE
 
+
+01/12/2020
+Title screen with the "Thanks" text
+Stats screen complete
+Begin screen Vintage Van Halen text and image	took ages to get dimensions correct!
+E:\GitHub\StevePro7\VanHalenTest\Code\06-TitleHeader_02\rom
+
+
 set SRAM for "last eddie"...?
 
 
