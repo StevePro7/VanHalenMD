@@ -24,14 +24,12 @@ void screen_play_screen_load()
 	engine_score_manager_draw_percent( quiz_saving[qo->quiz_riff_index] );
 	// TODO try to get the score percent working from SRAM.
 
-	// TODO add hack manager to check if cheat enabled
-	//
-	if( go->game_localcheat )
+	// TODO integrate from title screen 
+	//if( go->game_localcheat )
 	{
 		//engine_debug_manager_cheat( quiz_select[ qo->quiz_riff_index ] );
+		engine_quiz_manager_cheat();
 	}
-	//engine_quiz_manager_cheat();
-	// TODO add hack manager to check if cheat enabled
 
 	engine_cursor_manager_load_large( MAX_OPTION, qo->quiz_selections, OPTION_X, quiz_yPos, quiz_years, quiz_line1, quiz_line2, quiz_line3, quiz_line4 );
 	engine_cursor_manager_draw();
