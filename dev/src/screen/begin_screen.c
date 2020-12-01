@@ -17,6 +17,18 @@ void screen_begin_screen_load()
 
 void screen_begin_screen_update( unsigned char *screen_type )
 {
+	//unsigned char delay;
+	unsigned char input;
+	unsigned char input2;
+
+	input = engine_input_manager_hold_buttonA();
+	input2 = engine_input_manager_hold_buttonStart();
+	if( input || input2 )
+	{
+		*screen_type = screen_type_intro;
+		return;
+	}
+
 	*screen_type = screen_type_begin;
 }
 
