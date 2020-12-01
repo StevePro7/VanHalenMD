@@ -4,6 +4,7 @@
 #include "debug_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "game_manager.h"
 #include "graphics_manager.h"
 #include "image_manager.h"
 #include "quiz_manager.h"
@@ -11,6 +12,7 @@
 
 void screen_part_screen_load()
 {
+	struct_game_object *go = &global_game_object;
 	struct_quiz_object *qo = &global_quiz_object;
 	unsigned char eddie_image;
 	unsigned char riff_index;
@@ -34,6 +36,7 @@ void screen_part_screen_load()
 	//engine_debug_manager_score();
 	//TODO delete
 	//// TODO add hack manager to check if cheat enabled
+	
 	////engine_quiz_manager_cheat();
 
 	riff_index = qo->quiz_riff_index;

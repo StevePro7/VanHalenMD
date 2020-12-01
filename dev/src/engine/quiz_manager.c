@@ -111,9 +111,12 @@ void engine_quiz_manager_load_normal()
 	// Must iterate and randomize all the riffs before randomize options!
 	random_options( default_option );
 }
-//
-//void engine_quiz_manager_cheat()
-//{
+
+void engine_quiz_manager_cheat()
+{
+	// TODO replace hard coded co-ordinates.
+	struct_quiz_object *qo = &global_quiz_object;
+	engine_font_manager_data( quiz_select[ qo->quiz_riff_index ], 17, 27 );
 //	// TODO replace magic numbers for X + Y.
 //	struct_quiz_object *qo = &global_quiz_object;
 //
@@ -121,8 +124,7 @@ void engine_quiz_manager_load_normal()
 //	//engine_font_manager_data( qo->quiz_riff_index + 1, 10, 4 );
 //	engine_font_manager_data( qo->quiz_riff_index + 0, 10, 4 );
 //	engine_font_manager_data( qo->quiz_riffs_play, 16, 4 );
-//}
-//
+}
 
 void engine_quiz_manager_riff()
 {

@@ -4,6 +4,7 @@
 #include "debug_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "game_manager.h"
 #include "global_manager.h"
 #include "graphics_manager.h"
 #include "hack_manager.h"
@@ -14,6 +15,7 @@
 
 void screen_play_screen_load()
 {
+	struct_game_object *go = &global_game_object;
 	struct_quiz_object *qo = &global_quiz_object;
 	//engine_font_manager_text( "PLAY SCREEN", 10, 2 );
 	engine_graphics_manager_clear_half();
@@ -23,7 +25,11 @@ void screen_play_screen_load()
 	// TODO try to get the score percent working from SRAM.
 
 	// TODO add hack manager to check if cheat enabled
-	engine_debug_manager_cheat( quiz_select[ qo->quiz_riff_index ] );
+	//
+	if( go->game_localcheat )
+	{
+		//engine_debug_manager_cheat( quiz_select[ qo->quiz_riff_index ] );
+	}
 	//engine_quiz_manager_cheat();
 	// TODO add hack manager to check if cheat enabled
 

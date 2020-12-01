@@ -1,6 +1,8 @@
 TODO
 01/12/2020
+Begin		TODO		delay letters / image / final lower text
 Start		TODO		record "last" Eddie so don't always show same Eddie
+Ready		TODO
 
 29/11/2020
 

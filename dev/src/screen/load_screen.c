@@ -12,11 +12,6 @@ void screen_load_screen_load()
 {
 	//engine_font_manager_text( "LOAD SCREEN", 10, 2 );
 
-	//TODO testing
-	//engine_quiz_manager_set_riffs_play( 3 );
-	//engine_quiz_manager_set_difficulty( difficulty_type_easy );
-	//TODO testing
-
 	// Reset variables.
 	engine_font_manager_text( LOCALE_BLANK_SIZE30, 5, BANNER_Y );
 	//engine_font_manager_text( LOCALE_BLANK_SIZE30, 5, BANNER_Y + 1);
@@ -29,9 +24,9 @@ void screen_load_screen_load()
 	engine_quiz_manager_draw();
 
 	// Load quiz questions.
-	//engine_quiz_manager_load_normal();
+	engine_quiz_manager_load_normal();
 	//engine_quiz_manager_load_mixing();
-	engine_quiz_manager_load_random();
+	//engine_quiz_manager_load_random();
 
 	// Assume the game will be completed.
 	engine_game_manager_set_game_finish( completion_type_yes );
@@ -40,8 +35,5 @@ void screen_load_screen_load()
 void screen_load_screen_update( unsigned char *screen_type )
 {
 	engine_sprite_manager_update();
-
-	//*screen_type = screen_type_load;
-	//*screen_type = screen_type_play;
 	*screen_type = screen_type_part;
 }
