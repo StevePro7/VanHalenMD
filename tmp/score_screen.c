@@ -14,6 +14,7 @@
 void screen_score_screen_load()
 {
 	struct_quiz_object *qo = &global_quiz_object;
+	//engine_font_manager_text( "SCRE SCREEN", 10, 2 );
 
 	engine_cursor_manager_hide();
 	engine_graphics_manager_clear_half();
@@ -27,9 +28,11 @@ void screen_score_screen_load()
 void screen_score_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
+	unsigned char input2;		// TODO delete
 
 	input = engine_input_manager_hold_buttonA();
-	if( input )
+	input2 = engine_input_manager_hold_right();		// TODO delete
+	if( input || input2 )
 	{
 		// Game is not completed!
 		engine_game_manager_set_game_finish( completion_type_nop );
@@ -38,7 +41,8 @@ void screen_score_screen_update( unsigned char *screen_type )
 	}
 
 	input = engine_input_manager_hold_buttonB();
-	if( input )
+	input2 = engine_input_manager_hold_left();		// TODO delete
+	if( input || input2 )
 	{
 		*screen_type = screen_type_play;
 		return;
