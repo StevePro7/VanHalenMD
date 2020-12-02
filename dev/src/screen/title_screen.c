@@ -23,5 +23,6 @@ void screen_title_screen_update( unsigned char *screen_type )
 
 	// From here goto : begin / intro / title / riff / load screen...
 	//*screen_type = screen_type_load;
-	*screen_type = screen_type_start;
+	*screen_type = screen_type_ready;
+	//*screen_type = screen_type_start;
 }
