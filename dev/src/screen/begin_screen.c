@@ -7,6 +7,12 @@
 #include "locale_manager.h"
 #include "timer_manager.h"
 
+#ifdef _CONSOLE
+#include <string.h>
+#else
+#include <genesis.h>
+#endif
+
 static void draw_texter();
 
 void screen_begin_screen_load()
@@ -38,12 +44,24 @@ void screen_begin_screen_update( unsigned char *screen_type )
 
 static void draw_texter()
 {
-	engine_font_manager_char( 'V', 8, 6 );
-	engine_font_manager_char( 'I', 12, 6 );
-	engine_font_manager_char( 'N', 16, 6 );
-	engine_font_manager_char( 'T', 20, 6 );
-	engine_font_manager_char( 'A', 24, 6 );
-	engine_font_manager_char( 'G', 28, 6 );
-	engine_font_manager_char( 'E', 32, 6 );
+	unsigned short length;
+	unsigned char index;
+	const unsigned char start = 8;
+	const unsigned char step = 4;
+	const unsigned char y = 6;
+
+	length = strlen( LOCALE_TITLE_VINTAGE );
+	for( index = 0; index < length; index++ )
+	{
+		engine_font_manager_char( LOCALE_TITLE_VINTAGE[ index ], start + ( index * step ), y );
+	}
+
+	//engine_font_manager_char( 'V', 8, 4 );
+	//engine_font_manager_char( 'I', 12, 4 );
+	//engine_font_manager_char( 'N', 16, 4 );
+	//engine_font_manager_char( 'T', 20, 4 );
+	//engine_font_manager_char( 'A', 24, 4 );
+	//engine_font_manager_char( 'G', 28, 4 );
+	//engine_font_manager_char( 'E', 32, 4 );
 }
 
