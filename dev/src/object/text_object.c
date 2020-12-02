@@ -13,12 +13,18 @@ const struct_text_object global_text_object[ 39 ] =
 	{ 1, 8, "foreach riff played" },
 
 	// Ready screen.
-	{ 1, 21, "Button [ A ]" },
-	{ 1, 22, "Button [ B ]" },
-	{ 1, 23, "Button [ C ]" },
-	{ 14, 21, "Select" },
-	{ 14, 22, "Census" },
-	{ 14, 23, "Replay" },
+	{ 1, 25, "Button [ A ]" },
+	{ 1, 26, "Button [ B ]" },
+	{ 1, 27, "Button [ C ]" },
+	{ 14, 25, "Select" },
+	{ 14, 26, "Census" },
+	{ 14, 27, "Replay" },
+	//{ 1, 21, "Button [ A ]" },
+	//{ 1, 22, "Button [ B ]" },
+	//{ 1, 23, "Button [ C ]" },
+	//{ 14, 21, "Select" },
+	//{ 14, 22, "Census" },
+	//{ 14, 23, "Replay" },
 
 	// Summary screen.
 	{ 2, 10, "Riffs Total" },

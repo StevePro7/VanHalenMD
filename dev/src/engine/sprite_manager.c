@@ -40,6 +40,11 @@ void engine_sprite_manager_update()
 	SPR_update();
 }
 
+void engine_sprite_manager_palette()
+{
+	palette_sprite();
+}
+
 void engine_sprite_manager_draw( const unsigned char index, unsigned char x, unsigned char y )
 {
 	const SpriteDefinition* spriteDef;
