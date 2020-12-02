@@ -13,6 +13,7 @@ void engine_eddie_manager_init()
 	unsigned char idx;
 
 	eo->eddie_index = 0;
+	eo->eddie_final = 0;
 	for( idx = 0; idx < EDDIE_IMAGES; idx++ )
 	{
 		eo->eddie_images[ idx ] = INVALID_INDEX;
@@ -28,6 +29,7 @@ unsigned char engine_eddie_manager_next()
 	{
 		eddie_image = engine_random_manager_data( ( MAX_EDDIES - 1 ) );
 		if(
+			( eddie_image != eo->eddie_final ) &&
 			( eddie_image != eo->eddie_images[ 0 ] ) &&
 			( eddie_image != eo->eddie_images[ 1 ] ) &&
 			( eddie_image != eo->eddie_images[ 2 ] ) &&
@@ -40,6 +42,7 @@ unsigned char engine_eddie_manager_next()
 			( eddie_image != eo->eddie_images[ 9 ] )
 			)
 		{
+			eo->eddie_final = eddie_image;
 			eo->eddie_images[ eo->eddie_index ] = eddie_image;
 			break;
 		}
@@ -52,4 +55,10 @@ unsigned char engine_eddie_manager_next()
 	}
 
 	return eddie_image;
+}
+
+void engine_eddie_manager_set_eddie_final( unsigned char eddie_image )
+{
+	struct_eddie_object *eo = &global_eddie_object;
+	eo->eddie_final = eddie_image;
 }

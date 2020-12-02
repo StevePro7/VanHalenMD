@@ -1,4 +1,5 @@
 #include "storage_manager.h"
+#include "eddie_manager.h"
 #include "enum_manager.h"
 #include "game_manager.h"
 #include "global_manager.h"
@@ -69,35 +70,48 @@ void engine_storage_manager_read()
 	}
 	engine_quiz_manager_set_quiz_total( word );
 
-	// padding 4x bytes.
-	word = SRAM_readWord( sRamOffSet );
-	sRamOffSet++;
-	sRamOffSet++;
-	if( MAX_INT_VALUE == word )
+
+	// Padding 2x bytes.
+	byte = SRAM_readByte( sRamOffSet++ );
+	if( INVALID_INDEX == byte )
 	{
-		word = 0;
+		byte = 0;
+	}
+	engine_eddie_manager_set_eddie_final( byte );
+	byte = SRAM_readByte( sRamOffSet++ );
+	if( INVALID_INDEX == byte )
+	{
+		byte = 0;
 	}
 
-	// Score summary correct + answered.
-	for( idx = 0; idx < MAX_RIFFS; idx++ )
-	{
-		word = SRAM_readWord( sRamOffSet );
-		sRamOffSet++;
-		sRamOffSet++;
-		if( MAX_INT_VALUE == word )
-		{
-			word = 0;
-		}
-		engine_score_manager_set_score_correct( idx, word );
-		word = SRAM_readWord( sRamOffSet );
-		sRamOffSet++;
-		sRamOffSet++;
-		if( MAX_INT_VALUE == word )
-		{
-			word = 0;
-		}
-		engine_score_manager_set_score_answerd( idx, word );
-	}
+	//word = SRAM_readWord( sRamOffSet );
+	//sRamOffSet++;
+	//sRamOffSet++;
+	//if( MAX_INT_VALUE == word )
+	//{
+	//	word = 0;
+	//}
+
+	//// Score summary correct + answered.
+	//for( idx = 0; idx < MAX_RIFFS; idx++ )
+	//{
+	//	word = SRAM_readWord( sRamOffSet );
+	//	sRamOffSet++;
+	//	sRamOffSet++;
+	//	if( MAX_INT_VALUE == word )
+	//	{
+	//		word = 0;
+	//	}
+	//	engine_score_manager_set_score_correct( idx, word );
+	//	word = SRAM_readWord( sRamOffSet );
+	//	sRamOffSet++;
+	//	sRamOffSet++;
+	//	if( MAX_INT_VALUE == word )
+	//	{
+	//		word = 0;
+	//	}
+	//	engine_score_manager_set_score_answerd( idx, word );
+	//}
 
 
 	SRAM_disable();
@@ -107,6 +121,7 @@ void engine_storage_manager_read()
 void engine_storage_manager_write()
 {
 	struct_quiz_object *qo = &global_quiz_object;
+	struct_eddie_object *eo = &global_eddie_object;
 	struct_score_object *so = &global_socre_object;
 
 	unsigned short sRamOffSet;
@@ -142,25 +157,29 @@ void engine_storage_manager_write()
 	sRamOffSet++;
 	sRamOffSet++;
 
-	// padding 4x bytes.
-	word = 0;
-	SRAM_writeWord( sRamOffSet, word );
-	sRamOffSet++;
-	sRamOffSet++;
+	// Padding 2x bytes.
+	byte = eo->eddie_final;
+	SRAM_writeByte( sRamOffSet++, byte );
+	byte = 0x00;
+	SRAM_writeByte( sRamOffSet++, byte );
+	//word = 0;
+	//SRAM_writeWord( sRamOffSet, word );
+	//sRamOffSet++;
+	//sRamOffSet++;
 
 
-	// Score summary correct + answered.
-	for( idx = 0; idx < MAX_RIFFS; idx++ )
-	{
-		word = so->saved_correct[ idx ];
-		SRAM_writeWord( sRamOffSet, word );
-		sRamOffSet++;
-		sRamOffSet++;
-		word = so->saved_answerd[ idx ];
-		SRAM_writeWord( sRamOffSet, word );
-		sRamOffSet++;
-		sRamOffSet++;
-	}
+	//// Score summary correct + answered.
+	//for( idx = 0; idx < MAX_RIFFS; idx++ )
+	//{
+	//	word = so->saved_correct[ idx ];
+	//	SRAM_writeWord( sRamOffSet, word );
+	//	sRamOffSet++;
+	//	sRamOffSet++;
+	//	word = so->saved_answerd[ idx ];
+	//	SRAM_writeWord( sRamOffSet, word );
+	//	sRamOffSet++;
+	//	sRamOffSet++;
+	//}
 
 
 	SRAM_disable();
@@ -195,19 +214,18 @@ void engine_storage_manager_erase()
 	sRamOffSet++;
 	sRamOffSet++;
 
-	// padding 4x bytes.
-	SRAM_writeWord( sRamOffSet, INVALID_INDEX );
-	sRamOffSet++;
-	sRamOffSet++;
+	// Padding 2x bytes.
+	SRAM_writeByte( sRamOffSet++, INVALID_INDEX );
+	SRAM_writeByte( sRamOffSet++, INVALID_INDEX );
 
 
-	// Score summary correct + answered.
-	for( idx = 0; idx < MAX_RIFFS; idx++ )
-	{
-		SRAM_writeWord( sRamOffSet, INVALID_INDEX );
-		sRamOffSet++;
-		sRamOffSet++;
-	}
+	//// Score summary correct + answered.
+	//for( idx = 0; idx < MAX_RIFFS; idx++ )
+	//{
+	//	SRAM_writeWord( sRamOffSet, INVALID_INDEX );
+	//	sRamOffSet++;
+	//	sRamOffSet++;
+	//}
 
 
 	SRAM_disable();
