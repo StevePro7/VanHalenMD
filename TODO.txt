@@ -14,8 +14,8 @@ Riff 		DONE		B button goes back to Title				DONE
 Ready		DONE	 	Yellow for riff + diff, delay + "GetReady" pause
 Load		TODO		remove SaveAll
 Play		DONE		test riff 0 "bug"...?
-Score		TODO		if goto Over then ended = 1
-Over		TODO		Quiz SaveAll, Score saveAll + SRAM write
+Score		DONE		if goto Over then ended = 1
+Over		DONE		Quiz SaveAll, Score saveAll + SRAM write
 				Game Over music delay and goto Title
 Stats		DONE		Hidden stats screen for riff + diff stats
 				integrate from Title screen				DONE
