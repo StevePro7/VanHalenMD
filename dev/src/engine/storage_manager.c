@@ -180,6 +180,7 @@ void engine_storage_manager_erase()
 	SRAM_writeByte( sRamOffSet++, INVALID_INDEX );
 	SRAM_writeByte( sRamOffSet++, INVALID_INDEX );
 
+
 	// Quiz summary numbers + difficulties.
 	for( idx = 0; idx < MAX_OPTION * MAX_DIFFICULTY; idx++ )
 	{

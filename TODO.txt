@@ -1,23 +1,23 @@
 TODO
 01/12/2020
-Begin		TODO		delay letters / image / final lower text
+Begin		DONE		Not doing : delay letters / image / final lower text
 Start		TODO		record "last" Eddie so don't always show same Eddie
-Ready		TODO
+Ready		DONE		Integrate yellow text and ready sfx
 
 29/11/2020
 
 Splash		DONE
-Intro		TODO		Vintage VH [pic] "and the cradle will rock"
-Title		TODO		Cheat mode + sfx when select i.e. pause b4 riff		DONE
+Intro		DONE		Vintage VH [pic] "and the cradle will rock"
+Title		DONE		Cheat mode + sfx when select i.e. pause b4 riff		DONE
 				Thanks text [short]					DONE
-Riff 		TODO		B button goes back to Title				DONE
+Riff 		DONE		B button goes back to Title				DONE
 Ready		TODO	 	Yellow for riff + diff, delay + "GetReady" pause
 Load		TODO		remove SaveAll
-Play		TODO		test riff 0 "bug"...?
+Play		DONE		test riff 0 "bug"...?
 Score		TODO		if goto Over then ended = 1
 Over		TODO		Quiz SaveAll, Score saveAll + SRAM write
 				Game Over music delay and goto Title
-Stats		TODO		Hidden stats screen for riff + diff stats
+Stats		DONE		Hidden stats screen for riff + diff stats
 				integrate from Title screen				DONE
 
 

@@ -1,16 +1,12 @@
 #include "ready_screen.h"
 #include "audio_manager.h"
-//#include "eddie_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
-//#include "hack_manager.h"
 #include "graphics_manager.h"
-//#include "image_manager.h"
 #include "input_manager.h"
 #include "locale_manager.h"
 #include "quiz_manager.h"
 #include "sprite_manager.h"
-//#include "storage_manager.h"
 #include "text_manager.h"
 #include "timer_manager.h"
 
@@ -56,17 +52,6 @@ void screen_ready_screen_update( unsigned char *screen_type )
 		*screen_type = screen_type_load;
 		return;
 	}
-
-	/*if( event_stage_menus == stage )
-	{
-		delay = engine_delay_manager_update();
-		if( delay )
-		{
-			*screen_type = screen_type_load;
-		}
-
-		return;
-	}*/
 
 	if( event_stage_pause == stage )
 	{
