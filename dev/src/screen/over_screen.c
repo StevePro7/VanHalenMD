@@ -39,6 +39,8 @@ void screen_over_screen_load()
 	engine_audio_manager_stop();
 
 	engine_quiz_manager_set_quiz_saved_all( go->game_completion );
+	engine_storage_manager_write();
+
 	//flash_score();
 	flash_count = 0;
 }
