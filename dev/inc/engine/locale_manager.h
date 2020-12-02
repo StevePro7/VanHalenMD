@@ -23,6 +23,7 @@
 #define LOCALE_STATS_TITLES		"STATISTICS"
 #define LOCALE_STATS_FINISH		"Complete"
 #define LOCALE_STATS_RIFFS		"riffs"
+#define LOCALE_OVER_PERFECT		"100%"
 #define LOCALE_BULLET_POINTS	"**"
 #define LOCALE_BULLET_POINT		"*"
 
