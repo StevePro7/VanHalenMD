@@ -37,7 +37,7 @@ void screen_stats_screen_load()
 	engine_font_manager_text( diff_line1[ 0 ], START_X + 2, START_Y + 6 );
 	engine_font_manager_text( diff_line1[ 1 ], START_X + 2, START_Y + 13 );
 
-	engine_text_manager_draw_lines_extra( 5, 1, 5 );
+	engine_text_manager_draw_lines_extra( 5, 1, 1 );
 	engine_text_manager_draw_lines( 15, 1 );
 
 	for( diff = 0; diff < MAX_DIFFICULTY; diff++ )
