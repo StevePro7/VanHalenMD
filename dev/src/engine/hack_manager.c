@@ -73,16 +73,16 @@ void engine_hack_manager_save()
 
 
 	// TODO delete		//ho->hack_navigation = 1;
-	ho->hack_delayspeed = 1;
+	//ho->hack_delayspeed = 1;
 	//ho->hack_invincible = 1;
 
-	index = 0;
-	engine_game_manager_set_riff_select( index );
-	engine_quiz_manager_set_riffs_play( index );
+	//index = 0;
+	//engine_game_manager_set_riff_select( index );
+	//engine_quiz_manager_set_riffs_play( index );
 
-	index = difficulty_type_easy;
+	//index = difficulty_type_easy;
 	//index = difficulty_type_hard;
-	engine_game_manager_set_diff_select( index );
-	engine_quiz_manager_set_difficulty( index );
+	//engine_game_manager_set_diff_select( index );
+	//engine_quiz_manager_set_difficulty( index );
 	// TODO delete
 }
