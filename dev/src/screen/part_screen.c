@@ -25,7 +25,7 @@ void screen_part_screen_load()
 
 	riff_index = qo->quiz_riff_index;
 	save_index = quiz_saving[ riff_index ];
-	//engine_audio_manager_play_riff( save_index );
+	engine_audio_manager_play_riff( save_index );
 }
 
 void screen_part_screen_update( unsigned char *screen_type )

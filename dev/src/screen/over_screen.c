@@ -14,7 +14,7 @@
 #include "text_manager.h"
 #include "timer_manager.h"
 
-#define SCORE_FLASH_DELAY		50
+#define SCORE_FLASH_DELAY		25
 
 static void flash_score();
 static unsigned char flash_count;
@@ -36,8 +36,8 @@ void screen_over_screen_load()
 	engine_delay_manager_load( SCORE_FLASH_DELAY );
 	engine_audio_manager_stop();
 
-	flash_score();
-	flash_count = 1;
+	//flash_score();
+	flash_count = 0;
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
@@ -47,7 +47,7 @@ void screen_over_screen_update( unsigned char *screen_type )
 	unsigned char delay;
 	unsigned char input;
 
-	if( 0 != so->saved_answerd && so->saved_answerd == so->saved_correct )
+	if( 0 != so->score_answerd && so->score_correct == so->score_answerd )
 	{
 		delay = engine_delay_manager_update();
 		if( delay )
@@ -85,7 +85,7 @@ static void flash_score()
 	struct_score_object *so = &global_socre_object;
 	if( go->game_completion )
 	{
-		if( 0 != so->saved_answerd && so->saved_answerd == so->saved_correct )
+		if( 0 != so->score_answerd && so->score_correct == so->score_answerd )
 		{
 			engine_text_manager_draw_lines_palette( LOCALE_OVER_PERFECT, 16, 23 );
 		}

@@ -36,7 +36,6 @@ void screen_play_screen_load()
 void screen_play_screen_update( unsigned char *screen_type )
 {
 	struct_cursor_object *co = &global_cursor_object;
-	struct_hack_object *ho = &global_hack_object;
 	struct_quiz_object *qo = &global_quiz_object;
 
 	unsigned char input;
@@ -56,11 +55,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		correct = quiz_select[ riff_index ];
 		answer = co->selects == correct ? sprite_type_right : sprite_type_wrong;
 
-		if( !ho->hack_delayspeed )
-		{
-			engine_audio_manager_play_effect( answer );
-		}
-
+		engine_audio_manager_play_effect( answer );
 		engine_score_manager_update( save_index, answer );
 		engine_cursor_manager_action( answer );
 

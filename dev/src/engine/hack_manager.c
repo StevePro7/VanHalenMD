@@ -76,7 +76,7 @@ void engine_hack_manager_save()
 	//ho->hack_delayspeed = 1;
 	//ho->hack_invincible = 1;
 
-	index = 1;
+	index = 0;
 	engine_game_manager_set_riff_select( index );
 	engine_quiz_manager_set_riffs_play( index );
 
