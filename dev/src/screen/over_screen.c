@@ -11,6 +11,7 @@
 #include "quiz_manager.h"
 #include "score_manager.h"
 #include "sprite_manager.h"
+#include "storage_manager.h"
 #include "text_manager.h"
 #include "timer_manager.h"
 
@@ -21,6 +22,7 @@ static unsigned char flash_count;
 
 void screen_over_screen_load()
 {
+	struct_game_object *go = &global_game_object;
 	struct_quiz_object *qo = &global_quiz_object;
 
 	engine_cursor_manager_hide();
@@ -36,6 +38,7 @@ void screen_over_screen_load()
 	engine_delay_manager_load( SCORE_FLASH_DELAY );
 	engine_audio_manager_stop();
 
+	engine_quiz_manager_set_quiz_saved_all( go->game_completion );
 	//flash_score();
 	flash_count = 0;
 }

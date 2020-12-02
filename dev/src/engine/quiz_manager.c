@@ -249,15 +249,13 @@ void engine_quiz_manager_set_difficulty( unsigned char index )
 	}
 }
 
-void engine_quiz_manager_set_quiz_saved_all()
+void engine_quiz_manager_set_quiz_saved_all( unsigned char ended )
 {
 	struct_quiz_object *qo = &global_quiz_object;
 	unsigned char index = qo->quiz_difficulty * MAX_OPTION + qo->quiz_riff_numbs;
 
 	qo->quiz_saved[ index ]++;
-	// TODO add logic for game_completion!!
-	qo->quiz_ended++;
-	// TODO add logic for game_completion!!
+	qo->quiz_ended += ended;
 	qo->quiz_total++;
 
 	// Attempt to prevent overflow!

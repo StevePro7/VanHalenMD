@@ -26,7 +26,7 @@ void engine_quiz_manager_cheat();
 void engine_quiz_manager_reset();
 void engine_quiz_manager_set_riffs_play( unsigned char index );
 void engine_quiz_manager_set_difficulty( unsigned char index );
-void engine_quiz_manager_set_quiz_saved_all();
+void engine_quiz_manager_set_quiz_saved_all( unsigned char ended );
 void engine_quiz_manager_set_quiz_saved( unsigned char index, unsigned short saved );
 void engine_quiz_manager_set_quiz_ended( unsigned short ended );
 void engine_quiz_manager_set_quiz_total( unsigned short total );
