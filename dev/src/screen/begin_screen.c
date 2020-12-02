@@ -21,7 +21,7 @@ void screen_begin_screen_load()
 	draw_texter();
 	engine_font_manager_text( LOCALE_BUILD_VERSION, 36, 27 );
 
-	// TODO render image after pause...
+	// TODO render image after pause...?
 	engine_image_manager_draw_header();
 }
 
@@ -55,13 +55,4 @@ static void draw_texter()
 	{
 		engine_font_manager_char( LOCALE_TITLE_VINTAGE[ index ], start + ( index * step ), y );
 	}
-
-	//engine_font_manager_char( 'V', 8, 4 );
-	//engine_font_manager_char( 'I', 12, 4 );
-	//engine_font_manager_char( 'N', 16, 4 );
-	//engine_font_manager_char( 'T', 20, 4 );
-	//engine_font_manager_char( 'A', 24, 4 );
-	//engine_font_manager_char( 'G', 28, 4 );
-	//engine_font_manager_char( 'E', 32, 4 );
 }
-
