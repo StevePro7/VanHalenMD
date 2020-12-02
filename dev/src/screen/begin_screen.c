@@ -5,6 +5,7 @@
 #include "image_manager.h"
 #include "input_manager.h"
 #include "locale_manager.h"
+#include "random_manager.h"
 #include "timer_manager.h"
 
 #ifdef _CONSOLE
@@ -44,6 +45,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		return;
 	}
 
+	engine_random_manager_rand();
 	*screen_type = screen_type_begin;
 }
 

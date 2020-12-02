@@ -6,6 +6,7 @@
 #include "image_manager.h"
 #include "input_manager.h"
 #include "locale_manager.h"
+#include "random_manager.h"
 #include "sprite_manager.h"
 #include "storage_manager.h"
 
@@ -30,6 +31,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 	//	engine_storage_manager_write();
 	//}
 
+	engine_random_manager_rand();
 	engine_sprite_manager_update();
 
 	// From here goto : begin / intro / title / riff / load screen...

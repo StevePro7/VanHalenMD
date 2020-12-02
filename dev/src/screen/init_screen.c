@@ -7,6 +7,7 @@
 #include "graphics_manager.h"
 #include "hack_manager.h"
 #include "quiz_manager.h"
+#include "random_manager.h"
 #include "score_manager.h"
 #include "screen_manager.h"
 #include "sprite_manager.h"
@@ -32,6 +33,7 @@ void screen_init_screen_load()
 
 void screen_init_screen_update( unsigned char *screen_type )
 {
+	engine_random_manager_rand();
 	//*screen_type = screen_type_title;
 	*screen_type = screen_type_begin;
 }
