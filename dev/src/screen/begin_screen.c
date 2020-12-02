@@ -13,6 +13,8 @@
 #include <genesis.h>
 #endif
 
+#define BEGIN_SCREEN_DELAY		250
+
 static void draw_texter();
 
 void screen_begin_screen_load()
@@ -23,17 +25,20 @@ void screen_begin_screen_load()
 
 	// TODO render image after pause...?
 	engine_image_manager_draw_header();
+	engine_delay_manager_load( BEGIN_SCREEN_DELAY );
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )
 {
-	//unsigned char delay;
-	unsigned char input;
+	unsigned char delay;
+	unsigned char input1;
 	unsigned char input2;
 
-	input = engine_input_manager_hold_buttonA();
+	delay = engine_delay_manager_update();
+	input1 = engine_input_manager_hold_buttonA();
 	input2 = engine_input_manager_hold_buttonStart();
-	if( input || input2 )
+
+	if( delay || input1 || input2 )
 	{
 		*screen_type = screen_type_intro;
 		return;

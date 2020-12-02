@@ -1,4 +1,16 @@
 TODO
+02/12/2020
+SRAM persist last 10x Eddies
+SRAM persist scores and regression test
+Switch Eddie last to first
+Begin screen 	add delay and move on	or press Start / A button to move on
+
+Over screen	extend the music to longer 
+		add delay and move back to title
+
+Revert load screen quiz random
+
+
 01/12/2020
 Begin		DONE		Not doing : delay letters / image / final lower text
 Start		TODO		record "last" Eddie so don't always show same Eddie
