@@ -228,6 +228,9 @@
     <ClCompile Include="src\screen\stats_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
+    <ClCompile Include="..\sfx\res\sfx_musics.c">
+      <Filter>Source Files\content</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat">
@@ -423,6 +426,9 @@
     </ClInclude>
     <ClInclude Include="inc\screen\stats_screen.h">
       <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="res\sfx_musics.h">
+      <Filter>Header Files\content</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

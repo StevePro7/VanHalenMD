@@ -151,6 +151,7 @@
     <ClCompile Include="..\gfx\res\gfx_sprites.c" />
     <ClCompile Include="..\gfx\res\gfx_tiles.c" />
     <ClCompile Include="..\sfx\res\sfx_effects.c" />
+    <ClCompile Include="..\sfx\res\sfx_musics.c" />
     <ClCompile Include="..\sfx\res\sfx_riffs.c" />
     <ClCompile Include="src\engine\audio_manager.c" />
     <ClCompile Include="src\engine\banner_manager.c" />
@@ -277,6 +278,7 @@
     <ClInclude Include="res\gfx_sprites.h" />
     <ClInclude Include="res\gfx_tiles.h" />
     <ClInclude Include="res\sfx_effects.h" />
+    <ClInclude Include="res\sfx_musics.h" />
     <ClInclude Include="res\sfx_riffs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

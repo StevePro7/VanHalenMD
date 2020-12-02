@@ -1,5 +1,6 @@
 #include "audio_object.h"
 #include "sfx_effects.h"
+#include "sfx_musics.h"
 #include "sfx_riffs.h"
 
 const unsigned char *audio_riff[ MAX_RIFFS ] =
@@ -104,4 +105,14 @@ const unsigned int audio_effect_size[ MAX_EFFECTS ] =
 	15872,
 	16384,
 	14592,
+};
+
+const unsigned char *audio_music[ MAX_MUSICS ] =
+{
+	sfx_music,
+};
+
+const unsigned int audio_music_size[ MAX_MUSICS ] =
+{
+	140544,
 };

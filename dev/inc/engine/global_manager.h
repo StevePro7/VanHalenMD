@@ -8,6 +8,7 @@
 #define TOT_SONGS				126
 #define MAX_RIFFS				40
 #define MAX_EFFECTS				4
+#define MAX_MUSICS				1
 #define MAX_MENUS				2
 #define MAX_OPTION				4
 #define MAX_DIFFICULTY			2
