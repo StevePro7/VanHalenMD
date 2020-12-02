@@ -71,18 +71,29 @@ void engine_storage_manager_read()
 	engine_quiz_manager_set_quiz_total( word );
 
 
-	// Padding 2x bytes.
-	byte = SRAM_readByte( sRamOffSet++ );
-	if( INVALID_INDEX == byte )
+	// Padding 10x bytes with Eddie images.
+	for( idx = 0; idx < EDDIE_IMAGES; idx++ )
 	{
-		byte = 0;
+		byte = SRAM_readByte( sRamOffSet++ );
+		if( INVALID_INDEX == byte )
+		{
+			byte = 0;
+		}
+
+		engine_eddie_manager_set_eddie_image( idx, byte );
 	}
-	engine_eddie_manager_set_eddie_final( byte );
-	byte = SRAM_readByte( sRamOffSet++ );
-	if( INVALID_INDEX == byte )
-	{
-		byte = 0;
-	}
+
+	//byte = SRAM_readByte( sRamOffSet++ );
+	//if( INVALID_INDEX == byte )
+	//{
+	//	byte = 0;
+	//}
+	//engine_eddie_manager_set_eddie_final( byte );
+	//byte = SRAM_readByte( sRamOffSet++ );
+	//if( INVALID_INDEX == byte )
+	//{
+	//	byte = 0;
+	//}
 
 	//word = SRAM_readWord( sRamOffSet );
 	//sRamOffSet++;
@@ -122,7 +133,7 @@ void engine_storage_manager_write()
 {
 	struct_quiz_object *qo = &global_quiz_object;
 	struct_eddie_object *eo = &global_eddie_object;
-	struct_score_object *so = &global_socre_object;
+	//struct_score_object *so = &global_socre_object;
 
 	unsigned short sRamOffSet;
 	unsigned short word;
@@ -157,11 +168,15 @@ void engine_storage_manager_write()
 	sRamOffSet++;
 	sRamOffSet++;
 
+
+	// Padding 10x bytes with Eddie images.
+	for( idx = 0; idx < EDDIE_IMAGES; idx++ )
+	{
+		byte = eo->eddie_images[ idx ];
+		SRAM_writeByte( sRamOffSet++, byte );
+	}
+
 	// Padding 2x bytes.
-	byte = eo->eddie_final;
-	SRAM_writeByte( sRamOffSet++, byte );
-	byte = 0x00;
-	SRAM_writeByte( sRamOffSet++, byte );
 	//word = 0;
 	//SRAM_writeWord( sRamOffSet, word );
 	//sRamOffSet++;
@@ -214,9 +229,15 @@ void engine_storage_manager_erase()
 	sRamOffSet++;
 	sRamOffSet++;
 
+
+	// Padding 10x bytes with Eddie images.
+	for( idx = 0; idx < EDDIE_IMAGES; idx++ )
+	{
+		SRAM_writeByte( sRamOffSet++, INVALID_INDEX );
+	}
 	// Padding 2x bytes.
-	SRAM_writeByte( sRamOffSet++, INVALID_INDEX );
-	SRAM_writeByte( sRamOffSet++, INVALID_INDEX );
+	//SRAM_writeByte( sRamOffSet++, INVALID_INDEX );
+	//SRAM_writeByte( sRamOffSet++, INVALID_INDEX );
 
 
 	//// Score summary correct + answered.
