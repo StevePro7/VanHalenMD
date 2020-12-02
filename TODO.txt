@@ -11,7 +11,7 @@ Intro		DONE		Vintage VH [pic] "and the cradle will rock"
 Title		DONE		Cheat mode + sfx when select i.e. pause b4 riff		DONE
 				Thanks text [short]					DONE
 Riff 		DONE		B button goes back to Title				DONE
-Ready		TODO	 	Yellow for riff + diff, delay + "GetReady" pause
+Ready		DONE	 	Yellow for riff + diff, delay + "GetReady" pause
 Load		TODO		remove SaveAll
 Play		DONE		test riff 0 "bug"...?
 Score		TODO		if goto Over then ended = 1
