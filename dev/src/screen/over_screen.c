@@ -16,7 +16,7 @@
 #include "timer_manager.h"
 
 //#define SCORE_FLASH_DELAY		25
-#define SCORE_MUSIC_DELAY		500
+#define SCORE_MUSIC_DELAY		600
 #define SCORE_FLASH_DELAY		20
 
 static void flash_score();
