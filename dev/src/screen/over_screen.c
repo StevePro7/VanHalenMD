@@ -15,10 +15,13 @@
 #include "text_manager.h"
 #include "timer_manager.h"
 
-#define SCORE_FLASH_DELAY		25
+//#define SCORE_FLASH_DELAY		25
+#define SCORE_MUSIC_DELAY		500
+#define SCORE_FLASH_DELAY		20
 
 static void flash_score();
 static unsigned char flash_count;
+static unsigned short frame_count;
 
 void screen_over_screen_load()
 {
@@ -35,7 +38,7 @@ void screen_over_screen_load()
 	//engine_text_manager_draw_lines( 12, 2 );
 	engine_score_manager_draw_summary( qo->quiz_riffs_play );
 
-	engine_delay_manager_load( SCORE_FLASH_DELAY );
+	engine_delay_manager_load( SCORE_MUSIC_DELAY );
 	engine_audio_manager_stop();
 
 	engine_quiz_manager_set_quiz_saved_all( go->game_completion );
@@ -44,6 +47,7 @@ void screen_over_screen_load()
 	engine_audio_manager_play_music( 0 );
 	//flash_score();
 	flash_count = 0;
+	frame_count = 0;
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
@@ -53,10 +57,18 @@ void screen_over_screen_update( unsigned char *screen_type )
 	unsigned char delay;
 	unsigned char input;
 
+	delay = engine_delay_manager_update();
+	if( delay )
+	{
+		*screen_type = screen_type_title;
+		return;
+	}
+
+	frame_count++;
 	if( 0 != so->score_answerd && so->score_correct == so->score_answerd )
 	{
-		delay = engine_delay_manager_update();
-		if( delay )
+	//	delay = engine_delay_manager_update();
+		if( 0 == frame_count % SCORE_FLASH_DELAY )
 		{
 			if( !ho->hack_delayspeed )
 			{

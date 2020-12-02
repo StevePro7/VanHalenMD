@@ -34,6 +34,6 @@ void screen_init_screen_load()
 void screen_init_screen_update( unsigned char *screen_type )
 {
 	engine_random_manager_rand();
-	//*screen_type = screen_type_title;
-	*screen_type = screen_type_begin;
+	*screen_type = screen_type_title;
+	//*screen_type = screen_type_begin;
 }
