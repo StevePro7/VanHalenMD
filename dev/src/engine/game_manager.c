@@ -11,7 +11,6 @@ void engine_game_manager_init()
 	struct_game_object *go = &global_game_object;
 	go->riff_selections = 0;
 	go->diff_selections = difficulty_type_easy;
-	//go->diff_selections = difficulty_type_hard;
 	go->game_localcheat = 0;
 	go->game_completion = 0;
 }
