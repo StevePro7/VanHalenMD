@@ -1,4 +1,5 @@
 #include "intro_screen.h"
+#include "audio_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "graphics_manager.h"
@@ -29,6 +30,8 @@ void screen_intro_screen_load()
 
 	eddie = 0;
 	print_text( eddie );
+
+	engine_audio_manager_play_intro( intros_type_dream );
 }
 
 void screen_intro_screen_update( unsigned char *screen_type )

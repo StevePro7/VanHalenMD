@@ -16,6 +16,7 @@
 #define START_FLASH_DELAY		50
 #define START_SCREEN_DELAY		100
 #define STATS_SCREEN_DELAY		75
+#define SAMPLE_ROTATE_DELAY		200
 #define LOCAL_CHEAT_TOTAL		5
 
 static void randomize_intro();
@@ -86,7 +87,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 	if( !audio )
 	{
 		frame++;
-		if( 0 == frame % 100 )
+		if( 0 == frame % SAMPLE_ROTATE_DELAY )
 		{
 			frame = 0;
 			check = intro_riffs[ intro_index ];

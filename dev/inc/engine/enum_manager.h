@@ -86,6 +86,13 @@ typedef enum tag_enum_effects_type
 
 } enum_effects_type;
 
+typedef enum tag_enum_intros_type
+{
+	intros_type_dream = 0,
+	intros_type_jumps = 1,
+
+} enum_intros_type;
+
 /*
 typedef enum tag_enum_album_type
 {

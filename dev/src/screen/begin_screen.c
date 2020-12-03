@@ -1,4 +1,5 @@
 #include "begin_screen.h"
+#include "audio_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "graphics_manager.h"
@@ -14,7 +15,7 @@
 #include <genesis.h>
 #endif
 
-#define BEGIN_SCREEN_DELAY		250
+#define BEGIN_SCREEN_DELAY		550
 
 static void draw_texter();
 
@@ -27,6 +28,8 @@ void screen_begin_screen_load()
 	// TODO render image after pause...?
 	engine_image_manager_draw_header();
 	engine_delay_manager_load( BEGIN_SCREEN_DELAY );
+
+	engine_audio_manager_play_intro( intros_type_jumps );
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )
