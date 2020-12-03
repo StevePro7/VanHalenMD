@@ -25,15 +25,6 @@ void screen_title_screen_load()
 
 void screen_title_screen_update( unsigned char *screen_type )
 {
-	//unsigned char input;
-
-	//input = engine_input_manager_hold_buttonA();
-	//if( input )
-	//{
-	//	engine_font_manager_text( "Saved data", 2, 14 );
-	//	engine_storage_manager_write();
-	//}
-
 	engine_random_manager_rand();
 	engine_sprite_manager_update();
 
