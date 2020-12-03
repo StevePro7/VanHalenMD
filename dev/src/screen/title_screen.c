@@ -18,6 +18,7 @@ void screen_title_screen_load()
 	engine_graphics_manager_clear_area();
 	eddie_image = engine_eddie_manager_next();
 	engine_image_manager_draw_eddie( eddie_image, 20, 6 );
+	engine_storage_manager_write();
 }
 
 void screen_title_screen_update( unsigned char *screen_type )

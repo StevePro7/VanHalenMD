@@ -19,6 +19,7 @@ void screen_part_screen_load()
 	eddie_image = engine_eddie_manager_next();
 	engine_graphics_manager_clear_area();
 	engine_image_manager_draw_eddie( eddie_image, 20, 6 );
+	//engine_storage_manager_write();		// TODO write
 
 	engine_quiz_manager_draw();
 	engine_quiz_manager_riff();

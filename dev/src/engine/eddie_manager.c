@@ -42,7 +42,10 @@ unsigned char engine_eddie_manager_next()
 
 	while( 1 )
 	{
-		eddie_image = engine_random_manager_data( ( MAX_EDDIES - 1 ) );
+		//eddie_image = engine_random_manager_data( ( MAX_EDDIES - 1 ) );
+		eddie_image = 0;
+		eddie_image += 1;
+
 		if(
 			( eddie_image != eo->eddie_images[ 0 ] ) &&
 			( eddie_image != eo->eddie_images[ 1 ] ) &&
