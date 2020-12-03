@@ -22,6 +22,9 @@ static unsigned char flash_count;
 static unsigned char cheat_count;
 static unsigned char stage;
 
+static void randomize_intro();
+static unsigned char intro_riffs[ MAX_INTRO ] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
 void screen_start_screen_load()
 {
 	struct_hack_object *ho = &global_hack_object;
@@ -42,6 +45,8 @@ void screen_start_screen_load()
 	engine_font_manager_text( LOCALE_TITLE_START, 5, 24 );
 	engine_delay_manager_load( START_FLASH_DELAY );
 	engine_reset_manager_load( STATS_SCREEN_DELAY );
+	randomize_intro();
+
 	event_stage = event_stage_start;
 	flash_count = 0;
 	cheat_count = 0;
@@ -138,3 +143,28 @@ void screen_start_screen_update( unsigned char *screen_type )
 	engine_sprite_manager_update();
 	*screen_type = screen_type_start;
 }
+
+static void randomize_intro()
+{
+	unsigned char idx;
+	unsigned char rnd;
+
+	for( idx = 0; idx < MAX_INTRO; idx++ )
+	{
+		intro_riffs[ idx ] = 0;
+	}
+
+	for( idx = 0; idx < MAX_INTRO; idx++ )
+	{
+		while( 1 )
+		{
+			rnd = engine_random_manager_data( MAX_INTRO );
+			if( 0 == intro_riffs[ rnd ] )
+			{
+				intro_riffs[ rnd ] = idx;
+				break;
+			}
+		}
+	}
+}
+//static unsigned char intro_riffs[ MAX_INTRO ] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
