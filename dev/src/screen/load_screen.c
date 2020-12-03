@@ -21,9 +21,9 @@ void screen_load_screen_load()
 	engine_quiz_manager_draw();
 
 	// Load quiz questions.
-	engine_quiz_manager_load_normal();
+	//engine_quiz_manager_load_normal();
 	//engine_quiz_manager_load_mixing();
-	//engine_quiz_manager_load_random();
+	engine_quiz_manager_load_random();
 
 	// Assume the game will be completed.
 	engine_game_manager_set_game_finish( completion_type_yes );

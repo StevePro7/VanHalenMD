@@ -20,7 +20,7 @@
 
 static void randomize_intro();
 
-static unsigned char intro_riffs[ MAX_INTRO ] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+static unsigned char intro_riffs[ MAX_SAMPLES ] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 static unsigned char intro_index;
 static unsigned char event_stage;
 static unsigned char flash_count;
@@ -93,7 +93,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 			engine_audio_manager_play_riff( music_intro[ check ] );
 			//engine_audio_manager_play_riff( 0x12 );
 			intro_index++;
-			if( intro_index >= MAX_INTRO )
+			if( intro_index >= MAX_SAMPLES )
 			{
 				intro_index = 0;
 			}
@@ -175,29 +175,16 @@ static void randomize_intro()
 	unsigned char idx;
 	unsigned char rnd;
 
-	for( idx = 0; idx < MAX_INTRO; idx++ )
+	for( idx = 0; idx < MAX_SAMPLES; idx++ )
 	{
 		intro_riffs[ idx ] = 0;
 	}
 
-	//for( idx = 0; idx < MAX_INTRO; idx++ )
-	//{
-	//	//while( 1 )
-	//	//{
-	//		//rnd = engine_random_manager_data( MAX_INTRO );
-	//		//if( 0 == intro_riffs[ rnd ] )
-	//		//{
-	//			intro_riffs[ idx ] = idx;
-	//			//break;
-	//		//}
-	//	//}
-	//}
-
-	for( idx = 0; idx < MAX_INTRO; idx++ )
+	for( idx = 0; idx < MAX_SAMPLES; idx++ )
 	{
 		while( 1 )
 		{
-			rnd = engine_random_manager_data( MAX_INTRO );
+			rnd = engine_random_manager_data( MAX_SAMPLES );
 			if( 0 == intro_riffs[ rnd ] )
 			{
 				intro_riffs[ rnd ] = idx;

@@ -1,5 +1,6 @@
 #include "audio_object.h"
 #include "sfx_effects.h"
+#include "sfx_intros.h"
 #include "sfx_musics.h"
 #include "sfx_riffs.h"
 
@@ -98,7 +99,6 @@ const unsigned char *audio_effect[ MAX_EFFECTS ] =
 	sfx_right,
 	sfx_wrong,
 };
-
 const unsigned int audio_effect_size[ MAX_EFFECTS ] =
 {
 	13568,
@@ -107,11 +107,21 @@ const unsigned int audio_effect_size[ MAX_EFFECTS ] =
 	14592,
 };
 
+const unsigned char *audio_intro[ MAX_INTROS ] =
+{
+	sfx_dream,
+	sfx_jumps,
+};
+const unsigned int audio_intro_size[ MAX_INTROS ] =
+{
+	196864,
+	132608,
+};
+
 const unsigned char *audio_music[ MAX_MUSICS ] =
 {
 	sfx_music,
 };
-
 const unsigned int audio_music_size[ MAX_MUSICS ] =
 {
 	140544,

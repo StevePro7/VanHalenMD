@@ -292,7 +292,7 @@ const unsigned char music_riffs[ MAX_RIFFS ] =
 	0x83, 0x87, 0x89, 0x8A, 0x91, 0x92, 0x97, 0x9B, 0xA7, 0xB2,
 };
 
-const unsigned char music_intro[ MAX_INTRO ] =
+const unsigned char music_intro[ MAX_SAMPLES ] =
 {
 	0, 1, 10, 13, 15, 28, 33, 35, 36, 39
 };

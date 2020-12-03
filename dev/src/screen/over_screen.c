@@ -60,6 +60,7 @@ void screen_over_screen_update( unsigned char *screen_type )
 	delay = engine_delay_manager_update();
 	if( delay )
 	{
+		engine_audio_manager_stop();
 		*screen_type = screen_type_title;
 		return;
 	}
@@ -88,6 +89,7 @@ void screen_over_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold_buttonA();
 	if( input )
 	{
+		engine_audio_manager_stop();
 		*screen_type = screen_type_title;
 		return;
 	}
