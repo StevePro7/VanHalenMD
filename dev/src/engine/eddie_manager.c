@@ -42,8 +42,8 @@ unsigned char engine_eddie_manager_next()
 
 	while( 1 )
 	{
-		//eddie_image = engine_random_manager_data( ( MAX_EDDIES - 1 ) );
-		eddie_image = 0;
+		// Displace Eddie images from 1-22 as 0 index is baby Eddie!
+		eddie_image = engine_random_manager_data( ( MAX_EDDIES - 1 ) );
 		eddie_image += 1;
 
 		if(
