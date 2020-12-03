@@ -19,7 +19,7 @@ void screen_intro_screen_load()
 	engine_graphics_manager_clear_full();
 
 	engine_image_manager_draw_banner();
-	engine_image_manager_draw_eddie( MAX_EDDIES - 1, 14, 6 );
+	engine_image_manager_draw_eddie( 0, 14, 6 );
 
 	engine_delay_manager_load( INTRO_SCREEN_DELAY );
 
