@@ -16,7 +16,7 @@
 #define START_FLASH_DELAY		50
 #define START_SCREEN_DELAY		100
 #define STATS_SCREEN_DELAY		75
-#define SAMPLE_ROTATE_DELAY		200
+#define SAMPLE_ROTATE_DELAY		150
 #define LOCAL_CHEAT_TOTAL		5
 
 static void randomize_intro();

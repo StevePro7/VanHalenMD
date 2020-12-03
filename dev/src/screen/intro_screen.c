@@ -12,8 +12,9 @@
 
 #define INTRO_SCREEN_DELAY		350
 
-static unsigned char eddie;
 static void print_text( unsigned char index );
+static unsigned char eddie;
+static unsigned short frame;
 
 void screen_intro_screen_load()
 {
@@ -30,8 +31,6 @@ void screen_intro_screen_load()
 
 	eddie = 0;
 	print_text( eddie );
-
-	engine_audio_manager_play_intro( intros_type_dream );
 }
 
 void screen_intro_screen_update( unsigned char *screen_type )
@@ -39,6 +38,19 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	unsigned char delay;
 	unsigned char input;
 	unsigned char input2;
+	unsigned char audio;
+
+	// Play audio intro riff.
+	audio = engine_audio_manager_is_playing();
+	if( !audio )
+	{
+		frame++;
+		if( 0 == frame % 150 )
+		{
+			frame = 0;
+			engine_audio_manager_play_intro( intros_type_dream );
+		}
+	}
 
 	delay = engine_delay_manager_update();
 	if( delay )
@@ -58,6 +70,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	input2 = engine_input_manager_hold_buttonStart();
 	if( input || input2 )
 	{
+		engine_audio_manager_stop();
 		*screen_type = screen_type_title;
 		return;
 	}

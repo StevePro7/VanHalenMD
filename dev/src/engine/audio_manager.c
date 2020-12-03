@@ -85,7 +85,7 @@ void engine_audio_manager_stop()
 
 unsigned char engine_audio_manager_is_playing()
 {
-	return XGM_isPlayingPCM( SOUND_PCM_CH1_MSK );
+	return XGM_isPlayingPCM( SOUND_PCM_CH1_MSK ) || XGM_isPlayingPCM( SOUND_PCM_CH2_MSK );
 }
 
 static void play_audio( const u8 id, const u8 priority, const u16 channel )

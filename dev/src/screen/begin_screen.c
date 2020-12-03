@@ -44,6 +44,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 
 	if( delay || input1 || input2 )
 	{
+		engine_audio_manager_stop();
 		*screen_type = screen_type_intro;
 		return;
 	}
