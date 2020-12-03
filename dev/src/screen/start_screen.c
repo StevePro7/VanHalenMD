@@ -92,7 +92,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 			frame = 0;
 			check = intro_riffs[ intro_index ];
 			engine_audio_manager_play_riff( music_intro[ check ] );
-			//engine_audio_manager_play_riff( 0x12 );
+
 			intro_index++;
 			if( intro_index >= MAX_SAMPLES )
 			{
@@ -141,8 +141,8 @@ void screen_start_screen_update( unsigned char *screen_type )
 			{
 				engine_audio_manager_play_effect( effects_type_cheat );
 
-				engine_font_manager_text( LOCALE_CHEAT_MARKER, 18, 27 );
 				engine_game_manager_set_local_cheat( completion_type_yes );
+				engine_game_manager_draw_cheat();
 			}
 		}
 	}

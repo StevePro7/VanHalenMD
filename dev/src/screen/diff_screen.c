@@ -26,6 +26,7 @@ void screen_diff_screen_load()
 	engine_cursor_manager_load_small( MAX_MENUS, go->diff_selections, OPTION_X, diff_yPos, diff_line1, diff_line2 );
 	engine_cursor_manager_draw();
 
+	engine_game_manager_draw_cheat();
 	print_extra( go->diff_selections );
 	stage = event_stage_start;
 }

@@ -3,9 +3,9 @@
 
 #define LOCALE_BLANK_SIZE4		"    "
 #define LOCALE_BLANK_SIZE18		"                  "
-#define LOCALE_BLANK_SIZE20		"                    "
+//#define LOCALE_BLANK_SIZE20		"                    "							// TODO test!!
 #define LOCALE_BLANK_SIZE30		"                              "
-#define LOCALE_BLANK_SIZE38		"                                      "
+//#define LOCALE_BLANK_SIZE38		"                                      "		// TODO test!!
 
 #define LOCALE_BUILD_VERSION	"V1.0"
 #define LOCALE_SPLASH_TEXT		"(C) 2020"
@@ -17,6 +17,7 @@
 #define LOCALE_TITLE_VANHALEN	"VAN HALEN"
 #define LOCALE_TITLE_START		"PRESS START"
 #define LOCALE_CHEAT_MARKER		"!!"
+
 #define LOCALE_READY_INFOTEXT	"DURING PLAY:"
 #define LOCALE_SUMMARY_SCORE	"InGame Statistics"
 #define LOCALE_SUMMARY_OVER		"TESTER COMPLETE "

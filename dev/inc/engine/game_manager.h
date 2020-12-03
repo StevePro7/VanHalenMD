@@ -7,6 +7,7 @@
 extern struct_game_object global_game_object;
 
 void engine_game_manager_init();
+void engine_game_manager_draw_cheat();
 void engine_game_manager_set_riff_select( unsigned char index );
 void engine_game_manager_set_diff_select( unsigned char index );
 void engine_game_manager_set_local_cheat( unsigned char cheat );

@@ -2,6 +2,7 @@
 #include "audio_manager.h"
 #include "cursor_manager.h"
 #include "enum_manager.h"
+#include "font_manager.h"
 #include "game_manager.h"
 #include "global_manager.h"
 #include "graphics_manager.h"
@@ -25,6 +26,7 @@ void screen_riff_screen_load()
 	engine_cursor_manager_load_small( MAX_OPTION, go->riff_selections, OPTION_X, riff_yPos, riff_line1, riff_line2 );
 	engine_cursor_manager_draw();
 
+	engine_game_manager_draw_cheat();
 	stage = event_stage_start;
 }
 
