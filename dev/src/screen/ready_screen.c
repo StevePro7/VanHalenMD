@@ -12,7 +12,7 @@
 #include "timer_manager.h"
 
 #define READY_SCREEN_DELAY		100
-#define READY_SCREEN_PAUSE		150
+#define READY_SCREEN_PAUSE		100
 
 static unsigned char stage;
 

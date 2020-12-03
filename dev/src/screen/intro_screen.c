@@ -11,8 +11,10 @@
 #include "timer_manager.h"
 
 #define INTRO_SCREEN_DELAY		350
+#define INTRO_MUSICS_DELAY		100
 
 static void print_text( unsigned char index );
+static unsigned char audio;
 static unsigned char eddie;
 static unsigned short frame;
 
@@ -23,12 +25,12 @@ void screen_intro_screen_load()
 	engine_image_manager_draw_banner();
 	engine_image_manager_draw_eddie( 0, 14, 6 );
 
-	engine_delay_manager_load( INTRO_SCREEN_DELAY );
-
 	// TODO replace hard coded co-ordinates.
 	engine_font_manager_text( LOCALE_EDWARD_TITLE, 12, 4 );
 	engine_font_manager_text( LOCALE_BIRTH_DEATH, 14, 22 );
 
+	engine_delay_manager_load( INTRO_SCREEN_DELAY );
+	audio = 0;
 	eddie = 0;
 	print_text( eddie );
 }
@@ -38,15 +40,14 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	unsigned char delay;
 	unsigned char input;
 	unsigned char input2;
-	unsigned char audio;
 
 	// Play audio intro riff.
-	audio = engine_audio_manager_is_playing();
-	if( !audio )
+	if( 0 == audio )
 	{
 		frame++;
-		if( 0 == frame % 150 )
+		if( 0 == frame % INTRO_MUSICS_DELAY )
 		{
+			audio = 1;
 			frame = 0;
 			engine_audio_manager_play_intro( intros_type_dream );
 		}
