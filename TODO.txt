@@ -13,7 +13,7 @@ Revert load screen quiz random
 
 01/12/2020
 Begin		DONE		Not doing : delay letters / image / final lower text
-Start		TODO		record "last" Eddie so don't always show same Eddie
+Start		DONE		record "last" Eddie so don't always show same Eddie
 Ready		DONE		Integrate yellow text and ready sfx
 
 29/11/2020
@@ -24,7 +24,7 @@ Title		DONE		Cheat mode + sfx when select i.e. pause b4 riff		DONE
 				Thanks text [short]					DONE
 Riff 		DONE		B button goes back to Title				DONE
 Ready		DONE	 	Yellow for riff + diff, delay + "GetReady" pause
-Load		TODO		remove SaveAll
+Load		DONE		remove SaveAll
 Play		DONE		test riff 0 "bug"...?
 Score		DONE		if goto Over then ended = 1
 Over		DONE		Quiz SaveAll, Score saveAll + SRAM write
