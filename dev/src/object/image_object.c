@@ -3,6 +3,7 @@
 
 const Image *image_eddie[ MAX_EDDIES ] =
 {
+	&gfx_eddie_99,
 	&gfx_eddie_00,
 	&gfx_eddie_01,
 	&gfx_eddie_02,
@@ -25,5 +26,4 @@ const Image *image_eddie[ MAX_EDDIES ] =
 	&gfx_eddie_19,
 	&gfx_eddie_20,
 	&gfx_eddie_21,
-	&gfx_eddie_99,
 };
