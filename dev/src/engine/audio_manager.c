@@ -70,6 +70,11 @@ void engine_audio_manager_stop()
 	stop_audio();
 }
 
+unsigned char engine_audio_manager_is_playing()
+{
+	return XGM_isPlayingPCM( SOUND_PCM_CH1_MSK );
+}
+
 static void play_audio( const u8 id, const u8 priority, const u16 channel )
 {
 	stop_audio();

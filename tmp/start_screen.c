@@ -11,22 +11,16 @@
 #include "sprite_manager.h"
 #include "text_manager.h"
 #include "timer_manager.h"
-#include "music_object.h"
 
 #define START_FLASH_DELAY		50
 #define START_SCREEN_DELAY		100
 #define STATS_SCREEN_DELAY		75
 #define LOCAL_CHEAT_TOTAL		5
 
-static void randomize_intro();
-
-static unsigned char intro_riffs[ MAX_INTRO ] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-static unsigned char intro_index;
 static unsigned char event_stage;
 static unsigned char flash_count;
 static unsigned char cheat_count;
 static unsigned char stage;
-static unsigned short frame;
 
 void screen_start_screen_load()
 {
@@ -48,15 +42,10 @@ void screen_start_screen_load()
 	engine_font_manager_text( LOCALE_TITLE_START, 5, 24 );
 	engine_delay_manager_load( START_FLASH_DELAY );
 	engine_reset_manager_load( STATS_SCREEN_DELAY );
-
-	randomize_intro();
-	intro_index = 0;
-
 	event_stage = event_stage_start;
 	flash_count = 0;
 	cheat_count = 0;
 	stage = event_stage_start;
-	frame = 0;
 }
 
 void screen_start_screen_update( unsigned char *screen_type )
@@ -67,7 +56,6 @@ void screen_start_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char input2;
 	unsigned char check;
-	unsigned char audio;
 
 	engine_sprite_manager_update();
 	if( event_stage_pause == stage )
@@ -79,24 +67,6 @@ void screen_start_screen_update( unsigned char *screen_type )
 		}
 
 		return;
-	}
-
-	// Play random audio riff.
-	audio = engine_audio_manager_is_playing();
-	if( !audio )
-	{
-		frame++;
-		if( 0 == frame % 100 )
-		{
-			frame = 0;
-			check = intro_riffs[ intro_index ];
-			engine_audio_manager_play_riff( music_intro[ check ] );
-			intro_index++;
-			if( intro_index >= MAX_INTRO )
-			{
-				intro_index = 0;
-			}
-		}
 	}
 
 	delay = engine_delay_manager_update();
@@ -167,28 +137,4 @@ void screen_start_screen_update( unsigned char *screen_type )
 	engine_random_manager_rand();
 	engine_sprite_manager_update();
 	*screen_type = screen_type_start;
-}
-
-static void randomize_intro()
-{
-	unsigned char idx;
-	unsigned char rnd;
-
-	for( idx = 0; idx < MAX_INTRO; idx++ )
-	{
-		intro_riffs[ idx ] = 0;
-	}
-
-	for( idx = 0; idx < MAX_INTRO; idx++ )
-	{
-		while( 1 )
-		{
-			rnd = engine_random_manager_data( MAX_INTRO );
-			if( 0 == intro_riffs[ rnd ] )
-			{
-				intro_riffs[ rnd ] = idx;
-				break;
-			}
-		}
-	}
 }

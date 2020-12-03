@@ -67,7 +67,6 @@ void screen_over_screen_update( unsigned char *screen_type )
 	frame_count++;
 	if( 0 != so->score_answerd && so->score_correct == so->score_answerd )
 	{
-	//	delay = engine_delay_manager_update();
 		if( 0 == frame_count % SCORE_FLASH_DELAY )
 		{
 			if( !ho->hack_delayspeed )
