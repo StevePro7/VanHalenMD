@@ -91,6 +91,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 			frame = 0;
 			check = intro_riffs[ intro_index ];
 			engine_audio_manager_play_riff( music_intro[ check ] );
+			//engine_audio_manager_play_riff( 0x12 );
 			intro_index++;
 			if( intro_index >= MAX_INTRO )
 			{
@@ -181,14 +182,27 @@ static void randomize_intro()
 
 	for( idx = 0; idx < MAX_INTRO; idx++ )
 	{
-		while( 1 )
-		{
-			rnd = engine_random_manager_data( MAX_INTRO );
-			if( 0 == intro_riffs[ rnd ] )
-			{
-				intro_riffs[ rnd ] = idx;
-				break;
-			}
-		}
+		//while( 1 )
+		//{
+			//rnd = engine_random_manager_data( MAX_INTRO );
+			//if( 0 == intro_riffs[ rnd ] )
+			//{
+				intro_riffs[ idx ] = idx;
+				//break;
+			//}
+		//}
 	}
+
+	//for( idx = 0; idx < MAX_INTRO; idx++ )
+	//{
+	//	while( 1 )
+	//	{
+	//		rnd = engine_random_manager_data( MAX_INTRO );
+	//		if( 0 == intro_riffs[ rnd ] )
+	//		{
+	//			intro_riffs[ rnd ] = idx;
+	//			break;
+	//		}
+	//	}
+	//}
 }

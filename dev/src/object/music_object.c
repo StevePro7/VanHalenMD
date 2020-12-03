@@ -294,7 +294,7 @@ const unsigned char music_riffs[ MAX_RIFFS ] =
 
 const unsigned char music_intro[ MAX_INTRO ] =
 {
-	0x00, 0x03, 0x30, 0x34, 0x52, 0x80, 0x83, 0x8A, 0x92, 0x97,
+	0, 1, 10, 13, 15, 28, 33, 35, 36, 39
 };
 
 // BEFORE [50]
