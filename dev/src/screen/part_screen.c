@@ -1,13 +1,12 @@
 #include "part_screen.h"
 #include "audio_manager.h"
 #include "eddie_manager.h"
-//#include "debug_manager.h"
 #include "enum_manager.h"
-//#include "font_manager.h"
 #include "graphics_manager.h"
 #include "image_manager.h"
 #include "quiz_manager.h"
 #include "sprite_manager.h"
+#include "storage_manager.h"
 
 void screen_part_screen_load()
 {
@@ -19,7 +18,9 @@ void screen_part_screen_load()
 	eddie_image = engine_eddie_manager_next();
 	engine_graphics_manager_clear_area();
 	engine_image_manager_draw_eddie( eddie_image, 20, 6 );
-	//engine_storage_manager_write();		// TODO write
+
+	// Store latest Eddie for riff.
+	engine_storage_manager_write();
 
 	engine_quiz_manager_draw();
 	engine_quiz_manager_riff();

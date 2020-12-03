@@ -36,8 +36,10 @@ void screen_ready_screen_load()
 	engine_text_manager_draw_lines_palette( diff_line1[ qo->quiz_difficulty ], 4, 20 );
 	engine_text_manager_draw_lines_palette( diff_line2[ qo->quiz_difficulty ], 4, 21 );
 
+	// Store latest riff + difficulty.
 	engine_storage_manager_write();
 	engine_delay_manager_load( READY_SCREEN_DELAY );
+
 	stage = event_stage_start;
 }
 
