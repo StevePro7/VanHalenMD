@@ -26,14 +26,15 @@ void screen_init_screen_load()
 	engine_hack_manager_init();
 	engine_hack_manager_load();
 	engine_storage_manager_read();
+	engine_eddie_manager_save();
 	engine_hack_manager_save();
-
+	
 	engine_graphics_manager_clear_full();
 }
 
 void screen_init_screen_update( unsigned char *screen_type )
 {
 	engine_random_manager_rand();
-	*screen_type = screen_type_title;
-	//*screen_type = screen_type_begin;
+	//*screen_type = screen_type_title;
+	*screen_type = screen_type_begin;
 }

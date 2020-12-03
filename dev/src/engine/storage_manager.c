@@ -83,17 +83,7 @@ void engine_storage_manager_read()
 		engine_eddie_manager_set_eddie_image( idx, byte );
 	}
 
-	//byte = SRAM_readByte( sRamOffSet++ );
-	//if( INVALID_INDEX == byte )
-	//{
-	//	byte = 0;
-	//}
-	//engine_eddie_manager_set_eddie_final( byte );
-	//byte = SRAM_readByte( sRamOffSet++ );
-	//if( INVALID_INDEX == byte )
-	//{
-	//	byte = 0;
-	//}
+
 
 	//word = SRAM_readWord( sRamOffSet );
 	//sRamOffSet++;

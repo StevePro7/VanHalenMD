@@ -13,10 +13,25 @@ void engine_eddie_manager_init()
 	unsigned char idx;
 
 	eo->eddie_index = 0;
-	//eo->eddie_final = 0;
 	for( idx = 0; idx < EDDIE_IMAGES; idx++ )
 	{
 		eo->eddie_images[ idx ] = 0;
+	}
+}
+
+void engine_eddie_manager_save()
+{
+	struct_eddie_object *eo = &global_eddie_object;
+	unsigned char idx;
+
+	eo->eddie_index = 0;
+	for( idx = 0; idx < EDDIE_IMAGES; idx++ )
+	{
+		if( 0 == eo->eddie_images[ idx ] )
+		{
+			eo->eddie_index = idx;
+			break;
+		}
 	}
 }
 
@@ -41,7 +56,6 @@ unsigned char engine_eddie_manager_next()
 			( eddie_image != eo->eddie_images[ 9 ] )
 			)
 		{
-			//eo->eddie_final = eddie_image;
 			eo->eddie_images[ eo->eddie_index ] = eddie_image;
 			break;
 		}

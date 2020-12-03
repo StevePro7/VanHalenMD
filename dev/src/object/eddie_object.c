@@ -1,4 +1,5 @@
 #include "eddie_object.h"
+
 //#ifndef __CURSOR_OBJECT_H__
 //#define __CURSOR_OBJECT_H__
 //

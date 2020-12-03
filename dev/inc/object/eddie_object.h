@@ -6,7 +6,6 @@
 typedef struct tag_struct_eddie_object
 {
 	unsigned char eddie_index;
-	//unsigned char eddie_final;
 	char eddie_images[ EDDIE_IMAGES ];
 
 } struct_eddie_object;
