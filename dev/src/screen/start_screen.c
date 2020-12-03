@@ -180,29 +180,29 @@ static void randomize_intro()
 		intro_riffs[ idx ] = 0;
 	}
 
-	for( idx = 0; idx < MAX_INTRO; idx++ )
-	{
-		//while( 1 )
-		//{
-			//rnd = engine_random_manager_data( MAX_INTRO );
-			//if( 0 == intro_riffs[ rnd ] )
-			//{
-				intro_riffs[ idx ] = idx;
-				//break;
-			//}
-		//}
-	}
-
 	//for( idx = 0; idx < MAX_INTRO; idx++ )
 	//{
-	//	while( 1 )
-	//	{
-	//		rnd = engine_random_manager_data( MAX_INTRO );
-	//		if( 0 == intro_riffs[ rnd ] )
-	//		{
-	//			intro_riffs[ rnd ] = idx;
-	//			break;
-	//		}
-	//	}
+	//	//while( 1 )
+	//	//{
+	//		//rnd = engine_random_manager_data( MAX_INTRO );
+	//		//if( 0 == intro_riffs[ rnd ] )
+	//		//{
+	//			intro_riffs[ idx ] = idx;
+	//			//break;
+	//		//}
+	//	//}
 	//}
+
+	for( idx = 0; idx < MAX_INTRO; idx++ )
+	{
+		while( 1 )
+		{
+			rnd = engine_random_manager_data( MAX_INTRO );
+			if( 0 == intro_riffs[ rnd ] )
+			{
+				intro_riffs[ rnd ] = idx;
+				break;
+			}
+		}
+	}
 }
