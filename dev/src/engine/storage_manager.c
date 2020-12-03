@@ -230,6 +230,9 @@ void engine_storage_manager_erase()
 		SRAM_writeWord( sRamOffSet, INVALID_INDEX );
 		sRamOffSet++;
 		sRamOffSet++;
+		SRAM_writeWord( sRamOffSet, INVALID_INDEX );
+		sRamOffSet++;
+		sRamOffSet++;
 	}
 
 
