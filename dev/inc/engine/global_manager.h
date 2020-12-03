@@ -14,7 +14,7 @@
 #define MAX_DIFFICULTY			2
 #define MAX_SPRITES				4
 #define MAX_EDDIES				23
-#define EDDIE_IMAGES			10
+#define EDDIE_IMAGES			9
 
 #define PALETTE1_TILES			1
 #define PALETTE2_TILES			240

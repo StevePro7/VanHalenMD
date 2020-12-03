@@ -71,7 +71,14 @@ void engine_storage_manager_read()
 	engine_quiz_manager_set_quiz_total( word );
 
 
-	// Padding 10x bytes with Eddie images.
+	// Padding 10x bytes with Eddie index + images.
+	byte = SRAM_readByte( sRamOffSet++ );
+	if( INVALID_INDEX == byte )
+	{
+		byte = 0;
+	}
+	engine_eddie_manager_set_eddie_index( byte );
+
 	for( idx = 0; idx < EDDIE_IMAGES; idx++ )
 	{
 		byte = SRAM_readByte( sRamOffSet++ );
@@ -159,7 +166,9 @@ void engine_storage_manager_write()
 	sRamOffSet++;
 
 
-	// Padding 10x bytes with Eddie images.
+	// Padding 10x bytes with Eddie index + images.
+	byte = eo->eddie_index;
+	SRAM_writeByte( sRamOffSet++, byte );
 	for( idx = 0; idx < EDDIE_IMAGES; idx++ )
 	{
 		byte = eo->eddie_images[ idx ];
@@ -220,7 +229,8 @@ void engine_storage_manager_erase()
 	sRamOffSet++;
 
 
-	// Padding 10x bytes with Eddie images.
+	// Padding 10x bytes with Eddie index + images.
+	SRAM_writeByte( sRamOffSet++, INVALID_INDEX );
 	for( idx = 0; idx < EDDIE_IMAGES; idx++ )
 	{
 		SRAM_writeByte( sRamOffSet++, INVALID_INDEX );
