@@ -35,6 +35,14 @@ void engine_audio_manager_init()
 		SND_setPCM_XGM( SFX_EFFECT_START + idx, audio, sized );
 	}
 
+	// Initialize intros.
+	for( idx = 0; idx < MAX_INTROS; idx++ )
+	{
+		audio = audio_intro[ idx ];
+		sized = audio_intro_size[ idx ];
+		SND_setPCM_XGM( SFX_INTRO_START + idx, audio, sized );
+	}
+
 	// Initialize music.
 	for( idx = 0; idx < MAX_MUSICS; idx++ )
 	{
@@ -58,6 +66,11 @@ void engine_audio_manager_play_effect( unsigned char index )
 	}
 
 	play_audio( SFX_EFFECT_START + index, 1, SOUND_PCM_CH2 );
+}
+
+void engine_audio_manager_play_intro( unsigned char index )
+{
+	play_audio( SFX_INTRO_START + index, 1, SOUND_PCM_CH2 );
 }
 
 void engine_audio_manager_play_music( unsigned char index )

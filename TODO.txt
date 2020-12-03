@@ -1,4 +1,9 @@
 TODO
+03/12/2020
+Could put "!!" on title / riff / diff screens not just title.. quick + simple
+NB: can't put on ready as there is text in that bottom corner
+
+
 02/12/2020
 SRAM persist last 10x Eddies
 SRAM persist scores and regression test
