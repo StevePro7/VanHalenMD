@@ -9,7 +9,7 @@
 #include "storage_manager.h"
 #include "timer_manager.h"
 
-#define SPLASH_SCREEN_DELAY		150
+#define SPLASH_SCREEN_DELAY		300
 //#define SPLASH_SCREEN_DELAY		1			// TODO remove check!!
 #define ERASE_SCREEN_DELAY		75
 

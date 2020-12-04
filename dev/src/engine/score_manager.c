@@ -72,7 +72,8 @@ void engine_score_manager_draw_percent( unsigned char index )
 	unsigned short correct = so->saved_correct[ index ];
 	unsigned short answerd = so->saved_answerd[ index ];
 	//unsigned short percent = calculate_percentage( correct, answerd );
-	unsigned short percent = engine_function_manager_calculate_percentage( correct, answerd );
+	//unsigned short percent = engine_function_manager_calculate_percentage( correct, answerd );
+	unsigned short percent = 100;
 	engine_font_manager_data( percent, 32, BANNER_Y );
 }
 

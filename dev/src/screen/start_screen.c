@@ -16,7 +16,7 @@
 #define START_FLASH_DELAY		50
 #define START_SCREEN_DELAY		100
 #define STATS_SCREEN_DELAY		75
-#define SAMPLE_ROTATE_DELAY		150
+#define SAMPLE_ROTATE_DELAY		25
 #define LOCAL_CHEAT_TOTAL		5
 
 static void randomize_intro();
@@ -91,7 +91,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 		{
 			frame = 0;
 			check = intro_riffs[ intro_index ];
-			engine_audio_manager_play_riff( music_intro[ check ] );
+			//engine_audio_manager_play_riff( music_intro[ check ] );
 
 			intro_index++;
 			if( intro_index >= MAX_SAMPLES )
@@ -174,7 +174,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 static void randomize_intro()
 {
 	unsigned char idx;
-	unsigned char rnd;
+	//unsigned char rnd;
 
 	for( idx = 0; idx < MAX_SAMPLES; idx++ )
 	{
@@ -183,14 +183,19 @@ static void randomize_intro()
 
 	for( idx = 0; idx < MAX_SAMPLES; idx++ )
 	{
-		while( 1 )
-		{
-			rnd = engine_random_manager_data( MAX_SAMPLES );
-			if( 0 == intro_riffs[ rnd ] )
-			{
-				intro_riffs[ rnd ] = idx;
-				break;
-			}
-		}
+				intro_riffs[ idx ] = idx;
 	}
+
+	//for( idx = 0; idx < MAX_SAMPLES; idx++ )
+	//{
+	//	while( 1 )
+	//	{
+	//		rnd = engine_random_manager_data( MAX_SAMPLES );
+	//		if( 0 == intro_riffs[ rnd ] )
+	//		{
+	//			intro_riffs[ rnd ] = idx;
+	//			break;
+	//		}
+	//	}
+	//}
 }

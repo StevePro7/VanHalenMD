@@ -15,7 +15,32 @@ void screen_part_screen_load()
 	unsigned char riff_index;
 	unsigned char save_index;
 
-	eddie_image = engine_eddie_manager_next();
+	riff_index = qo->quiz_riff_index;
+	save_index = quiz_saving[ riff_index ];
+	//eddie_image = engine_eddie_manager_next();
+	if( 0 == riff_index )
+	{
+		eddie_image = 5;
+	}
+	else if( 1 == riff_index )
+	{
+		eddie_image = 2;
+	}
+	else if( 2 == riff_index )
+	{
+		//eddie_image = 4;
+		eddie_image = 6;
+	}
+	else if( 3 == riff_index )
+	{
+		eddie_image = 8;
+	}
+	else if( 4 == riff_index )
+	{
+		eddie_image = 1;
+	}
+
+
 	engine_graphics_manager_clear_area();
 	engine_image_manager_draw_eddie( eddie_image, 20, 6 );
 
@@ -25,8 +50,7 @@ void screen_part_screen_load()
 	engine_quiz_manager_draw();
 	engine_quiz_manager_riff();
 
-	riff_index = qo->quiz_riff_index;
-	save_index = quiz_saving[ riff_index ];
+	
 	engine_audio_manager_play_riff( save_index );
 }
 

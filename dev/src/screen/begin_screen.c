@@ -15,7 +15,7 @@
 #include <genesis.h>
 #endif
 
-#define BEGIN_SCREEN_DELAY		550
+#define BEGIN_SCREEN_DELAY		600
 
 static void draw_texter();
 

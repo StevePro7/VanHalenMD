@@ -61,11 +61,33 @@ void engine_quiz_manager_load_random()
 		}
 	}
 
+	// Video 5x riffs:
+	// Panama
+	// Don't tell me what love can do
+	// Mean street
+	// Top of the world
+	// Ice cream man
+	quiz_saving[ 0 ] = 15;
+	quiz_saving[ 1 ] = 35;
+	quiz_saving[ 2 ] = 10;
+	quiz_saving[ 3 ] = 33;
+	quiz_saving[ 4 ] = 4;
+
+	quiz_answer[ 0 ] = 0x52;
+	quiz_answer[ 1 ] = 0x92;
+	quiz_answer[ 2 ] = 0x30;
+	quiz_answer[ 3 ] = 0x8A;
+	quiz_answer[ 4 ] = 0x09;
+
+
 	// Must iterate and randomize all the riffs before randomize options!
 	random_options( INVALID_INDEX );
 	//random_options( 0 );
 
+
 	// TODO delete
+	//quiz_answer[ 0 ] = 0x05;
+
 	//quiz_option[ 0 ][ 0 ] = 0x03;
 	//quiz_option[ 0 ][ 1 ] = 0x05;
 	//quiz_option[ 0 ][ 2 ] = 0x04;
