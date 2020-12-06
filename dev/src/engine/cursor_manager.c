@@ -3,12 +3,6 @@
 #include "locale_manager.h"
 #include "scribe_manager.h"
 #include "sprite_manager.h"
-//#include "text_manager.h"
-//#include "function_manager.h"
-
-//#include "quiz_manager.h"
-//#include "music_object.h"
-//#include "quiz_object.h"
 
 #ifdef _CONSOLE
 #include "_genesis.h"

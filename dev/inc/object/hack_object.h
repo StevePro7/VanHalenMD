@@ -3,8 +3,6 @@
 
 typedef struct tag_struct_hack_object
 {
-	//TODO delete
-	//unsigned char hack_navigation;
 	unsigned char hack_delayspeed;
 	unsigned char hack_invincible;
 	unsigned char hack_riffselect;

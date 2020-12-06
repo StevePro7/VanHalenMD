@@ -62,13 +62,6 @@ typedef enum tag_enum_movement_type
 
 } enum_movement_type;
 
-//typedef enum tag_enum_horizontal_type
-//{
-//	horizontal_type_left = 0,
-//	horizontal_type_right = 1,
-//
-//} enum_horizontal_type;
-
 typedef enum tag_enum_stage_type
 {
 	event_stage_start = 0,

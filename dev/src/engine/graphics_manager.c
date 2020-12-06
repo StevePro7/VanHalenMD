@@ -31,10 +31,3 @@ void engine_graphics_manager_clear_bottom()
 {
 	VDP_clearTileMapRect( BG_A, GAME_AREA_X, 24, GAME_AREA_W, 4 );
 }
-
-//void engine_graphics_manager_clear_plane()
-//{
-//	VDP_clearPlane( BG_A, 0 );
-//}
-
-// TODO VDP_clearPlane wrapper..!!

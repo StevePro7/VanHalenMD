@@ -19,11 +19,8 @@ void screen_play_screen_load()
 	struct_quiz_object *qo = &global_quiz_object;
 	engine_graphics_manager_clear_half();
 
-	// TODO try to get the score percent working from SRAM.
-	engine_score_manager_draw_percent( quiz_saving[qo->quiz_riff_index] );
-	// TODO try to get the score percent working from SRAM.
 
-	// TODO integrate from title screen 
+	engine_score_manager_draw_percent( quiz_saving[qo->quiz_riff_index] );
 	if( go->game_localcheat )
 	{
 		engine_quiz_manager_cheat();

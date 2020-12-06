@@ -4,7 +4,6 @@
 
 // Global variables.
 struct_delay_object global_delay_object;
-//struct_frame_object global_frame_object;
 struct_reset_object global_reset_object;
 
 // Delay Manager.
@@ -35,24 +34,6 @@ unsigned char engine_delay_manager_update()
 
 	return test;
 }
-
-
-// Frame Manager.
-//void engine_frame_manager_load( unsigned int timer )
-//{
-//	struct_frame_object *fo = &global_frame_object;
-//	fo->frame_count = 0;
-//	fo->frame_timer = timer;
-//}
-//void engine_frame_manager_update()
-//{
-//	struct_frame_object *fo = &global_frame_object;
-//	fo->frame_count++;
-//	if( fo->frame_count >= MAX_INT_VALUE )
-//	{
-//		fo->frame_count = 0;
-//	}
-//}
 
 
 // Reset Manager.

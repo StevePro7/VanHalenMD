@@ -29,7 +29,6 @@ void engine_eddie_manager_save()
 	struct_eddie_object *eo = &global_eddie_object;
 	unsigned char idx;
 
-	//eo->eddie_index = 0;
 	for( idx = 0; idx < EDDIE_IMAGES; idx++ )
 	{
 		if( 0 == eo->eddie_images[ idx ] )
@@ -47,7 +46,7 @@ unsigned char engine_eddie_manager_next()
 
 	while( 1 )
 	{
-		// Displace Eddie images from 1-22 as 0 index is baby Eddie!
+		// Displace Eddie images from 1-22 as 0 index is young Eddie!
 		eddie_image = engine_random_manager_data( ( MAX_EDDIES - 1 ) );
 		eddie_image += 1;
 

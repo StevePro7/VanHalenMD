@@ -79,10 +79,7 @@ static void init_sprite( const unsigned char index )
 }
 static void palette_sprite()
 {
-	// Sega genesis light yellow hex color
-	// TODO replace hard coded magic numbers
-	//unsigned short color = RGB24_TO_VDPCOLOR( 0x800080 );		// hot pink
-	//unsigned short color = RGB24_TO_VDPCOLOR( 0xFFFCBB );		// light yellow
+	// Sega Genesis light yellow hex color:
 	unsigned short color = RGB24_TO_VDPCOLOR( 0xFFE57C );		// deep yellow
 	VDP_setPaletteColor( PAL3 * 16 + 15, color );
 }
