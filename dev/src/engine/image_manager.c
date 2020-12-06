@@ -24,7 +24,7 @@ void engine_image_manager_draw_header()
 
 void engine_image_manager_draw_banner()
 {
-	draw_image( gfx_banner, PAL1, PALETTE1_TILES, 0, 0 );
+	//draw_image( gfx_banner, PAL1, PALETTE1_TILES, 0, 0 );
 }
 
 void engine_image_manager_draw_eddie( unsigned char index, unsigned char x, unsigned char y )

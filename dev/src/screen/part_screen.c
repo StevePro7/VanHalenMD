@@ -2,11 +2,14 @@
 #include "audio_manager.h"
 #include "eddie_manager.h"
 #include "enum_manager.h"
+#include "font_manager.h"
 #include "graphics_manager.h"
 #include "image_manager.h"
 #include "quiz_manager.h"
 #include "sprite_manager.h"
 #include "storage_manager.h"
+
+static void print_quiz();
 
 void screen_part_screen_load()
 {
@@ -17,7 +20,7 @@ void screen_part_screen_load()
 
 	eddie_image = engine_eddie_manager_next();
 	engine_graphics_manager_clear_area();
-	engine_image_manager_draw_eddie( eddie_image, 20, 6 );
+	//engine_image_manager_draw_eddie( eddie_image, 20, 6 );
 
 	// Store latest Eddie for riff.
 	engine_storage_manager_write();
@@ -28,10 +31,26 @@ void screen_part_screen_load()
 	riff_index = qo->quiz_riff_index;
 	save_index = quiz_saving[ riff_index ];
 	engine_audio_manager_play_riff( save_index );
+	print_quiz();
 }
 
 void screen_part_screen_update( unsigned char *screen_type )
 {
 	engine_sprite_manager_update();
 	*screen_type = screen_type_play;
+}
+
+static void print_quiz()
+{
+	struct_quiz_object *qo = &global_quiz_object;
+	unsigned char index = qo->quiz_riff_index;
+	engine_font_manager_data( quiz_saving[ index ], 30, 6 );
+	engine_font_manager_data( quiz_answer[ index ], 30, 7 );
+	engine_font_manager_data( quiz_select[ index ] + 1, 30, 8 );
+	engine_font_manager_data( quiz_select[ index ] + 0, 35, 8 );
+
+	engine_font_manager_data( quiz_option[ index ][ 0 ], 30, 10 );
+	engine_font_manager_data( quiz_option[ index ][ 1 ], 30, 11 );
+	engine_font_manager_data( quiz_option[ index ][ 2 ], 30, 12 );
+	engine_font_manager_data( quiz_option[ index ][ 3 ], 30, 13 );
 }

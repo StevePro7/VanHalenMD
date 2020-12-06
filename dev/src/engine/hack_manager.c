@@ -74,9 +74,9 @@ void engine_hack_manager_save()
 
 	// TODO delete		//ho->hack_navigation = 1;
 	//ho->hack_delayspeed = 1;
-	//ho->hack_invincible = 1;
+	////ho->hack_invincible = 1;
 
-	//index = 0;
+	//index = 3;
 	//engine_game_manager_set_riff_select( index );
 	//engine_quiz_manager_set_riffs_play( index );
 
@@ -84,5 +84,7 @@ void engine_hack_manager_save()
 	//index = difficulty_type_hard;
 	//engine_game_manager_set_diff_select( index );
 	//engine_quiz_manager_set_difficulty( index );
+
+	//engine_game_manager_set_local_cheat( completion_type_yes );
 	// TODO delete
 }

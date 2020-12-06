@@ -1,4 +1,66 @@
 BUG
+05/12/2020
+
+solution trialling out
+reset all quiz_answer to 255 instead of 0
+iterate thru and check if rnd = 255 then use this index
+
+Confirm
+that after loop that if the bug occurred that it does in fact occur here!
+quiz manager
+random()
+
+repo 2x in a row
+believe can "always" get the bug if 40x riffs and easy [and/or hard?]
+
+Runnin' with the Devil is the first option but 
+
+Repo video
+VAN HALEN
+
+1.	Aint Talking bout love
+2.	Jamies Cryin
+3.	Runnin' with the devil
+4.	Little dreamer
+
+10
+ 0
+ 3	2
+
+3 5 0 8
+
+index = 31
+quiz_saving[ index ]	10
+quiz_answer[ index ]	 0
+quiz_select[ index ]	 3
+
+but is playing "Mean Street"
+
+0x30	Mean Street
+music_riffs[10]
+
+quiz_answer[ rnd ] = music_riffs[ idx ];
+quiz_answer[ 31 ] = music_riffs[ 0 ];		0
+
+
+part_screen
+riff_index = qo->quiz_riff_index;
+save_index = quiz_saving[ riff_index ];
+engine_audio_manager_play_riff( save_index );
+
+riff_index = 31
+save_index = 10
+engine_audio_manager_play_riff( 10 )		Mean Street
+
+
+MADE IT FAIL
+with all the debug information
+
+cleared SRAM
+40x riffs
+Hard
+
+
 25/11/2020
 
 Ain't Talkin' 'bout Love
@@ -7,3 +69,6 @@ riff played
 BUT
 option said
 Runnin' with the devil
+
+
+Top of the World

@@ -20,7 +20,7 @@ void screen_play_screen_load()
 	engine_graphics_manager_clear_half();
 
 	// TODO try to get the score percent working from SRAM.
-	engine_score_manager_draw_percent( quiz_saving[qo->quiz_riff_index] );
+	engine_score_manager_draw_percent( quiz_saving[ qo->quiz_riff_index ] );
 	// TODO try to get the score percent working from SRAM.
 
 	// TODO integrate from title screen 

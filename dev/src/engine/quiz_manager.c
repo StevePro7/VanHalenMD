@@ -45,13 +45,24 @@ void engine_quiz_manager_load_random()
 {
 	unsigned char idx;
 	unsigned char rnd;
+	unsigned char tst;
 
+	tst = 0;
 	reset_quiz();
 	for( idx = 0; idx < MAX_RIFFS; idx++ )
 	{
 		while( 1 )
 		{
 			rnd = engine_random_manager_data( MAX_RIFFS );
+			//if( 0 == quiz_saving[ rnd ] )			// NEW
+
+			if( MAX_BYTE_VALUE != quiz_answer[ rnd ] )
+			{
+				tst = quiz_answer[ rnd ];
+			}
+
+			// OLD
+			//if( 0 == quiz_answer[ rnd ] )
 			if( MAX_BYTE_VALUE == quiz_answer[ rnd ] )
 			{
 				quiz_saving[ rnd ] = idx;
@@ -60,6 +71,28 @@ void engine_quiz_manager_load_random()
 			}
 		}
 	}
+
+	engine_font_manager_text( "START random", 2, 0 );
+
+	for( idx = 0; idx < MAX_RIFFS; idx++ )
+	{
+		if( 0 == quiz_answer[ idx ] )
+		{
+			engine_font_manager_zero( idx, 35, 1 );
+		}
+
+		rnd = quiz_saving[ idx ];
+		if( quiz_answer[ idx ] != music_riffs[ rnd ] )
+		{
+			
+			engine_font_manager_zero( idx, 5, 1 );
+			engine_font_manager_zero( music_riffs[ rnd ], 15, 1 );
+			//engine_font_manager_zero( quiz_answer[ idx ], 25, 1 );
+			rnd = rnd + 1;
+		}
+	}
+
+	engine_font_manager_text( "-END- random", 2, 2 );
 
 	// Must iterate and randomize all the riffs before randomize options!
 	random_options( INVALID_INDEX );
@@ -293,6 +326,7 @@ static void reset_quiz()
 	unsigned char idx, opt;
 	for( idx = 0; idx < MAX_RIFFS; idx++ )
 	{
+		//quiz_answer[ idx ] = 0;
 		quiz_answer[ idx ] = MAX_BYTE_VALUE;
 		for( opt = 0; opt < MAX_OPTION; opt++ )
 		{
