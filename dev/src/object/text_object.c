@@ -1,7 +1,6 @@
 #include "text_object.h"
 
 // Global variable.
-// TODO set maximum once established
 const struct_text_object global_text_object[ MAX_TEXTER ] =
 {
 	// Riff screen.
