@@ -175,7 +175,6 @@ void engine_quiz_manager_draw()
 	engine_font_manager_zero( qo->quiz_riffs_play, 13, BANNER_Y );
 }
 
-
 unsigned char engine_quiz_manager_increment( unsigned char quiz_selection )
 {
 	struct_quiz_object *qo = &global_quiz_object;
@@ -190,40 +189,6 @@ void engine_quiz_manager_selection( unsigned char quiz_selection )
 	struct_quiz_object *qo = &global_quiz_object;
 	qo->quiz_selections = quiz_selection;
 }
-
-//void engine_quiz_manager_decrement( unsigned char quiz_selection )
-//{
-//	struct_quiz_object *qo = &global_quiz_object;
-//	qo->quiz_riff_index--;
-//	qo->quiz_selections = quiz_selection;
-//}
-//
-//void engine_quiz_manager_load_testing()
-//{
-//	// 0x01		1-1
-//	// 0x22		2-1
-//	// 0x01		1-2
-//	// 0x87		2-2
-//quiz_option[ 0 ][ 0 ] = 0x01;
-//quiz_option[ 0 ][ 1 ] = 0x87;
-//quiz_option[ 0 ][ 2 ] = 0x02;
-//quiz_option[ 0 ][ 3 ] = 0x03;
-//
-//	quiz_option[ 1 ][ 0 ] = 0x87;
-//	quiz_option[ 1 ][ 1 ] = 0x87;
-//	quiz_option[ 1 ][ 2 ] = 0x12;
-//	quiz_option[ 1 ][ 3 ] = 0x13;
-//
-//	quiz_option[ 2 ][ 0 ] = 0x01;
-//	quiz_option[ 2 ][ 1 ] = 0x11;
-//	quiz_option[ 2 ][ 2 ] = 0x12;
-//	quiz_option[ 2 ][ 3 ] = 0x13;
-//
-//	quiz_option[ 3 ][ 0 ] = 0x87;
-//	quiz_option[ 3 ][ 1 ] = 0x11;
-//	quiz_option[ 3 ][ 2 ] = 0x12;
-//	quiz_option[ 3 ][ 3 ] = 0x13;
-//}
 
 void engine_quiz_manager_reset()
 {

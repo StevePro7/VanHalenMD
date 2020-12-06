@@ -2,7 +2,7 @@
 
 // Global variable.
 // TODO set maximum once established
-const struct_text_object global_text_object[ 39 ] =
+const struct_text_object global_text_object[ MAX_TEXTER ] =
 {
 	// Riff screen.
 	{ 1, 7, "Pick how many riffs" },
@@ -19,20 +19,12 @@ const struct_text_object global_text_object[ 39 ] =
 	{ 14, 25, "Select" },
 	{ 14, 26, "Census" },
 	{ 14, 27, "Replay" },
-	//{ 1, 21, "Button [ A ]" },
-	//{ 1, 22, "Button [ B ]" },
-	//{ 1, 23, "Button [ C ]" },
-	//{ 14, 21, "Select" },
-	//{ 14, 22, "Census" },
-	//{ 14, 23, "Replay" },
 
 	// Summary screen.
 	{ 2, 10, "Riffs Total" },
 	{ 2, 14, "Riffs Solved" },
 	{ 2, 18, "Riffs Correct" },
 	{ 2, 22, "Riffs Percent" },
-	//{ 1, 26, "Button [ A ]" },
-	//{ 1, 27, "Button [ B ]" },
 	{ 16, 26, "Quit" },
 	{ 16, 27, "Back" },
 	{ 1, 26, "Thanks for playing!" },
@@ -63,20 +55,8 @@ const struct_text_object global_text_object[ 39 ] =
 	{ 1, 20, "to the MegaDriveDev" },
 	{ 1, 21, "Suzanne and Adriana" },
 
-	// OLD Title screen - too wide
-	//{ 0, 11, "There's only one way" },
-	//{ 0, 12, "to rock! Vintage Van" },
-	//{ 0, 13, "Halen celebrates 40x" },
-	//{ 0, 14, "awesome riffs played" },
-	//{ 0, 15, "by Eddie Van Halen." },
 };
 
-// Riff Screen.
-//const struct_text_object riff_text_object[ MAX_MENUS ] =
-//{
-//	{ 1, 7, "Pick how many riffs" },
-//	{ 1, 8, "Eddie should shred:" },
-//};
 const unsigned char riff_yPos[ MAX_OPTION ] = { 12, 16, 20, 24 };
 const char *riff_line1[ MAX_OPTION ] =
 {
@@ -93,12 +73,6 @@ const char *riff_line2[ MAX_OPTION ] =
 	"   EVH marathon!",
 };
 
-// Difficulty Screen.
-//const struct_text_object diff_text_object[ MAX_MENUS ] =
-//{
-//	{ 1, 7, "Select option mixup" },
-//	{ 1, 8, "foreach riff played" },
-//};
 const unsigned char diff_yPos[ MAX_MENUS ] = { 12, 16 };
 const char *diff_line1[ MAX_MENUS ] =
 {

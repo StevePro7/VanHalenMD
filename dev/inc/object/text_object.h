@@ -12,7 +12,7 @@ typedef struct tag_struct_text_object
 } struct_text_object;
 
 // Global variable.
-extern const struct_text_object global_text_object[ 39 ];		// TODO set maximum once established
+extern const struct_text_object global_text_object[ MAX_TEXTER ];
 
 // Riff Screen.
 extern const unsigned char riff_yPos[ MAX_OPTION ];

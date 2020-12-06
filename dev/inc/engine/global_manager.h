@@ -15,6 +15,7 @@
 #define MAX_OPTION				4
 #define MAX_DIFFICULTY			2
 #define MAX_SPRITES				4
+#define MAX_TEXTER				39
 #define MAX_EDDIES				23
 #define EDDIE_IMAGES			9
 

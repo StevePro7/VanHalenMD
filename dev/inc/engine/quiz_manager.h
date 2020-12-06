@@ -18,10 +18,6 @@ void engine_quiz_manager_draw();
 unsigned char engine_quiz_manager_increment( unsigned char quiz_selection );
 void engine_quiz_manager_selection( unsigned char quiz_selection );
 
-//void engine_quiz_manager_increment( unsigned char quiz_selection );
-//void engine_quiz_manager_decrement( unsigned char quiz_selection );
-//void engine_quiz_manager_load_testing();
-
 void engine_quiz_manager_cheat();
 void engine_quiz_manager_reset();
 void engine_quiz_manager_set_riffs_play( unsigned char index );

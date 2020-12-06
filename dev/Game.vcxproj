@@ -157,7 +157,6 @@
     <ClCompile Include="src\engine\audio_manager.c" />
     <ClCompile Include="src\engine\banner_manager.c" />
     <ClCompile Include="src\engine\cursor_manager.c" />
-    <ClCompile Include="src\engine\debug_manager.c" />
     <ClCompile Include="src\engine\eddie_manager.c" />
     <ClCompile Include="src\engine\enum_manager.c" />
     <ClCompile Include="src\engine\font_manager.c" />
@@ -189,12 +188,10 @@
     <ClCompile Include="src\object\quiz_object.c" />
     <ClCompile Include="src\object\score_object.c" />
     <ClCompile Include="src\object\scribe_object.c" />
-    <ClCompile Include="src\object\storage_object.c" />
     <ClCompile Include="src\object\text_object.c" />
     <ClCompile Include="src\object\timer_object.c" />
     <ClCompile Include="src\screen\begin_screen.c" />
     <ClCompile Include="src\screen\diff_screen.c" />
-    <ClCompile Include="src\screen\func_screen.c" />
     <ClCompile Include="src\screen\init_screen.c" />
     <ClCompile Include="src\screen\intro_screen.c" />
     <ClCompile Include="src\screen\load_screen.c" />
@@ -209,7 +206,6 @@
     <ClCompile Include="src\screen\splash_screen.c" />
     <ClCompile Include="src\screen\start_screen.c" />
     <ClCompile Include="src\screen\stats_screen.c" />
-    <ClCompile Include="src\screen\test_screen.c" />
     <ClCompile Include="src\screen\title_screen.c" />
   </ItemGroup>
   <ItemGroup>
@@ -219,7 +215,6 @@
     <ClInclude Include="inc\engine\audio_manager.h" />
     <ClInclude Include="inc\engine\banner_manager.h" />
     <ClInclude Include="inc\engine\cursor_manager.h" />
-    <ClInclude Include="inc\engine\debug_manager.h" />
     <ClInclude Include="inc\engine\eddie_manager.h" />
     <ClInclude Include="inc\engine\enum_manager.h" />
     <ClInclude Include="inc\engine\font_manager.h" />
@@ -251,12 +246,10 @@
     <ClInclude Include="inc\object\quiz_object.h" />
     <ClInclude Include="inc\object\score_object.h" />
     <ClInclude Include="inc\object\scribe_object.h" />
-    <ClInclude Include="inc\object\storage_object.h" />
     <ClInclude Include="inc\object\text_object.h" />
     <ClInclude Include="inc\object\timer_object.h" />
     <ClInclude Include="inc\screen\begin_screen.h" />
     <ClInclude Include="inc\screen\diff_screen.h" />
-    <ClInclude Include="inc\screen\func_screen.h" />
     <ClInclude Include="inc\screen\init_screen.h" />
     <ClInclude Include="inc\screen\intro_screen.h" />
     <ClInclude Include="inc\screen\load_screen.h" />
@@ -271,7 +264,6 @@
     <ClInclude Include="inc\screen\splash_screen.h" />
     <ClInclude Include="inc\screen\start_screen.h" />
     <ClInclude Include="inc\screen\stats_screen.h" />
-    <ClInclude Include="inc\screen\test_screen.h" />
     <ClInclude Include="inc\screen\title_screen.h" />
     <ClInclude Include="res\gfx_eddies.h" />
     <ClInclude Include="res\gfx_sprites.h" />

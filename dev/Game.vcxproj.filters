@@ -63,9 +63,6 @@
     <ClCompile Include="src\engine\cursor_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="src\engine\debug_manager.c">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
     <ClCompile Include="src\engine\enum_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
@@ -141,9 +138,6 @@
     <ClCompile Include="src\object\scribe_object.c">
       <Filter>Source Files\object</Filter>
     </ClCompile>
-    <ClCompile Include="src\object\storage_object.c">
-      <Filter>Source Files\object</Filter>
-    </ClCompile>
     <ClCompile Include="src\object\text_object.c">
       <Filter>Source Files\object</Filter>
     </ClCompile>
@@ -156,16 +150,10 @@
     <ClCompile Include="src\screen\diff_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
-    <ClCompile Include="src\screen\func_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
     <ClCompile Include="src\screen\init_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
     <ClCompile Include="src\screen\intro_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\screen\level_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
     <ClCompile Include="src\screen\load_screen.c">
@@ -196,9 +184,6 @@
       <Filter>Source Files\screen</Filter>
     </ClCompile>
     <ClCompile Include="src\screen\splash_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\screen\test_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
     <ClCompile Include="src\screen\title_screen.c">
@@ -263,9 +248,6 @@
       <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="inc\engine\cursor_manager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\engine\debug_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="inc\engine\enum_manager.h">
@@ -343,9 +325,6 @@
     <ClInclude Include="inc\object\scribe_object.h">
       <Filter>Header Files\object</Filter>
     </ClInclude>
-    <ClInclude Include="inc\object\storage_object.h">
-      <Filter>Header Files\object</Filter>
-    </ClInclude>
     <ClInclude Include="inc\object\text_object.h">
       <Filter>Header Files\object</Filter>
     </ClInclude>
@@ -358,16 +337,10 @@
     <ClInclude Include="inc\screen\diff_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
-    <ClInclude Include="inc\screen\func_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
     <ClInclude Include="inc\screen\init_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
     <ClInclude Include="inc\screen\intro_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\screen\level_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
     <ClInclude Include="inc\screen\load_screen.h">
@@ -398,9 +371,6 @@
       <Filter>Header Files\screen</Filter>
     </ClInclude>
     <ClInclude Include="inc\screen\splash_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\screen\test_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
     <ClInclude Include="inc\screen\title_screen.h">

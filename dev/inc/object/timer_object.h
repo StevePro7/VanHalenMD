@@ -9,13 +9,6 @@ typedef struct tag_struct_delay_object
 
 } struct_delay_object;
 
-// Frame Object.
-//typedef struct tag_struct_frame_object
-//{
-//	unsigned int frame_count;
-//	unsigned int frame_timer;
-//
-//} struct_frame_object;
 
 // Reset Object.
 typedef struct tag_struct_reset_object

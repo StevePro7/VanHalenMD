@@ -3,7 +3,7 @@
 
 #include "global_manager.h"
 
-// Quiz Manager.
+// Score Manager.
 typedef struct tag_struct_score_object
 {
 	unsigned char score_correct;
