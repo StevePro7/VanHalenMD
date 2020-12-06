@@ -59,7 +59,6 @@ void engine_score_manager_update( unsigned char index, unsigned char answer )
 
 void engine_score_manager_draw()
 {
-	// TODO replace hard coded co-ordinates.
 	struct_score_object *so = &global_socre_object;
 	engine_font_manager_zero( so->score_correct, 23, BANNER_Y );
 }
@@ -79,10 +78,8 @@ void engine_score_manager_draw_summary( unsigned char played )
 	struct_score_object *so = &global_socre_object;
 	unsigned char correct = so->score_correct;
 	unsigned char answerd = so->score_answerd;
-
 	unsigned short percent = engine_function_manager_calculate_percentage( correct, answerd );
 
-	// TODO replace hard coded co-ordinates.
 	engine_font_manager_zero( played, 17, 11 );
 	engine_font_manager_zero( answerd, 17, 15 );
 	engine_font_manager_zero( correct, 17, 19 );

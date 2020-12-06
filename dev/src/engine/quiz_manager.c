@@ -63,22 +63,6 @@ void engine_quiz_manager_load_random()
 
 	// Must iterate and randomize all the riffs before randomize options!
 	random_options( INVALID_INDEX );
-	//random_options( 0 );
-
-	// TODO delete
-	//quiz_option[ 0 ][ 0 ] = 0x03;
-	//quiz_option[ 0 ][ 1 ] = 0x05;
-	//quiz_option[ 0 ][ 2 ] = 0x04;
-	//quiz_option[ 0 ][ 3 ] = 0x07;
-
-	//quiz_answer[ 0 ] = 0x05;
-	//quiz_select[ 0 ] = 1;
-	//quiz_saving[ 0 ] = 3;
-
-	//quiz_option[ 0 ][ 0 ] = 0x86;
-	//quiz_option[ 0 ][ 1 ] = 0x50;
-	//quiz_option[ 0 ][ 2 ] = 0x67;
-	//quiz_option[ 0 ][ 3 ] = 0xA9;
 }
 
 void engine_quiz_manager_load_mixing()
@@ -99,7 +83,7 @@ void engine_quiz_manager_load_mixing()
 void engine_quiz_manager_load_normal()
 {
 	unsigned char idx;
-	const unsigned char default_option = 0;		// TODO do I want default_option to be from hack mgr?
+	const unsigned char default_option = 0;
 
 	reset_quiz();
 	for( idx = 0; idx < MAX_RIFFS; idx++ )
@@ -114,7 +98,6 @@ void engine_quiz_manager_load_normal()
 
 void engine_quiz_manager_cheat()
 {
-	// TODO replace hard coded co-ordinates.
 	struct_quiz_object *qo = &global_quiz_object;
 	unsigned char cheat = quiz_select[ qo->quiz_riff_index ] + 1;
 	engine_font_manager_data( cheat, 17, 27 );
@@ -169,7 +152,6 @@ void engine_quiz_manager_riff()
 
 void engine_quiz_manager_draw()
 {
-	// TODO replace hard coded co-ordinates.
 	struct_quiz_object *qo = &global_quiz_object;
 	engine_font_manager_zero( qo->quiz_riff_index + 1, 10, BANNER_Y );
 	engine_font_manager_zero( qo->quiz_riffs_play, 13, BANNER_Y );

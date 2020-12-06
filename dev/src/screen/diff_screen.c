@@ -104,7 +104,6 @@ void screen_diff_screen_update( unsigned char *screen_type )
 
 static void print_extra( unsigned char index )
 {
-	// TODO replace hard coded co-ordinates.
 	engine_font_manager_text( diff_line3[ index ], 1, 22 );
 	engine_font_manager_text( diff_line4[ index ], 1, 23 );
 }

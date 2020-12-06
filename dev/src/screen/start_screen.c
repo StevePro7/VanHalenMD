@@ -37,7 +37,6 @@ void screen_start_screen_load()
 	engine_font_manager_text( LOCALE_TITLE_VINTAGE, 7, 7 );
 	engine_font_manager_text( LOCALE_TITLE_VANHALEN, 6, 8 );
 	engine_text_manager_draw_lines( 30, 8 );
-	//engine_text_manager_draw_lines( 30, 9 );		// TODO include Suzanne and Adriana??
 
 	engine_game_manager_set_local_cheat( completion_type_nop );
 	if( ho->hack_invincible )

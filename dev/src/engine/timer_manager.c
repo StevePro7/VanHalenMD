@@ -6,6 +6,7 @@
 struct_delay_object global_delay_object;
 struct_reset_object global_reset_object;
 
+
 // Delay Manager.
 void engine_delay_manager_load( unsigned int delay )
 {

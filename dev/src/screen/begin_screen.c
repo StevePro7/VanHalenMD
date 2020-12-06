@@ -25,7 +25,6 @@ void screen_begin_screen_load()
 	draw_texter();
 	engine_font_manager_text( LOCALE_BUILD_VERSION, 36, 27 );
 
-	// TODO render image after pause...?
 	engine_image_manager_draw_header();
 	engine_delay_manager_load( BEGIN_SCREEN_DELAY );
 

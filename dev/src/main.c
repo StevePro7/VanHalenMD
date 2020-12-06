@@ -2,13 +2,7 @@
 
 int main()
 {
-	//unsigned char open_screen_type = screen_type_splash;
-
-	unsigned char open_screen_type;
-	
-	open_screen_type = screen_type_splash;
-	//open_screen_type = screen_type_init;
-
+	unsigned char open_screen_type = screen_type_splash;
 	engine_screen_manager_init( open_screen_type );
 	while( 1 )
 	{

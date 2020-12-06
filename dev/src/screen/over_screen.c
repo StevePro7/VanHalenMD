@@ -15,7 +15,6 @@
 #include "text_manager.h"
 #include "timer_manager.h"
 
-//#define SCORE_FLASH_DELAY		25
 #define SCORE_MUSIC_DELAY		600
 #define SCORE_FLASH_DELAY		20
 
@@ -44,7 +43,6 @@ void screen_over_screen_load()
 	engine_storage_manager_write();
 
 	engine_audio_manager_play_music( 0 );
-	//flash_score();
 	flash_count = 0;
 	frame_count = 0;
 }

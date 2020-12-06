@@ -28,11 +28,5 @@ void screen_title_screen_update( unsigned char *screen_type )
 	engine_random_manager_rand();
 	engine_sprite_manager_update();
 
-	// From here goto : begin / intro / title / riff / load screen...
-	//*screen_type = screen_type_load;
-	//*screen_type = screen_type_over;
-	//*screen_type = screen_type_ready;
-	//*screen_type = screen_type_test;
-	//*screen_type = screen_type_title;
 	*screen_type = screen_type_start;
 }
