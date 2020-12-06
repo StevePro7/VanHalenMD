@@ -17,7 +17,7 @@
 struct_quiz_object global_quiz_object;
 
 static void reset_quiz();
-static void random_options(const char default_option );
+static void random_options( const char default_option );
 
 void engine_quiz_manager_init()
 {
@@ -52,7 +52,7 @@ void engine_quiz_manager_load_random()
 		while( 1 )
 		{
 			rnd = engine_random_manager_data( MAX_RIFFS );
-			if( 0 == quiz_answer[ rnd ] )
+			if( MAX_BYTE_VALUE == quiz_answer[ rnd ] )
 			{
 				quiz_saving[ rnd ] = idx;
 				quiz_answer[ rnd ] = music_riffs[ idx ];
@@ -204,10 +204,10 @@ void engine_quiz_manager_selection( unsigned char quiz_selection )
 //	// 0x22		2-1
 //	// 0x01		1-2
 //	// 0x87		2-2
-	//quiz_option[ 0 ][ 0 ] = 0x01;
-	//quiz_option[ 0 ][ 1 ] = 0x87;
-	//quiz_option[ 0 ][ 2 ] = 0x02;
-	//quiz_option[ 0 ][ 3 ] = 0x03;
+//quiz_option[ 0 ][ 0 ] = 0x01;
+//quiz_option[ 0 ][ 1 ] = 0x87;
+//quiz_option[ 0 ][ 2 ] = 0x02;
+//quiz_option[ 0 ][ 3 ] = 0x03;
 //
 //	quiz_option[ 1 ][ 0 ] = 0x87;
 //	quiz_option[ 1 ][ 1 ] = 0x87;
@@ -293,7 +293,7 @@ static void reset_quiz()
 	unsigned char idx, opt;
 	for( idx = 0; idx < MAX_RIFFS; idx++ )
 	{
-		quiz_answer[ idx ] = 0;
+		quiz_answer[ idx ] = MAX_BYTE_VALUE;
 		for( opt = 0; opt < MAX_OPTION; opt++ )
 		{
 			quiz_option[ idx ][ opt ] = 0;
@@ -301,7 +301,7 @@ static void reset_quiz()
 	}
 }
 
-static void random_options(const char default_option )
+static void random_options( const char default_option )
 {
 	struct_quiz_object *qo = &global_quiz_object;
 	unsigned char idx;

@@ -29,6 +29,7 @@
 #define BANNER_Y				4
 #define OPTION_X				4
 
+#define MAX_BYTE_VALUE			255
 #define MAX_INT_VALUE			65535
 #define INVALID_INDEX			-1
 
