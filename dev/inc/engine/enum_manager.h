@@ -20,8 +20,6 @@ typedef enum tag_enum_screen_type
 	screen_type_score = 14,
 	screen_type_stats = 15,
 	screen_type_over = 16,
-	screen_type_test = 17,
-	screen_type_func = 18,
 
 } enum_screen_type;
 

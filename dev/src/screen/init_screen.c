@@ -28,7 +28,7 @@ void screen_init_screen_load()
 	engine_storage_manager_read();
 	engine_eddie_manager_save();
 	engine_hack_manager_save();
-	
+
 	engine_graphics_manager_clear_full();
 }
 

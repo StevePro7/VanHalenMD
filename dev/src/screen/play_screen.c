@@ -18,7 +18,6 @@ void screen_play_screen_load()
 	struct_quiz_object *qo = &global_quiz_object;
 	engine_graphics_manager_clear_half();
 
-
 	engine_score_manager_draw_percent( quiz_saving[qo->quiz_riff_index] );
 	if( go->game_localcheat )
 	{

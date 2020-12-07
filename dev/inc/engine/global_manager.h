@@ -1,7 +1,7 @@
 #ifndef __GLOBAL_MANAGER__
 #define __GLOBAL_MANAGER__
 
-#define MAX_SCREEENS			19
+#define MAX_SCREEENS			17
 
 #define MAX_ALBUMS				12
 #define MAX_SONGS				13
