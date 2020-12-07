@@ -29,6 +29,6 @@ extern const Image gfx_eddie_18;
 extern const Image gfx_eddie_19;
 extern const Image gfx_eddie_20;
 extern const Image gfx_eddie_21;
-extern const Image gfx_eddie_99;
+extern const Image gfx_eddie_22;
 
 #endif // _RES_GFX_EDDIES_H_

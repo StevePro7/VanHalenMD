@@ -23,4 +23,4 @@ const Image gfx_eddie_18 = { NULL, NULL, NULL };
 const Image gfx_eddie_19 = { NULL, NULL, NULL };
 const Image gfx_eddie_20 = { NULL, NULL, NULL };
 const Image gfx_eddie_21 = { NULL, NULL, NULL };
-const Image gfx_eddie_99 = { NULL, NULL, NULL };
+const Image gfx_eddie_22 = { NULL, NULL, NULL };
